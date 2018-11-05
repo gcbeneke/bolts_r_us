@@ -1,0 +1,8 @@
+prefix=/home/gijs/bolts_ws/install
+
+Name: irb
+Description: Description of irb
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/gijs/bolts_ws/install/lib 
+Requires: 
