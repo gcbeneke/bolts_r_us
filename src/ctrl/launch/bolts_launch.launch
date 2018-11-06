@@ -1,0 +1,7 @@
+
+<launch>
+  <include file="$(find ctrl)/launch/ctrl_launch.launch"/>
+  <include file="$(find opt)/launch/opt_launch.launch"/>
+  <include file="$(find vis)/launch/vis_launch.launch"/>
+  <include file="$(find irb)/launch/irb_launch.launch"/>
+</launch>
