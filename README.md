@@ -16,3 +16,6 @@ het overbrengen van data.
 ### Installatie voorwaarden
 Voor het runnen van de software zijn verschillende drivers en packages nodig van Optoforce, ABB en Intel RealSense. Hieronder 
 staan de verschillende drivers die nodig zijn met bijbehorende URL's om deze te downloaden.
+
+#### Arduino Driver
+#### Intel RealSense Driver
