@@ -36,27 +36,29 @@ sketchbook moet vervangen worden met de huidige versie van arduino. E.g. cd ardu
 
 2. Voer de volgende commando's uit:
 
-- cd ..
+- `cd ..`
 
-- sudo apt-get install ros-indigo-rosserial-arduino
+- `sudo apt-get install ros-indigo-rosserial-arduino`
 
-- sudo apt-get install ros-indigo-rosserial
+- `sudo apt-get install ros-indigo-rosserial`
 
 Deze commando's zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie.
 
 3. Voer de volgende commando's uit: 
 
-- cd sketchbook/libraries 
+- `cd sketchbook/libraries`
   
-- rm -rf ros_lib
+- `rm -rf ros_lib`
 
-- rosrun rosserial_arduino make_libraries.py .
+- `rosrun rosserial_arduino make_libraries.py`
 
 Vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries
 
-#### Intel RealSense Driver
+#### Intel RealSense Driver & Packages
+Om gebruik te kunnen maken van de Intel RealSense D435 module is de driver nodig en er wordt een package gedownload om de werking te controleren. Daarnaast werkt de driver alleen op Linux kernals versie *4.16+*
 
-### ABB IRB120
+
+#### ABB IRB120
 
 text
 
@@ -64,7 +66,7 @@ Mocht de robot niet goed openen in de simulatie (Rviz)
 
 Run dan de volgende command voordat je de simulatie runt:
 
-export LC_NUMERIC="en_US.UTF-8" 
+`export LC_NUMERIC="en_US.UTF-8"` 
 
 TIP:
 
