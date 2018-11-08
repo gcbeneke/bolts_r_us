@@ -61,15 +61,21 @@ Vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries
 #### Intel RealSense Driver & Packages
 Om gebruik te kunnen maken van de Intel RealSense D435 module is de driver nodig en er wordt een package gedownload om de werking te controleren. Daarnaast werkt de driver alleen op Linux kernals versie **4.16+**
 
+
 librealsense2 **driver** installatie:
+
 https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
 
 realsense2_camera **package** installatie:
+
 https://github.com/intel-ros/realsense/#installation-instructions
 
+
 **Als bij de vorige stappen errors zijn voorgekomen bij het testen van de camera met bijvoorbeeld realsense-viewer, controleer dan de kernel!** 
+
 Controleer de huidige kernel versie met:
   `uname -r`
+  
 Deze versie moet **4.16+** zijn om zeker te weten dat het werkt.
   
 Indien de huidige kernel versie niet werkt kan eerst de pc opnieuw worden opgestart en daarbij moet in het opstartmenu **Advanced Ubuntu options** daar kan de kernelversie worden gewijzigd.
