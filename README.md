@@ -50,6 +50,6 @@ sketchbook moet je vervangen de huigide versie van arduino. E.g. cd arduino-1.8.
 
 - rosrun rosserial_arduino make_libraries.py .
 
-- (vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
+Vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries
 
 #### Intel RealSense Driver
