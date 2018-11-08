@@ -32,7 +32,7 @@ Hieronder volgt ook een korte omschrijving van de stappen:
 
 - ./install.sh
 
-sketchbook moet je vervangen de huigide versie van arduino. E.g. cd arduino-1.8.7.
+sketchbook moet je vervangen de huidige versie van arduino. E.g. cd arduino-1.8.7.
 
 2. Voer de volgende commando's uit:
 
