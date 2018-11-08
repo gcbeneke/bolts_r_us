@@ -36,6 +36,8 @@ sketchbook moet vervangen worden met de huidige versie van arduino. E.g. cd ardu
 
 2. Voer de volgende commando's uit:
 
+- cd ..
+
 - sudo apt-get install ros-indigo-rosserial-arduino
 
 - sudo apt-get install ros-indigo-rosserial
