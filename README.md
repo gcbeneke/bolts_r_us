@@ -28,9 +28,9 @@ Als de .tar.xz file gedownload is pak deze uit in een map naar jouw keuze. E.g. 
 
 Voer de volgende commando's uit: 
 
-- 'cd sketchbook'
+- `cd sketchbook`
 
-- './install.sh'
+- `./install.sh`
 
 sketchbook moet vervangen worden met de huidige versie van arduino. E.g. cd arduino-1.8.7. Het meegegeven pad aan de cd commando is afhankelijk van waar de tar-file is uitgepakt.
 
