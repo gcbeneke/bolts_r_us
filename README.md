@@ -19,6 +19,8 @@ het overbrengen van data.
 Voor het runnen van de software zijn verschillende drivers en packages nodig van Optoforce, ABB en Intel RealSense. Hieronder 
 staan de verschillende drivers die nodig zijn met bijbehorende URL's om deze te downloaden.
 
+##
+
 #### Arduino Driver
 Hieronder staat een link voor het installeren van de rosserial voor Arduino IDE. Rosserial wordt gebruikt om de knoppen uit te lezen.
 http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
@@ -62,18 +64,18 @@ Vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries
 Om gebruik te kunnen maken van de Intel RealSense D435 module is de driver nodig en er wordt een package gedownload om de werking te controleren. Daarnaast werkt de driver alleen op Linux kernals versie **4.16+**
 
 
-librealsense2 **driver** installatie:
+- librealsense2 **driver** installatie:
 
 https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
 
-realsense2_camera **package** installatie:
+- realsense2_camera **package** installatie:
 
 https://github.com/intel-ros/realsense/#installation-instructions
 
 
 **Als bij de vorige stappen errors zijn voorgekomen bij het testen van de camera met bijvoorbeeld realsense-viewer, controleer dan de kernel!** 
 
-Controleer de huidige kernel versie met:
+- Controleer de huidige kernel versie met:
   `uname -r`
   
 Deze versie moet **4.16+** zijn om zeker te weten dat het werkt.
