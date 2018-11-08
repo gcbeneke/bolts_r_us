@@ -57,6 +57,15 @@ Vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries
 #### Intel RealSense Driver & Packages
 Om gebruik te kunnen maken van de Intel RealSense D435 module is de driver nodig en er wordt een package gedownload om de werking te controleren. Daarnaast werkt de driver alleen op Linux kernals versie *4.16+*
 
+librealsense2 **driver** installatie:
+https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
+
+
+
+realsense2_camera **package** installatie:
+https://github.com/intel-ros/realsense/#installation-instructions
+
+
 
 #### ABB IRB120
 
