@@ -1061,6 +1061,33 @@ src/realsense_node_factory.cpp.s:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.s
 .PHONY : src/realsense_node_factory.cpp.s
 
+src/rs415_node.o: src/rs415_node.cpp.o
+
+.PHONY : src/rs415_node.o
+
+# target to build an object file
+src/rs415_node.cpp.o:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o
+.PHONY : src/rs415_node.cpp.o
+
+src/rs415_node.i: src/rs415_node.cpp.i
+
+.PHONY : src/rs415_node.i
+
+# target to preprocess a source file
+src/rs415_node.cpp.i:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.i
+.PHONY : src/rs415_node.cpp.i
+
+src/rs415_node.s: src/rs415_node.cpp.s
+
+.PHONY : src/rs415_node.s
+
+# target to generate assembly for a file
+src/rs415_node.cpp.s:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.s
+.PHONY : src/rs415_node.cpp.s
+
 src/rs435_node.o: src/rs435_node.cpp.o
 
 .PHONY : src/rs435_node.o
@@ -1087,6 +1114,33 @@ src/rs435_node.s: src/rs435_node.cpp.s
 src/rs435_node.cpp.s:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.s
 .PHONY : src/rs435_node.cpp.s
+
+src/sr300_node.o: src/sr300_node.cpp.o
+
+.PHONY : src/sr300_node.o
+
+# target to build an object file
+src/sr300_node.cpp.o:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o
+.PHONY : src/sr300_node.cpp.o
+
+src/sr300_node.i: src/sr300_node.cpp.i
+
+.PHONY : src/sr300_node.i
+
+# target to preprocess a source file
+src/sr300_node.cpp.i:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.i
+.PHONY : src/sr300_node.cpp.i
+
+src/sr300_node.s: src/sr300_node.cpp.s
+
+.PHONY : src/sr300_node.s
+
+# target to generate assembly for a file
+src/sr300_node.cpp.s:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.s
+.PHONY : src/sr300_node.cpp.s
 
 # Help Target
 help:
@@ -1163,9 +1217,15 @@ help:
 	@echo "... src/realsense_node_factory.o"
 	@echo "... src/realsense_node_factory.i"
 	@echo "... src/realsense_node_factory.s"
+	@echo "... src/rs415_node.o"
+	@echo "... src/rs415_node.i"
+	@echo "... src/rs415_node.s"
 	@echo "... src/rs435_node.o"
 	@echo "... src/rs435_node.i"
 	@echo "... src/rs435_node.s"
+	@echo "... src/sr300_node.o"
+	@echo "... src/sr300_node.i"
+	@echo "... src/sr300_node.s"
 .PHONY : help
 
 

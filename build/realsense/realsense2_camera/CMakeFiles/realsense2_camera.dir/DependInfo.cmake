@@ -6,7 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/gijs/bolts_ws/src/realsense/realsense2_camera/src/base_realsense_node.cpp" "/home/gijs/bolts_ws/build/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/base_realsense_node.cpp.o"
   "/home/gijs/bolts_ws/src/realsense/realsense2_camera/src/realsense_node_factory.cpp" "/home/gijs/bolts_ws/build/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.o"
+  "/home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs415_node.cpp" "/home/gijs/bolts_ws/build/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o"
   "/home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs435_node.cpp" "/home/gijs/bolts_ws/build/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o"
+  "/home/gijs/bolts_ws/src/realsense/realsense2_camera/src/sr300_node.cpp" "/home/gijs/bolts_ws/build/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -105,9 +105,33 @@ realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/base_realsense_
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/base_realsense_node.cpp.o.provides.build: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/base_realsense_node.cpp.o
 
 
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/flags.make
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o: /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs415_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o"
+	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o -c /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs415_node.cpp
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.i"
+	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs415_node.cpp > CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.i
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.s"
+	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs415_node.cpp -o CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.s
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.requires:
+
+.PHONY : realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.requires
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.provides: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.requires
+	$(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.provides.build
+.PHONY : realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.provides
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.provides.build: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o
+
+
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/flags.make
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o: /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs435_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o"
 	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o -c /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs435_node.cpp
 
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.i: cmake_force
@@ -129,18 +153,46 @@ realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o.provides.build: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o
 
 
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/flags.make
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o: /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/sr300_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o"
+	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o -c /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/sr300_node.cpp
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.i"
+	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/sr300_node.cpp > CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.i
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.s"
+	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/sr300_node.cpp -o CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.s
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.requires:
+
+.PHONY : realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.requires
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.provides: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.requires
+	$(MAKE) -f realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.provides.build
+.PHONY : realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.provides
+
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.provides.build: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o
+
+
 # Object files for target realsense2_camera
 realsense2_camera_OBJECTS = \
 "CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.o" \
 "CMakeFiles/realsense2_camera.dir/src/base_realsense_node.cpp.o" \
-"CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o"
+"CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o" \
+"CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o" \
+"CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o"
 
 # External object files for target realsense2_camera
 realsense2_camera_EXTERNAL_OBJECTS =
 
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.o
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/base_realsense_node.cpp.o
+/home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o
+/home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /usr/lib/x86_64-linux-gnu/librealsense2.so.2.16.4
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /opt/ros/melodic/lib/libnodeletlib.so
@@ -184,7 +236,7 @@ realsense2_camera_EXTERNAL_OBJECTS =
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so"
 	cd /home/gijs/bolts_ws/build/realsense/realsense2_camera && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/realsense2_camera.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -194,7 +246,9 @@ realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build: /home/gijs/b
 
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/requires: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.o.requires
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/requires: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/base_realsense_node.cpp.o.requires
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/requires: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o.requires
 realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/requires: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o.requires
+realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/requires: realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o.requires
 
 .PHONY : realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/requires
 

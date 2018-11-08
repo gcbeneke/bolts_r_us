@@ -224,9 +224,17 @@ iostream
 map
 -
 
+/home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs415_node.cpp
+../include/rs415_node.h
+/home/gijs/bolts_ws/src/realsense/realsense2_camera/include/rs415_node.h
+
 /home/gijs/bolts_ws/src/realsense/realsense2_camera/src/rs435_node.cpp
 ../include/rs435_node.h
 /home/gijs/bolts_ws/src/realsense/realsense2_camera/include/rs435_node.h
+
+/home/gijs/bolts_ws/src/realsense/realsense2_camera/src/sr300_node.cpp
+../include/sr300_node.h
+/home/gijs/bolts_ws/src/realsense/realsense2_camera/include/sr300_node.h
 
 /opt/ros/melodic/include/class_loader/class_loader.hpp
 boost/bind.hpp
