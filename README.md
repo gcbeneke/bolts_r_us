@@ -1,6 +1,8 @@
 # Minor Vision & Robotics Project 11
 ### Bolts R Us
 
+Calibratie camera: https://trojan03.github.io/#!/blog/4
+
 Dit is de Readme file voor het project Bolts R Us. De gehele source code is gemaakt in C++ en gebruikt ROS als middleware voor 
 het overbrengen van data.
 
