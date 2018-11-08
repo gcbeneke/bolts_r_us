@@ -23,10 +23,13 @@ http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 
 Hieronder volgt ook een korte omschrijving van de stappen:
 1. Download & installeer de Arduino IDE (https://www.arduino.cc/en/Main/Software)
+
 Volg hierbij de instructies van de installer.
 
-2. Voer de volgende commandos uit: 
+2. Voer de volgende commandos uit:
+
 sudo apt-get install ros-indigo-rosserial-arduino
+
 sudo apt-get install ros-indigo-rosserial
 
 Deze commandos zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie
@@ -34,7 +37,9 @@ Deze commandos zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS wer
 3. Voer de volgende commando's uit: 
 
 cd <sketchbook>/libraries 
+  
 rm -rf ros_lib
+
 rosrun rosserial_arduino make_libraries.py .
 
 (<sketchbook> vervangen door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
