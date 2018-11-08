@@ -1,0 +1,2 @@
+ctrl:irb:opt:realsense/realsense2_camera:vis
+-DCATKIN_DEVEL_PREFIX=/home/gijs/bolts_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gijs/bolts_ws/install -G Unix Makefiles
