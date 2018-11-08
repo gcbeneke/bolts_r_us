@@ -26,13 +26,13 @@ Hieronder volgt ook een korte omschrijving van de stappen:
 
 - Als de .tar.xz file gedownload is pak deze uit in een map naar jouw keuze. E.g. $Home/arduino-1.8.7.
 
-- Voer het volgende commando uit, onthoudt  waar de tar-file is uitgepakt: 
+- Voer de volgende commando's uit: 
 
 - cd sketchbook
 
 - ./install.sh
 
-sketchbook moet je vervangen de huidige versie van arduino. E.g. cd arduino-1.8.7.
+sketchbook moet vervangen worden met de huidige versie van arduino. E.g. cd arduino-1.8.7. Het meegegeven pad aan de cd commando is afhankelijk van waar de tar-file is uitgepakt.
 
 2. Voer de volgende commando's uit:
 
@@ -40,7 +40,7 @@ sketchbook moet je vervangen de huidige versie van arduino. E.g. cd arduino-1.8.
 
 - sudo apt-get install ros-indigo-rosserial
 
-- Deze commando's zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie
+Deze commando's zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie.
 
 3. Voer de volgende commando's uit: 
 
