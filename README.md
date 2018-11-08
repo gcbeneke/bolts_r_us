@@ -26,13 +26,13 @@ Hieronder volgt ook een korte omschrijving van de stappen:
 
 Volg hierbij de instructies van de installer.
 
-2. Voer de volgende commandos uit:
+2. Voer de volgende commando's uit:
 
 sudo apt-get install ros-indigo-rosserial-arduino
 
 sudo apt-get install ros-indigo-rosserial
 
-Deze commandos zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie
+Deze commando's zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie
 
 3. Voer de volgende commando's uit: 
 
@@ -42,6 +42,6 @@ rm -rf ros_lib
 
 rosrun rosserial_arduino make_libraries.py .
 
-(<sketchbook> vervangen door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
+(vervang <sketchbook> door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
 
 #### Intel RealSense Driver
