@@ -24,32 +24,32 @@ http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 Hieronder volgt ook een korte omschrijving van de stappen:
 1. Download de Arduino IDE (https://www.arduino.cc/en/Main/Software)
 
-Als de .tar.xz file gedownload is pak deze uit in een map naar jouw keuze. E.g. $Home/arduino-1.8.7.
+- Als de .tar.xz file gedownload is pak deze uit in een map naar jouw keuze. E.g. $Home/arduino-1.8.7.
 
-Voer het volgende commando uit, onthoudt  waar de tar-file is uitgepakt: 
+- Voer het volgende commando uit, onthoudt  waar de tar-file is uitgepakt: 
 
-cd sketchbook
+- cd sketchbook
 
-./install.sh
+- ./install.sh
 
 sketchbook moet je vervangen de huigide versie van arduino. E.g. cd arduino-1.8.7.
 
 2. Voer de volgende commando's uit:
 
-sudo apt-get install ros-indigo-rosserial-arduino
+- sudo apt-get install ros-indigo-rosserial-arduino
 
-sudo apt-get install ros-indigo-rosserial
+- sudo apt-get install ros-indigo-rosserial
 
-Deze commando's zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie
+- Deze commando's zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS werkstation. Vervang indigo met de huidige ROS versie
 
 3. Voer de volgende commando's uit: 
 
-cd sketchbook/libraries 
+- cd sketchbook/libraries 
   
-rm -rf ros_lib
+- rm -rf ros_lib
 
-rosrun rosserial_arduino make_libraries.py .
+- rosrun rosserial_arduino make_libraries.py .
 
-(vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
+- (vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
 
 #### Intel RealSense Driver
