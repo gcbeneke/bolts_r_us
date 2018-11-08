@@ -61,7 +61,11 @@ Vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries
 text
 
 Mocht de robot niet goed openen in de simulatie (Rviz)
+
 Run dan de volgende command voordat je de simulatie runt:
+
 export LC_NUMERIC="en_US.UTF-8" 
+
 TIP:
+
 Zet het command in de ~/.bashrc file zodat elke keer als de terminal wordt geopend het goed ingesteld is.
