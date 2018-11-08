@@ -24,9 +24,9 @@ http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 Hieronder volgt ook een korte omschrijving van de stappen:
 1. Download de Arduino IDE (https://www.arduino.cc/en/Main/Software)
 
-- Als de .tar.xz file gedownload is pak deze uit in een map naar jouw keuze. E.g. $Home/arduino-1.8.7.
+Als de .tar.xz file gedownload is pak deze uit in een map naar jouw keuze. E.g. $Home/arduino-1.8.7.
 
-- Voer de volgende commando's uit: 
+Voer de volgende commando's uit: 
 
 - cd sketchbook
 
