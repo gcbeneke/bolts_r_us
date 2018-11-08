@@ -22,9 +22,17 @@ Hieronder staat een link voor het installeren van de rosserial voor Arduino IDE.
 http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 
 Hieronder volgt ook een korte omschrijving van de stappen:
-1. Download & installeer de Arduino IDE (https://www.arduino.cc/en/Main/Software)
+1. Download de Arduino IDE (https://www.arduino.cc/en/Main/Software)
 
-Volg hierbij de instructies van de installer.
+Als de .tar.xz file gedownload is pak deze uit in een map naar jouw keuze. E.g. $Home/arduino-1.8.7.
+
+Voer het volgende commando uit, onthoudt  waar de tar-file is uitgepakt: 
+
+cd sketchbook
+
+./install.sh
+
+sketchbook moet je vervangen de huigide versie van arduino. E.g. cd arduino-1.8.7.
 
 2. Voer de volgende commando's uit:
 
