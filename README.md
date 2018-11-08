@@ -86,7 +86,25 @@ Indien de huidige kernel versie niet werkt kan eerst de pc opnieuw worden opgest
 
 #### ABB IRB120
 
-text
+Voor de connectie met de robot moeten er meerdere packages gedownload worden:
+
+ROS industrial core ( https://github.com/ros-industrial/industrial_core )
+
+ABB ( https://github.com/ros-industrial/abb.git )
+
+ABB Experimental ( https://github.com/ros-industrial/abb_experimental.git )
+
+Voer de catkin_make command uit
+
+Als die lukt kan er verbinding gemaakt worden met de robot
+
+Gun de volgende launch file: 
+
+roslaunch abb_irb120_support robot_interface_download_irb120_3_58.launch robot_ip:=<IP_OF_YOUR_ROBOT>
+En vervang IP_OF_YOUR_ROBOT door het ipadres van de robot
+
+Als dit lukt moet er op de flexpendant van de robot staan die hij geconnected is. 
+
 
 Mocht de robot niet goed openen in de simulatie (Rviz)
 
