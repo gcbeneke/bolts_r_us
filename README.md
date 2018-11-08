@@ -36,12 +36,12 @@ Deze commando's zorgen ervoor dat de rosserial wordt geinstalleerd op het ROS we
 
 3. Voer de volgende commando's uit: 
 
-cd <sketchbook>/libraries 
+cd sketchbook/libraries 
   
 rm -rf ros_lib
 
 rosrun rosserial_arduino make_libraries.py .
 
-(vervang <sketchbook> door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
+(vervang sketchbook door huidige Arduino versie E.g. cd arduino-1.8.7/libraries)
 
 #### Intel RealSense Driver
