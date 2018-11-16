@@ -1003,6 +1003,8 @@ industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/ping_mess
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/ping_message.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/ping_message.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 
+industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/devel/include/industrial_msgs/RobotMode.h
+industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/devel/include/industrial_msgs/TriState.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/byte_array.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/log_wrapper.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/robot_status.h
@@ -1010,8 +1012,6 @@ industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_sta
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/simple_message.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/simple_serialize.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/bolts_ws/src/industrial_core/simple_message/src/robot_status.cpp
-industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/opt/devel/include/industrial_msgs/RobotMode.h
-industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /home/gijs/opt/devel/include/industrial_msgs/TriState.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /opt/ros/melodic/include/ros/advertise_options.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /opt/ros/melodic/include/ros/advertise_service_options.h
 industrial_core/simple_message/CMakeFiles/simple_message_bswap.dir/src/robot_status.cpp.o: /opt/ros/melodic/include/ros/assert.h

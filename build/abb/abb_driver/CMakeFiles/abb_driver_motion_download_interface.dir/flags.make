@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++11
 
 CXX_DEFINES = -DLINUXSOCKETS=1 -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"abb_driver\"
 
-CXX_INCLUDES = -I/home/gijs/bolts_ws/src/abb/abb_driver/include -I/home/gijs/opt/devel/include -I/home/gijs/opt/src/irb/industrial_robot_client/include -I/home/gijs/opt/src/irb/simple_message/include -I/home/gijs/opt/src/irb/industrial_utils/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/gijs/bolts_ws/src/abb/abb_driver/include -I/home/gijs/bolts_ws/devel/include -I/home/gijs/bolts_ws/src/industrial_core/industrial_robot_client/include -I/home/gijs/bolts_ws/src/industrial_core/simple_message/include -I/home/gijs/bolts_ws/src/industrial_core/industrial_utils/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

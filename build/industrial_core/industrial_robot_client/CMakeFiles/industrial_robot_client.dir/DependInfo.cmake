@@ -26,9 +26,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/gijs/bolts_ws/src/industrial_core/industrial_robot_client/include"
-  "/home/gijs/opt/devel/include"
-  "/home/gijs/opt/src/irb/simple_message/include"
-  "/home/gijs/opt/src/irb/industrial_utils/include"
+  "/home/gijs/bolts_ws/devel/include"
+  "/home/gijs/bolts_ws/src/industrial_core/simple_message/include"
+  "/home/gijs/bolts_ws/src/industrial_core/industrial_utils/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

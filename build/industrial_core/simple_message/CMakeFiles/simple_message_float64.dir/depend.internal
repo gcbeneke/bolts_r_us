@@ -1004,6 +1004,8 @@ industrial_core/simple_message/CMakeFiles/simple_message_float64.dir/src/ping_me
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 industrial_core/simple_message/CMakeFiles/simple_message_float64.dir/src/robot_status.cpp.o
+ /home/gijs/bolts_ws/devel/include/industrial_msgs/RobotMode.h
+ /home/gijs/bolts_ws/devel/include/industrial_msgs/TriState.h
  /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/byte_array.h
  /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/log_wrapper.h
  /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/robot_status.h
@@ -1011,8 +1013,6 @@ industrial_core/simple_message/CMakeFiles/simple_message_float64.dir/src/robot_s
  /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/simple_message.h
  /home/gijs/bolts_ws/src/industrial_core/simple_message/include/simple_message/simple_serialize.h
  /home/gijs/bolts_ws/src/industrial_core/simple_message/src/robot_status.cpp
- /home/gijs/opt/devel/include/industrial_msgs/RobotMode.h
- /home/gijs/opt/devel/include/industrial_msgs/TriState.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h

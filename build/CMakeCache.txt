@@ -14,51 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Path to a library.
-BLAS_Accelerate_LIBRARY:FILEPATH=BLAS_Accelerate_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_acml_LIBRARY:FILEPATH=BLAS_acml_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_acml_mp_LIBRARY:FILEPATH=BLAS_acml_mp_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_blas_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libblas.so
-
-//Path to a library.
-BLAS_complib.sgimath_LIBRARY:FILEPATH=BLAS_complib.sgimath_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_cxml_LIBRARY:FILEPATH=BLAS_cxml_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_dxml_LIBRARY:FILEPATH=BLAS_dxml_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_essl_LIBRARY:FILEPATH=BLAS_essl_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_f77blas_LIBRARY:FILEPATH=BLAS_f77blas_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_goto2_LIBRARY:FILEPATH=BLAS_goto2_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_openblas_LIBRARY:FILEPATH=BLAS_openblas_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_scsl_LIBRARY:FILEPATH=BLAS_scsl_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_sgemm_LIBRARY:FILEPATH=BLAS_sgemm_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_sunperf_LIBRARY:FILEPATH=BLAS_sunperf_LIBRARY-NOTFOUND
-
-//Path to a library.
-BLAS_vecLib_LIBRARY:FILEPATH=BLAS_vecLib_LIBRARY-NOTFOUND
-
 //The threading library used by boost-thread
 BOOST_THREAD_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 
@@ -70,9 +25,6 @@ BUILD_GTEST:BOOL=OFF
 
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
-
-//Use OpenMP
-BUILD_WITH_OPENMP:BOOL=OFF
 
 //Boost atomic library (debug)
 Boost_ATOMIC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_atomic.so
@@ -341,21 +293,6 @@ GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
 
-//Path to a library.
-LAPACK_Accelerate_LIBRARY:FILEPATH=LAPACK_Accelerate_LIBRARY-NOTFOUND
-
-//Path to a library.
-LAPACK_goto2_LIBRARY:FILEPATH=LAPACK_goto2_LIBRARY-NOTFOUND
-
-//Path to a library.
-LAPACK_lapack_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/liblapack.so
-
-//Path to a library.
-LAPACK_openblas_LIBRARY:FILEPATH=LAPACK_openblas_LIBRARY-NOTFOUND
-
-//Path to a library.
-LAPACK_vecLib_LIBRARY:FILEPATH=LAPACK_vecLib_LIBRARY-NOTFOUND
-
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
 
@@ -385,9 +322,6 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
-
-//Set user wait point in startup (for debug)
-SET_USER_BREAK_AT_STARTUP:BOOL=OFF
 
 //Path to a file.
 TinyXML_INCLUDE_DIR:PATH=/usr/include
@@ -432,30 +366,6 @@ abb_experimental_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/ab
 abb_experimental_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_experimental
 
 //Value Computed by CMake
-abb_irb1200_5_90_moveit_config_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb1200_5_90_moveit_config
-
-//Value Computed by CMake
-abb_irb1200_5_90_moveit_config_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb1200_5_90_moveit_config
-
-//Value Computed by CMake
-abb_irb1200_7_70_moveit_config_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb1200_7_70_moveit_config
-
-//Value Computed by CMake
-abb_irb1200_7_70_moveit_config_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb1200_7_70_moveit_config
-
-//Value Computed by CMake
-abb_irb1200_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb1200_support
-
-//Value Computed by CMake
-abb_irb1200_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb1200_support
-
-//Value Computed by CMake
-abb_irb120_gazebo_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb120_gazebo
-
-//Value Computed by CMake
-abb_irb120_gazebo_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb120_gazebo
-
-//Value Computed by CMake
 abb_irb120_moveit_config_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb120_moveit_config
 
 //Value Computed by CMake
@@ -468,105 +378,6 @@ abb_irb120_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/
 abb_irb120_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb120_support
 
 //Value Computed by CMake
-abb_irb120t_moveit_config_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb120t_moveit_config
-
-//Value Computed by CMake
-abb_irb120t_moveit_config_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb120t_moveit_config
-
-//Value Computed by CMake
-abb_irb1600_6_12_moveit_config_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb1600_6_12_moveit_config
-
-//Value Computed by CMake
-abb_irb1600_6_12_moveit_config_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb1600_6_12_moveit_config
-
-//Value Computed by CMake
-abb_irb1600_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb1600_support
-
-//Value Computed by CMake
-abb_irb1600_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb1600_support
-
-//Dependencies for the target
-abb_irb2400_manipulator_moveit_ikfast_plugin_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libmoveit_exceptions.so;general;/opt/ros/melodic/lib/libmoveit_background_processing.so;general;/opt/ros/melodic/lib/libmoveit_kinematics_base.so;general;/opt/ros/melodic/lib/libmoveit_robot_model.so;general;/opt/ros/melodic/lib/libmoveit_transforms.so;general;/opt/ros/melodic/lib/libmoveit_robot_state.so;general;/opt/ros/melodic/lib/libmoveit_robot_trajectory.so;general;/opt/ros/melodic/lib/libmoveit_planning_interface.so;general;/opt/ros/melodic/lib/libmoveit_collision_detection.so;general;/opt/ros/melodic/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/melodic/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/melodic/lib/libmoveit_planning_scene.so;general;/opt/ros/melodic/lib/libmoveit_constraint_samplers.so;general;/opt/ros/melodic/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/melodic/lib/libmoveit_profiler.so;general;/opt/ros/melodic/lib/libmoveit_trajectory_processing.so;general;/opt/ros/melodic/lib/libmoveit_distance_field.so;general;/opt/ros/melodic/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/melodic/lib/libmoveit_dynamics_solver.so;general;/opt/ros/melodic/lib/libmoveit_utils.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libfcl.so;general;/opt/ros/melodic/lib/libgeometric_shapes.so;general;/opt/ros/melodic/lib/liboctomap.so;general;/opt/ros/melodic/lib/liboctomath.so;general;/opt/ros/melodic/lib/libkdl_parser.so;general;/opt/ros/melodic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/melodic/lib/librosconsole_bridge.so;general;/opt/ros/melodic/lib/librandom_numbers.so;general;/opt/ros/melodic/lib/libsrdfdom.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/libtf_conversions.so;general;/opt/ros/melodic/lib/libkdl_conversions.so;general;/opt/ros/melodic/lib/liborocos-kdl.so.1.4.0;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;
-
-//Value Computed by CMake
-abb_irb2400_moveit_config_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb2400_moveit_config
-
-//Value Computed by CMake
-abb_irb2400_moveit_config_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb2400_moveit_config
-
-//Value Computed by CMake
-abb_irb2400_moveit_plugins_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb2400_moveit_plugins
-
-//Value Computed by CMake
-abb_irb2400_moveit_plugins_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb2400_moveit_plugins
-
-//Value Computed by CMake
-abb_irb2400_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb2400_support
-
-//Value Computed by CMake
-abb_irb2400_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb2400_support
-
-//Value Computed by CMake
-abb_irb2600_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb2600_support
-
-//Value Computed by CMake
-abb_irb2600_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb2600_support
-
-//Value Computed by CMake
-abb_irb4400_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb4400_support
-
-//Value Computed by CMake
-abb_irb4400_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb4400_support
-
-//Value Computed by CMake
-abb_irb4600_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb4600_support
-
-//Value Computed by CMake
-abb_irb4600_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb4600_support
-
-//Value Computed by CMake
-abb_irb52_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb52_support
-
-//Value Computed by CMake
-abb_irb52_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb52_support
-
-//Value Computed by CMake
-abb_irb5400_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb5400_support
-
-//Value Computed by CMake
-abb_irb5400_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb5400_support
-
-//Value Computed by CMake
-abb_irb6600_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb6600_support
-
-//Value Computed by CMake
-abb_irb6600_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb6600_support
-
-//Value Computed by CMake
-abb_irb6640_moveit_config_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb6640_moveit_config
-
-//Value Computed by CMake
-abb_irb6640_moveit_config_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb6640_moveit_config
-
-//Value Computed by CMake
-abb_irb6640_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_irb6640_support
-
-//Value Computed by CMake
-abb_irb6640_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb/abb_irb6640_support
-
-//Value Computed by CMake
-abb_irb6650s_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb6650s_support
-
-//Value Computed by CMake
-abb_irb6650s_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb6650s_support
-
-//Value Computed by CMake
-abb_irb7600_support_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb_experimental/abb_irb7600_support
-
-//Value Computed by CMake
-abb_irb7600_support_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/abb_experimental/abb_irb7600_support
-
-//Value Computed by CMake
 abb_resources_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/abb/abb_resources
 
 //Value Computed by CMake
@@ -577,12 +388,6 @@ actionlib_DIR:PATH=/opt/ros/melodic/share/actionlib/cmake
 
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/melodic/share/actionlib_msgs/cmake
-
-//The directory containing a CMake configuration file for bond.
-bond_DIR:PATH=/opt/ros/melodic/share/bond/cmake
-
-//The directory containing a CMake configuration file for bondcpp.
-bondcpp_DIR:PATH=/opt/ros/melodic/share/bondcpp/cmake
 
 //The directory containing a CMake configuration file for camera_calibration_parsers.
 camera_calibration_parsers_DIR:PATH=/opt/ros/melodic/share/camera_calibration_parsers/cmake
@@ -619,9 +424,6 @@ diagnostic_msgs_DIR:PATH=/opt/ros/melodic/share/diagnostic_msgs/cmake
 
 //The directory containing a CMake configuration file for diagnostic_updater.
 diagnostic_updater_DIR:PATH=/opt/ros/melodic/share/diagnostic_updater/cmake
-
-//The directory containing a CMake configuration file for dynamic_reconfigure.
-dynamic_reconfigure_DIR:PATH=/opt/ros/melodic/share/dynamic_reconfigure/cmake
 
 //The directory containing a CMake configuration file for eigen_stl_containers.
 eigen_stl_containers_DIR:PATH=/opt/ros/melodic/share/eigen_stl_containers/cmake
@@ -721,7 +523,7 @@ industrial_deprecated_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/industrial_core/
 industrial_msgs_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/industrial_core/industrial_msgs
 
 //The directory containing a CMake configuration file for industrial_msgs.
-industrial_msgs_DIR:PATH=/home/gijs/opt/devel/share/industrial_msgs/cmake
+industrial_msgs_DIR:PATH=/home/gijs/bolts_ws/devel/share/industrial_msgs/cmake
 
 //Value Computed by CMake
 industrial_msgs_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/industrial_core/industrial_msgs
@@ -730,7 +532,7 @@ industrial_msgs_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/industrial_core/indust
 industrial_robot_client_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/industrial_core/industrial_robot_client
 
 //The directory containing a CMake configuration file for industrial_robot_client.
-industrial_robot_client_DIR:PATH=/home/gijs/opt/devel/share/industrial_robot_client/cmake
+industrial_robot_client_DIR:PATH=/home/gijs/bolts_ws/devel/share/industrial_robot_client/cmake
 
 //Dependencies for the target
 industrial_robot_client_LIB_DEPENDS:STATIC=general;simple_message;
@@ -763,7 +565,7 @@ industrial_trajectory_filters_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/industri
 industrial_utils_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/industrial_core/industrial_utils
 
 //The directory containing a CMake configuration file for industrial_utils.
-industrial_utils_DIR:PATH=/home/gijs/opt/devel/share/industrial_utils/cmake
+industrial_utils_DIR:PATH=/home/gijs/bolts_ws/devel/share/industrial_utils/cmake
 
 //Dependencies for the target
 industrial_utils_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/librosconsole_bridge.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
@@ -771,23 +573,11 @@ industrial_utils_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/liburdf.so;gene
 //Value Computed by CMake
 industrial_utils_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/industrial_core/industrial_utils
 
-//Value Computed by CMake
-irb_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/irb
-
-//Value Computed by CMake
-irb_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/irb
-
-//The directory containing a CMake configuration file for kdl_conversions.
-kdl_conversions_DIR:PATH=/opt/ros/melodic/share/kdl_conversions/cmake
-
 //The directory containing a CMake configuration file for kdl_parser.
 kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 
 //Path to a library.
 lib:FILEPATH=/opt/ros/melodic/lib/libmessage_filters.so
-
-//The directory containing a CMake configuration file for librealsense.
-librealsense_DIR:PATH=librealsense_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/melodic/share/message_filters/cmake
@@ -810,9 +600,6 @@ moveit_ros_perception_DIR:PATH=/opt/ros/melodic/share/moveit_ros_perception/cmak
 //The directory containing a CMake configuration file for moveit_ros_planning.
 moveit_ros_planning_DIR:PATH=/opt/ros/melodic/share/moveit_ros_planning/cmake
 
-//The directory containing a CMake configuration file for nodelet.
-nodelet_DIR:PATH=/opt/ros/melodic/share/nodelet/cmake
-
 //The directory containing a CMake configuration file for object_recognition_msgs.
 object_recognition_msgs_DIR:PATH=/opt/ros/melodic/share/object_recognition_msgs/cmake
 
@@ -825,29 +612,11 @@ opt_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/opt
 //Value Computed by CMake
 opt_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/opt
 
-//Value Computed by CMake
-optoforce_etherdaq_driver_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/opt
-
-//Value Computed by CMake
-optoforce_etherdaq_driver_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/opt
-
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
 
 //The directory containing a CMake configuration file for random_numbers.
 random_numbers_DIR:PATH=/opt/ros/melodic/share/random_numbers/cmake
-
-//The directory containing a CMake configuration file for realsense2.
-realsense2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/realsense2
-
-//Value Computed by CMake
-realsense2_camera_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/realsense/realsense2_camera
-
-//Dependencies for the target
-realsense2_camera_LIB_DEPENDS:STATIC=general;realsense2::realsense2;general;/opt/ros/melodic/lib/libnodeletlib.so;general;/opt/ros/melodic/lib/libbondcpp.so;general;/opt/ros/melodic/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0;general;/opt/ros/melodic/lib/libimage_transport.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
-
-//Value Computed by CMake
-realsense2_camera_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/realsense/realsense2_camera
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
@@ -863,9 +632,6 @@ roscpp_serialization_DIR:PATH=/opt/ros/melodic/share/roscpp_serialization/cmake
 
 //The directory containing a CMake configuration file for roscpp_traits.
 roscpp_traits_DIR:PATH=/opt/ros/melodic/share/roscpp_traits/cmake
-
-//The directory containing a CMake configuration file for rosgraph.
-rosgraph_DIR:PATH=/opt/ros/melodic/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/melodic/share/rosgraph_msgs/cmake
@@ -895,7 +661,7 @@ shape_msgs_DIR:PATH=/opt/ros/melodic/share/shape_msgs/cmake
 simple_message_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/industrial_core/simple_message
 
 //The directory containing a CMake configuration file for simple_message.
-simple_message_DIR:PATH=/home/gijs/opt/devel/share/simple_message/cmake
+simple_message_DIR:PATH=/home/gijs/bolts_ws/devel/share/simple_message/cmake
 
 //Dependencies for the target
 simple_message_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
@@ -912,35 +678,14 @@ simple_message_dummy_LIB_DEPENDS:STATIC=
 //Dependencies for the target
 simple_message_float64_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
 
-//The directory containing a CMake configuration file for smclib.
-smclib_DIR:PATH=/opt/ros/melodic/share/smclib/cmake
-
 //The directory containing a CMake configuration file for srdfdom.
 srdfdom_DIR:PATH=/opt/ros/melodic/share/srdfdom/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
-//The directory containing a CMake configuration file for tf2.
-tf2_DIR:PATH=/opt/ros/melodic/share/tf2/cmake
-
 //The directory containing a CMake configuration file for tf2_eigen.
 tf2_eigen_DIR:PATH=/opt/ros/melodic/share/tf2_eigen/cmake
-
-//The directory containing a CMake configuration file for tf2_msgs.
-tf2_msgs_DIR:PATH=/opt/ros/melodic/share/tf2_msgs/cmake
-
-//The directory containing a CMake configuration file for tf2_py.
-tf2_py_DIR:PATH=/opt/ros/melodic/share/tf2_py/cmake
-
-//The directory containing a CMake configuration file for tf2_ros.
-tf2_ros_DIR:PATH=/opt/ros/melodic/share/tf2_ros/cmake
-
-//The directory containing a CMake configuration file for tf.
-tf_DIR:PATH=/opt/ros/melodic/share/tf/cmake
-
-//The directory containing a CMake configuration file for tf_conversions.
-tf_conversions_DIR:PATH=/opt/ros/melodic/share/tf_conversions/cmake
 
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/melodic/share/trajectory_msgs/cmake
@@ -968,38 +713,6 @@ xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: BLAS_Accelerate_LIBRARY
-BLAS_Accelerate_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_acml_LIBRARY
-BLAS_acml_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_acml_mp_LIBRARY
-BLAS_acml_mp_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_blas_LIBRARY
-BLAS_blas_LIBRARY-ADVANCED:INTERNAL=1
-//Have function sgemm_
-BLAS_blas_WORKS:INTERNAL=1
-//ADVANCED property for variable: BLAS_complib.sgimath_LIBRARY
-BLAS_complib.sgimath_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_cxml_LIBRARY
-BLAS_cxml_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_dxml_LIBRARY
-BLAS_dxml_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_essl_LIBRARY
-BLAS_essl_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_f77blas_LIBRARY
-BLAS_f77blas_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_goto2_LIBRARY
-BLAS_goto2_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_openblas_LIBRARY
-BLAS_openblas_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_scsl_LIBRARY
-BLAS_scsl_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_sgemm_LIBRARY
-BLAS_sgemm_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_sunperf_LIBRARY
-BLAS_sunperf_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: BLAS_vecLib_LIBRARY
-BLAS_vecLib_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_ATOMIC_LIBRARY_DEBUG
 Boost_ATOMIC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_ATOMIC_LIBRARY_RELEASE
@@ -1212,18 +925,6 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: LAPACK_Accelerate_LIBRARY
-LAPACK_Accelerate_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: LAPACK_goto2_LIBRARY
-LAPACK_goto2_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: LAPACK_lapack_LIBRARY
-LAPACK_lapack_LIBRARY-ADVANCED:INTERNAL=1
-//Have function cheev_
-LAPACK_lapack_WORKS:INTERNAL=1
-//ADVANCED property for variable: LAPACK_openblas_LIBRARY
-LAPACK_openblas_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: LAPACK_vecLib_LIBRARY
-LAPACK_vecLib_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
