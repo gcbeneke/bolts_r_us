@@ -1,8 +1,0 @@
-prefix=/home/gijs/bolts_ws/devel
-
-Name: industrial_utils
-Description: Description of industrial_utils
-Version: 0.5.1
-Cflags: -I/home/gijs/bolts_ws/src/industrial_core/industrial_utils/include
-Libs: -L/home/gijs/bolts_ws/devel/lib -lindustrial_utils
-Requires: roscpp urdf
