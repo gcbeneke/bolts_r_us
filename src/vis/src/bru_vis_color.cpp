@@ -7,32 +7,18 @@
 
 int buttonState;
 
+void chatterCallback(const std_msgs::String::ConstPtr& msg)
+{
+  ROS_INFO("I heard: [%s]", msg->data.c_str());
+}
+
 int main(int argc, char **argv){
-  ros::init(argc, argv, "colorCameraPub");
+  ros::init(argc, argv, "realSenseListener");
   ros::NodeHandle nh;
 
-  image_transport::ImageTransport it(nh);
+  ros::Subscriber sub = nh.subscribe("/camera/color/image_raw", 1000, chatterCallback);
+  ros::spin();
 
-  image_transport::Publisher pub = it.advertise("bru_vis_colorImg", 1);
-
-  cv::VideoCapture cap(1);
-  // Check if video device can be opened with the given index
-  if(!cap.isOpened()) return 1;
-  cv::Mat frame;
-  sensor_msgs::ImagePtr msg;
-
-  ros::Rate loop_rate(5);
-  while (nh.ok()) {
-    cap >> frame;
-    // Check if grabbed frame is actually full with some content
-    if(!frame.empty()) {
-      msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", frame).toImageMsg();
-      pub.publish(msg);
-      cv::waitKey(1);
-    }
-
-    ros::spinOnce();
-    loop_rate.sleep();
-  }
+  return 0;
 
 }

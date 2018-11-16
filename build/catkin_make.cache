@@ -1,2 +1,2 @@
-ctrl:irb:opt:realsense/realsense2_camera:vis
+abb/abb:abb/abb_driver:abb/abb_resources:abb_experimental/abb_experimental:abb_experimental/abb_irb120_moveit_config:abb_experimental/abb_irb120_support:ctrl:industrial_core/industrial_core:industrial_core/industrial_deprecated:industrial_core/industrial_msgs:industrial_core/industrial_robot_client:industrial_core/industrial_robot_simulator:industrial_core/industrial_trajectory_filters:industrial_core/industrial_utils:industrial_core/simple_message:opt:vis
 -DCATKIN_DEVEL_PREFIX=/home/gijs/bolts_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gijs/bolts_ws/install -G Unix Makefiles

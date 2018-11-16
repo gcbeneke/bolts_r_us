@@ -80,16 +80,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -101,6 +91,16 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target test
 test:
@@ -258,21 +258,6 @@ ctrl_genpy/fast:
 .PHONY : ctrl_genpy/fast
 
 # Convenience name for target.
-ctrl/CMakeFiles/ctrl_generate_messages.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ctrl/CMakeFiles/ctrl_generate_messages.dir/rule
-.PHONY : ctrl/CMakeFiles/ctrl_generate_messages.dir/rule
-
-# Convenience name for target.
-ctrl_generate_messages: ctrl/CMakeFiles/ctrl_generate_messages.dir/rule
-
-.PHONY : ctrl_generate_messages
-
-# fast build rule for target.
-ctrl_generate_messages/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/ctrl_generate_messages.dir/build.make ctrl/CMakeFiles/ctrl_generate_messages.dir/build
-.PHONY : ctrl_generate_messages/fast
-
-# Convenience name for target.
 ctrl/CMakeFiles/ctrl_generate_messages_py.dir/rule:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ctrl/CMakeFiles/ctrl_generate_messages_py.dir/rule
 .PHONY : ctrl/CMakeFiles/ctrl_generate_messages_py.dir/rule
@@ -301,6 +286,21 @@ ctrl_gencpp: ctrl/CMakeFiles/ctrl_gencpp.dir/rule
 ctrl_gencpp/fast:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/ctrl_gencpp.dir/build.make ctrl/CMakeFiles/ctrl_gencpp.dir/build
 .PHONY : ctrl_gencpp/fast
+
+# Convenience name for target.
+ctrl/CMakeFiles/ctrl_generate_messages.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ctrl/CMakeFiles/ctrl_generate_messages.dir/rule
+.PHONY : ctrl/CMakeFiles/ctrl_generate_messages.dir/rule
+
+# Convenience name for target.
+ctrl_generate_messages: ctrl/CMakeFiles/ctrl_generate_messages.dir/rule
+
+.PHONY : ctrl_generate_messages
+
+# fast build rule for target.
+ctrl_generate_messages/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/ctrl_generate_messages.dir/build.make ctrl/CMakeFiles/ctrl_generate_messages.dir/build
+.PHONY : ctrl_generate_messages/fast
 
 # Convenience name for target.
 ctrl/CMakeFiles/_ctrl_generate_messages_check_deps_State.dir/rule:
@@ -333,21 +333,6 @@ ctrl_genlisp/fast:
 .PHONY : ctrl_genlisp/fast
 
 # Convenience name for target.
-ctrl/CMakeFiles/bru_ctrl_control.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ctrl/CMakeFiles/bru_ctrl_control.dir/rule
-.PHONY : ctrl/CMakeFiles/bru_ctrl_control.dir/rule
-
-# Convenience name for target.
-bru_ctrl_control: ctrl/CMakeFiles/bru_ctrl_control.dir/rule
-
-.PHONY : bru_ctrl_control
-
-# fast build rule for target.
-bru_ctrl_control/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/bru_ctrl_control.dir/build.make ctrl/CMakeFiles/bru_ctrl_control.dir/build
-.PHONY : bru_ctrl_control/fast
-
-# Convenience name for target.
 ctrl/CMakeFiles/ctrl_generate_messages_lisp.dir/rule:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ctrl/CMakeFiles/ctrl_generate_messages_lisp.dir/rule
 .PHONY : ctrl/CMakeFiles/ctrl_generate_messages_lisp.dir/rule
@@ -361,33 +346,6 @@ ctrl_generate_messages_lisp: ctrl/CMakeFiles/ctrl_generate_messages_lisp.dir/rul
 ctrl_generate_messages_lisp/fast:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/ctrl_generate_messages_lisp.dir/build.make ctrl/CMakeFiles/ctrl_generate_messages_lisp.dir/build
 .PHONY : ctrl_generate_messages_lisp/fast
-
-src/bru_ctrl_control.o: src/bru_ctrl_control.cpp.o
-
-.PHONY : src/bru_ctrl_control.o
-
-# target to build an object file
-src/bru_ctrl_control.cpp.o:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/bru_ctrl_control.dir/build.make ctrl/CMakeFiles/bru_ctrl_control.dir/src/bru_ctrl_control.cpp.o
-.PHONY : src/bru_ctrl_control.cpp.o
-
-src/bru_ctrl_control.i: src/bru_ctrl_control.cpp.i
-
-.PHONY : src/bru_ctrl_control.i
-
-# target to preprocess a source file
-src/bru_ctrl_control.cpp.i:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/bru_ctrl_control.dir/build.make ctrl/CMakeFiles/bru_ctrl_control.dir/src/bru_ctrl_control.cpp.i
-.PHONY : src/bru_ctrl_control.cpp.i
-
-src/bru_ctrl_control.s: src/bru_ctrl_control.cpp.s
-
-.PHONY : src/bru_ctrl_control.s
-
-# target to generate assembly for a file
-src/bru_ctrl_control.cpp.s:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f ctrl/CMakeFiles/bru_ctrl_control.dir/build.make ctrl/CMakeFiles/bru_ctrl_control.dir/src/bru_ctrl_control.cpp.s
-.PHONY : src/bru_ctrl_control.cpp.s
 
 # Help Target
 help:
@@ -403,21 +361,17 @@ help:
 	@echo "... ctrl_geneus"
 	@echo "... ctrl_gennodejs"
 	@echo "... ctrl_genpy"
-	@echo "... list_install_components"
-	@echo "... ctrl_generate_messages"
 	@echo "... ctrl_generate_messages_py"
 	@echo "... install"
 	@echo "... ctrl_gencpp"
+	@echo "... ctrl_generate_messages"
+	@echo "... list_install_components"
 	@echo "... _ctrl_generate_messages_check_deps_State"
 	@echo "... ctrl_genlisp"
-	@echo "... bru_ctrl_control"
 	@echo "... test"
 	@echo "... edit_cache"
 	@echo "... ctrl_generate_messages_lisp"
 	@echo "... rebuild_cache"
-	@echo "... src/bru_ctrl_control.o"
-	@echo "... src/bru_ctrl_control.i"
-	@echo "... src/bru_ctrl_control.s"
 .PHONY : help
 
 

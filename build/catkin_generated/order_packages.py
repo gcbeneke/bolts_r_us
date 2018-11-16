@@ -2,4 +2,4 @@
 source_root_dir = "/home/gijs/bolts_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/gijs/catkin_ws/devel;/home/gijs/bolts_ws/devel;/opt/ros/melodic".split(';') if "/home/gijs/catkin_ws/devel;/home/gijs/bolts_ws/devel;/opt/ros/melodic" != "" else []
+underlay_workspaces = "/home/gijs/opt/devel;/home/gijs/bolts_ws/devel;/opt/ros/melodic".split(';') if "/home/gijs/opt/devel;/home/gijs/bolts_ws/devel;/opt/ros/melodic" != "" else []

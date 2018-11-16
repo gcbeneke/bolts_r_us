@@ -1,3 +1,20 @@
 <launch>
-
+	<node
+		pkg="opt"
+		type="etherdaq_node"
+		name="etherdaq_node"
+		args="--address 192.168.1.2 --rate 1000 --filter 4"
+	/>
+	<node
+		pkg="opt"
+		type="bru_opt_publisher"
+		name="bru_opt_publisher"
+		output="screen"
+	/>
+	<node
+		pkg="opt"
+		type="bru_opt_placebolt"
+		name="bru_opt_placebolt"
+		output="screen"
+	/>
 </launch>

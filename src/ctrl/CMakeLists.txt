@@ -36,11 +36,14 @@ include_directories(
   ${OpenCV_INCLUDE_DIRS}
 )
 
-add_executable(bru_ctrl_control src/bru_ctrl_control.cpp)
-target_link_libraries(bru_ctrl_control ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+##add_executable(bru_ctrl_control src/bru_ctrl_control.cpp)
 
-install(TARGETS bru_ctrl_control
-    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+##add_dependencies(bru_ctrl_control custom_msg_generate_messages_cpp)
+
+##target_link_libraries(bru_ctrl_control ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+##install(TARGETS bru_ctrl_control
+##    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(PROGRAMS
 

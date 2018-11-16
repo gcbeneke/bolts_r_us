@@ -1,4 +1,4 @@
-/* 
+/*
  * Button Example for Rosserial
  */
 
@@ -24,19 +24,19 @@ void setup()
 {
   nh.initNode();
   nh.advertise(buttonState);
-  
-  //initialize an LED output pin 
+
+  //initialize an LED output pin
   //and a input pin for our push button
   pinMode(startButton, INPUT);
   pinMode(stopButton, INPUT);
   pinMode(caliButton, INPUT);
-  
+
   //Enable the pullup resistor on the button
   //digitalWrite(button_pin, HIGH);
-  
+
   //The button is a normally button
   //last_reading = ! digitalRead(button_pin);
- 
+
 }
 
 void loop()
@@ -45,7 +45,7 @@ void loop()
   bool startB = digitalRead(startButton);
   bool stopB = digitalRead(stopButton);
   bool caliB = digitalRead(caliButton);
-  
+
   if (startB == true){
     Serial.println("Startbutton pressed");
     startB = true;
@@ -72,6 +72,6 @@ void loop()
     state_msg.data = state;
     buttonState.publish(&state_msg);
   }
-  
+
   nh.spinOnce();
 }
