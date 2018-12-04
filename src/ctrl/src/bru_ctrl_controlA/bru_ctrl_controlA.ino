@@ -12,13 +12,13 @@ std_msgs::Int8 state_msg;
 ros::Publisher buttonState("bru_ctrl_state", &state_msg);
 
 const int startButton = 2;
-const int stopButton = 4;
-const int caliButton = 8;
+const int stopButton = 3;
+const int caliButton = 4;
 
-bool last_reading;
-long last_debounce_time=0;
-long debounce_delay=50;
-bool published = true;
+int state = 0;
+bool published = false;
+bool publishedStop = false;
+bool publishedCali = false;
 
 void setup()
 {
@@ -32,7 +32,9 @@ void setup()
   pinMode(caliButton, INPUT);
 
   //Enable the pullup resistor on the button
-  //digitalWrite(button_pin, HIGH);
+  digitalWrite(startButton, HIGH);
+  digitalWrite(stopButton, HIGH);
+  digitalWrite(caliButton, HIGH);
 
   //The button is a normally button
   //last_reading = ! digitalRead(button_pin);
@@ -41,37 +43,41 @@ void setup()
 
 void loop()
 {
-  int state;
   bool startB = digitalRead(startButton);
   bool stopB = digitalRead(stopButton);
   bool caliB = digitalRead(caliButton);
-
-  if (startB == true){
-    Serial.println("Startbutton pressed");
-    startB = true;
-    stopB = false;
-    caliB = false;
+   
+  if (startB == false && state != 1 && published != true){
     state = 1;
-  } else if (stopB == true){
-    Serial.println("Stopbutton pressed");
-    startB = false;
-    stopB = true;
-    caliB = false;
+    published = true;
+    publishedStop = false;
+    publishedCali = false;
+    //Serial.print(state);
+    Serial.println(". Started"); 
+  }
+  else if (stopB == false && state != 2 && publishedStop != true){
     state = 2;
-  } else if (caliB == true){
-    Serial.println("Calibratebutton pressed");
-    startB = false;
-    stopB = false;
-    caliB = true;
+    published = false;
+    publishedStop = true;
+    publishedCali = false;
+    //Serial.print(state);
+    Serial.println(". Stopped");
+  }
+    else if (caliB == false && publishedCali != true && state != 3){
     state = 3;
-  } else {
-    state = 0;
+    published = false;
+    publishedStop = false;   
+    publishedCali = true;
+    //Serial.print(state);
+    Serial.println(". Calibration");
   }
 
   if(state != 0){
     state_msg.data = state;
+    Serial.println(state);
     buttonState.publish(&state_msg);
+    state = 0;
   }
-
+  delay(100);
   nh.spinOnce();
 }

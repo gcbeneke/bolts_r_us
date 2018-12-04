@@ -1,0 +1,8 @@
+prefix=/home/gijs/bolts_ws/install
+
+Name: ctrl
+Description: Description of ctrl
+Version: 1.1.4
+Cflags: -I/home/gijs/bolts_ws/install/include
+Libs: -L/home/gijs/bolts_ws/install/lib 
+Requires: message_runtime

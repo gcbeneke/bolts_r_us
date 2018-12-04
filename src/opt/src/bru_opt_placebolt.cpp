@@ -93,6 +93,9 @@ int main (int argc, char ** argv)
 			pub_correctPos.publish(pub);
 		}
 
+		for(int i = 0; i < MAX_SIZE; i++){
+			avg.offSet[i]=0;
+		}
 
 		lastFx = newFx, lastFy = newFy, lastFz = newFz;
 		lastTx = newTx, lastTy = newTy, lastTz = newTz;
