@@ -60,8 +60,8 @@ add_executable(etherdaq_node src/etherdaq_node.cpp)
 add_executable(bru_opt_publisher src/bru_opt_publisher.cpp)
 add_executable(bru_opt_placebolt src/bru_opt_placebolt.cpp)
 
-add_dependencies(bru_opt_publisher custom_msg_generate_messages_cpp)
-add_dependencies(bru_opt_placebolt custom_msg_generate_messages_cpp)
+add_dependencies(bru_opt_publisher opt_generate_messages_cpp)
+add_dependencies(bru_opt_placebolt opt_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(etherdaq_node etherdaq_driver)
@@ -77,4 +77,4 @@ target_link_libraries(bru_opt_placebolt ${catkin_LIBRARIES})
    ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
- )
+)

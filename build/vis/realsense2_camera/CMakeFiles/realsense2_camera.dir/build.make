@@ -194,7 +194,7 @@ realsense2_camera_EXTERNAL_OBJECTS =
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: vis/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: vis/realsense2_camera/CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: vis/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make
-/home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /usr/lib/x86_64-linux-gnu/librealsense2.so.2.16.4
+/home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /usr/lib/x86_64-linux-gnu/librealsense2.so.2.17.0
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /opt/ros/melodic/lib/libnodeletlib.so
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /opt/ros/melodic/lib/libbondcpp.so
 /home/gijs/bolts_ws/devel/lib/librealsense2_camera.so: /opt/ros/melodic/lib/libcv_bridge.so

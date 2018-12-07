@@ -38,20 +38,17 @@ include_directories(
   ${OpenCV_INCLUDE_DIRS}
 )
 
-# bru_vis_grayImg
 add_executable(bru_vis_grayImg src/bru_vis_grayImg.cpp)
-target_link_libraries(bru_vis_grayImg ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-
-# bru_vis_display
 add_executable(bru_vis_displayV2 src/bru_vis_displayV2.cpp)
-target_link_libraries(bru_vis_displayV2 ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-
-# bru_vis_threshImg
 add_executable(bru_vis_threshImg src/bru_vis_threshImg.cpp)
-target_link_libraries(bru_vis_threshImg ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-
-# bru_vis_circleDetection
 add_executable(bru_vis_circleDetection src/bru_vis_circleDetection.cpp)
+
+add_dependencies(bru_vis_displayV2 vision_generate_messages_cpp)
+add_dependencies(bru_vis_circleDetection vision_generate_messages_cpp)
+
+target_link_libraries(bru_vis_grayImg ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(bru_vis_displayV2 ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(bru_vis_threshImg ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 target_link_libraries(bru_vis_circleDetection ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 install(TARGETS bru_vis_grayImg

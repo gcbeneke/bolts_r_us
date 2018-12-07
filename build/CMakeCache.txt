@@ -84,7 +84,7 @@ CATKIN_BLACKLIST_PACKAGES:STRING=
 CATKIN_DEVEL_PREFIX:PATH=/home/gijs/bolts_ws/devel
 
 //Catkin enable testing
-CATKIN_ENABLE_TESTING:BOOL=ON
+CATKIN_ENABLE_TESTING:BOOL=False
 
 //Catkin skip testing
 CATKIN_SKIP_TESTING:BOOL=OFF
@@ -101,7 +101,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -748,12 +748,6 @@ urdf_DIR:PATH=/opt/ros/melodic/share/urdf/cmake
 urdfdom_py_DIR:PATH=/opt/ros/melodic/share/urdfdom_py/cmake
 
 //Value Computed by CMake
-vis_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/vis
-
-//Value Computed by CMake
-vis_SOURCE_DIR:STATIC=/home/gijs/bolts_ws/src/vis
-
-//Value Computed by CMake
 vision_BINARY_DIR:STATIC=/home/gijs/bolts_ws/build/vis/vision
 
 //Value Computed by CMake
@@ -913,7 +907,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=23
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=20
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

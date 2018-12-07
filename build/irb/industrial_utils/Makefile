@@ -56,50 +56,17 @@ CMAKE_BINARY_DIR = /home/gijs/bolts_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -123,17 +90,39 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,66 +157,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-irb/industrial_utils/CMakeFiles/clean_test_results_industrial_utils.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/clean_test_results_industrial_utils.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/clean_test_results_industrial_utils.dir/rule
-
-# Convenience name for target.
-clean_test_results_industrial_utils: irb/industrial_utils/CMakeFiles/clean_test_results_industrial_utils.dir/rule
-
-.PHONY : clean_test_results_industrial_utils
-
-# fast build rule for target.
-clean_test_results_industrial_utils/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/clean_test_results_industrial_utils.dir/build.make irb/industrial_utils/CMakeFiles/clean_test_results_industrial_utils.dir/build
-.PHONY : clean_test_results_industrial_utils/fast
-
-# Convenience name for target.
-irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule
-
-# Convenience name for target.
-_run_tests_industrial_utils_gtest_utest_inds_utils: irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule
-
-.PHONY : _run_tests_industrial_utils_gtest_utest_inds_utils
-
-# fast build rule for target.
-_run_tests_industrial_utils_gtest_utest_inds_utils/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest_utest_inds_utils.dir/build.make irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest_utest_inds_utils.dir/build
-.PHONY : _run_tests_industrial_utils_gtest_utest_inds_utils/fast
-
-# Convenience name for target.
-irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule
-
-# Convenience name for target.
-run_tests_industrial_utils_gtest_utest_inds_utils: irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest_utest_inds_utils.dir/rule
-
-.PHONY : run_tests_industrial_utils_gtest_utest_inds_utils
-
-# fast build rule for target.
-run_tests_industrial_utils_gtest_utest_inds_utils/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest_utest_inds_utils.dir/build.make irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest_utest_inds_utils.dir/build
-.PHONY : run_tests_industrial_utils_gtest_utest_inds_utils/fast
-
-# Convenience name for target.
-irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/rule
-
-# Convenience name for target.
-utest_inds_utils: irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/rule
-
-.PHONY : utest_inds_utils
-
-# fast build rule for target.
-utest_inds_utils/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/build.make irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/build
-.PHONY : utest_inds_utils/fast
-
-# Convenience name for target.
 irb/industrial_utils/CMakeFiles/industrial_utils.dir/rule:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/industrial_utils.dir/rule
 .PHONY : irb/industrial_utils/CMakeFiles/industrial_utils.dir/rule
@@ -241,66 +170,6 @@ industrial_utils: irb/industrial_utils/CMakeFiles/industrial_utils.dir/rule
 industrial_utils/fast:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/industrial_utils.dir/build.make irb/industrial_utils/CMakeFiles/industrial_utils.dir/build
 .PHONY : industrial_utils/fast
-
-# Convenience name for target.
-irb/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/rule
-
-# Convenience name for target.
-run_tests_industrial_utils: irb/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/rule
-
-.PHONY : run_tests_industrial_utils
-
-# fast build rule for target.
-run_tests_industrial_utils/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/build.make irb/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/build
-.PHONY : run_tests_industrial_utils/fast
-
-# Convenience name for target.
-irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest.dir/rule
-
-# Convenience name for target.
-_run_tests_industrial_utils_gtest: irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest.dir/rule
-
-.PHONY : _run_tests_industrial_utils_gtest
-
-# fast build rule for target.
-_run_tests_industrial_utils_gtest/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest.dir/build.make irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils_gtest.dir/build
-.PHONY : _run_tests_industrial_utils_gtest/fast
-
-# Convenience name for target.
-irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils.dir/rule
-
-# Convenience name for target.
-_run_tests_industrial_utils: irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils.dir/rule
-
-.PHONY : _run_tests_industrial_utils
-
-# fast build rule for target.
-_run_tests_industrial_utils/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils.dir/build.make irb/industrial_utils/CMakeFiles/_run_tests_industrial_utils.dir/build
-.PHONY : _run_tests_industrial_utils/fast
-
-# Convenience name for target.
-irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest.dir/rule
-.PHONY : irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest.dir/rule
-
-# Convenience name for target.
-run_tests_industrial_utils_gtest: irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest.dir/rule
-
-.PHONY : run_tests_industrial_utils_gtest
-
-# fast build rule for target.
-run_tests_industrial_utils_gtest/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest.dir/build.make irb/industrial_utils/CMakeFiles/run_tests_industrial_utils_gtest.dir/build
-.PHONY : run_tests_industrial_utils_gtest/fast
 
 src/param_utils.o: src/param_utils.cpp.o
 
@@ -356,64 +225,25 @@ src/utils.cpp.s:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/industrial_utils.dir/build.make irb/industrial_utils/CMakeFiles/industrial_utils.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
-test/utest.o: test/utest.cpp.o
-
-.PHONY : test/utest.o
-
-# target to build an object file
-test/utest.cpp.o:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/build.make irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/test/utest.cpp.o
-.PHONY : test/utest.cpp.o
-
-test/utest.i: test/utest.cpp.i
-
-.PHONY : test/utest.i
-
-# target to preprocess a source file
-test/utest.cpp.i:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/build.make irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/test/utest.cpp.i
-.PHONY : test/utest.cpp.i
-
-test/utest.s: test/utest.cpp.s
-
-.PHONY : test/utest.s
-
-# target to generate assembly for a file
-test/utest.cpp.s:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/build.make irb/industrial_utils/CMakeFiles/utest_inds_utils.dir/test/utest.cpp.s
-.PHONY : test/utest.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... list_install_components"
-	@echo "... clean_test_results_industrial_utils"
-	@echo "... edit_cache"
-	@echo "... _run_tests_industrial_utils_gtest_utest_inds_utils"
-	@echo "... run_tests_industrial_utils_gtest_utest_inds_utils"
-	@echo "... rebuild_cache"
-	@echo "... utest_inds_utils"
-	@echo "... industrial_utils"
-	@echo "... run_tests_industrial_utils"
 	@echo "... install/strip"
-	@echo "... _run_tests_industrial_utils_gtest"
-	@echo "... _run_tests_industrial_utils"
-	@echo "... run_tests_industrial_utils_gtest"
+	@echo "... edit_cache"
+	@echo "... industrial_utils"
+	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... install/local"
+	@echo "... install"
 	@echo "... src/param_utils.o"
 	@echo "... src/param_utils.i"
 	@echo "... src/param_utils.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"
-	@echo "... test/utest.o"
-	@echo "... test/utest.i"
-	@echo "... test/utest.s"
 .PHONY : help
 
 

@@ -96,8 +96,6 @@ add_library(${PROJECT_NAME}
     src/sr300_node.cpp
     )
 
-
-
 add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_generate_messages_cpp)
 add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
 add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_gencfg)
