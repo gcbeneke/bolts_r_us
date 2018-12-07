@@ -90,6 +90,17 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -358,13 +369,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... weiss_gripper_ieg76_generate_messages_eus"
 	@echo "... list_install_components"
+	@echo "... weiss_gripper_ieg76_generate_messages_eus"
 	@echo "... weiss_gripper_ieg76_gencpp"
 	@echo "... _weiss_gripper_ieg76_generate_messages_check_deps_Move"
 	@echo "... install/local"
 	@echo "... weiss_gripper_ieg76_geneus"
 	@echo "... weiss_gripper_ieg76_generate_messages"
+	@echo "... test"
 	@echo "... weiss_gripper_ieg76_generate_messages_cpp"
 	@echo "... install"
 	@echo "... _weiss_gripper_ieg76_generate_messages_check_deps_SetForce"

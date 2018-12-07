@@ -68,17 +68,37 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -92,37 +112,28 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target test
+test/fast: test
 
-.PHONY : list_install_components/fast
+.PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -156,6 +167,111 @@ depend:
 	cd /home/gijs/bolts_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+irb/abb_irb120_support/CMakeFiles/clean_test_results_abb_irb120_support.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/abb_irb120_support/CMakeFiles/clean_test_results_abb_irb120_support.dir/rule
+.PHONY : irb/abb_irb120_support/CMakeFiles/clean_test_results_abb_irb120_support.dir/rule
+
+# Convenience name for target.
+clean_test_results_abb_irb120_support: irb/abb_irb120_support/CMakeFiles/clean_test_results_abb_irb120_support.dir/rule
+
+.PHONY : clean_test_results_abb_irb120_support
+
+# fast build rule for target.
+clean_test_results_abb_irb120_support/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/abb_irb120_support/CMakeFiles/clean_test_results_abb_irb120_support.dir/build.make irb/abb_irb120_support/CMakeFiles/clean_test_results_abb_irb120_support.dir/build
+.PHONY : clean_test_results_abb_irb120_support/fast
+
+# Convenience name for target.
+irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support.dir/rule
+.PHONY : irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support.dir/rule
+
+# Convenience name for target.
+_run_tests_abb_irb120_support: irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support.dir/rule
+
+.PHONY : _run_tests_abb_irb120_support
+
+# fast build rule for target.
+_run_tests_abb_irb120_support/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support.dir/build.make irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support.dir/build
+.PHONY : _run_tests_abb_irb120_support/fast
+
+# Convenience name for target.
+irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support.dir/rule
+.PHONY : irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support.dir/rule
+
+# Convenience name for target.
+run_tests_abb_irb120_support: irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support.dir/rule
+
+.PHONY : run_tests_abb_irb120_support
+
+# fast build rule for target.
+run_tests_abb_irb120_support/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support.dir/build.make irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support.dir/build
+.PHONY : run_tests_abb_irb120_support/fast
+
+# Convenience name for target.
+irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule
+.PHONY : irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule
+
+# Convenience name for target.
+_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml: irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule
+
+.PHONY : _run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml
+
+# fast build rule for target.
+_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/build.make irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/build
+.PHONY : _run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml/fast
+
+# Convenience name for target.
+irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check.dir/rule
+.PHONY : irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check.dir/rule
+
+# Convenience name for target.
+run_tests_abb_irb120_support_roslaunch-check: irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check.dir/rule
+
+.PHONY : run_tests_abb_irb120_support_roslaunch-check
+
+# fast build rule for target.
+run_tests_abb_irb120_support_roslaunch-check/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check.dir/build.make irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check.dir/build
+.PHONY : run_tests_abb_irb120_support_roslaunch-check/fast
+
+# Convenience name for target.
+irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule
+.PHONY : irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule
+
+# Convenience name for target.
+run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml: irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/rule
+
+.PHONY : run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml
+
+# fast build rule for target.
+run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/build.make irb/abb_irb120_support/CMakeFiles/run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml.dir/build
+.PHONY : run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml/fast
+
+# Convenience name for target.
+irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check.dir/rule
+.PHONY : irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check.dir/rule
+
+# Convenience name for target.
+_run_tests_abb_irb120_support_roslaunch-check: irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check.dir/rule
+
+.PHONY : _run_tests_abb_irb120_support_roslaunch-check
+
+# fast build rule for target.
+_run_tests_abb_irb120_support_roslaunch-check/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check.dir/build.make irb/abb_irb120_support/CMakeFiles/_run_tests_abb_irb120_support_roslaunch-check.dir/build
+.PHONY : _run_tests_abb_irb120_support_roslaunch-check/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -163,11 +279,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
-	@echo "... install/local"
 	@echo "... list_install_components"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... clean_test_results_abb_irb120_support"
+	@echo "... install/local"
+	@echo "... test"
+	@echo "... _run_tests_abb_irb120_support"
+	@echo "... run_tests_abb_irb120_support"
+	@echo "... _run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml"
+	@echo "... install"
+	@echo "... run_tests_abb_irb120_support_roslaunch-check"
+	@echo "... run_tests_abb_irb120_support_roslaunch-check_tests_roslaunch_test.xml"
+	@echo "... _run_tests_abb_irb120_support_roslaunch-check"
 .PHONY : help
 
 

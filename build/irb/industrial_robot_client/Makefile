@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/gijs/bolts_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -80,17 +68,28 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -102,6 +101,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -155,6 +166,126 @@ preinstall/fast:
 depend:
 	cd /home/gijs/bolts_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_client_roslaunch-check: irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check.dir/rule
+
+.PHONY : _run_tests_industrial_robot_client_roslaunch-check
+
+# fast build rule for target.
+_run_tests_industrial_robot_client_roslaunch-check/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check.dir/build.make irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check.dir/build
+.PHONY : _run_tests_industrial_robot_client_roslaunch-check/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_client_roslaunch-check: irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check.dir/rule
+
+.PHONY : run_tests_industrial_robot_client_roslaunch-check
+
+# fast build rule for target.
+run_tests_industrial_robot_client_roslaunch-check/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check.dir/build.make irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check.dir/build
+.PHONY : run_tests_industrial_robot_client_roslaunch-check/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml: irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule
+
+.PHONY : run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml
+
+# fast build rule for target.
+run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/build.make irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/build
+.PHONY : run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/clean_test_results_industrial_robot_client.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/clean_test_results_industrial_robot_client.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/clean_test_results_industrial_robot_client.dir/rule
+
+# Convenience name for target.
+clean_test_results_industrial_robot_client: irb/industrial_robot_client/CMakeFiles/clean_test_results_industrial_robot_client.dir/rule
+
+.PHONY : clean_test_results_industrial_robot_client
+
+# fast build rule for target.
+clean_test_results_industrial_robot_client/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/clean_test_results_industrial_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/clean_test_results_industrial_robot_client.dir/build
+.PHONY : clean_test_results_industrial_robot_client/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_client_gtest_utest_robot_client: irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule
+
+.PHONY : _run_tests_industrial_robot_client_gtest_utest_robot_client
+
+# fast build rule for target.
+_run_tests_industrial_robot_client_gtest_utest_robot_client/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest_utest_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest_utest_robot_client.dir/build
+.PHONY : _run_tests_industrial_robot_client_gtest_utest_robot_client/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_client_gtest: irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/rule
+
+.PHONY : _run_tests_industrial_robot_client_gtest
+
+# fast build rule for target.
+_run_tests_industrial_robot_client_gtest/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/build.make irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/build
+.PHONY : _run_tests_industrial_robot_client_gtest/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_client_gtest: irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest.dir/rule
+
+.PHONY : run_tests_industrial_robot_client_gtest
+
+# fast build rule for target.
+run_tests_industrial_robot_client_gtest/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest.dir/build.make irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest.dir/build
+.PHONY : run_tests_industrial_robot_client_gtest/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_client: irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client.dir/rule
+
+.PHONY : run_tests_industrial_robot_client
+
+# fast build rule for target.
+run_tests_industrial_robot_client/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client.dir/build
+.PHONY : run_tests_industrial_robot_client/fast
 
 # Convenience name for target.
 irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
@@ -232,19 +363,34 @@ joint_trajectory_action/fast:
 .PHONY : joint_trajectory_action/fast
 
 # Convenience name for target.
-irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-.PHONY : irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/rule
 
 # Convenience name for target.
-control_msgs_generate_messages_eus: irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+utest_robot_client: irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/rule
 
-.PHONY : control_msgs_generate_messages_eus
+.PHONY : utest_robot_client
 
 # fast build rule for target.
-control_msgs_generate_messages_eus/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/build
-.PHONY : control_msgs_generate_messages_eus/fast
+utest_robot_client/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/build
+.PHONY : utest_robot_client/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml: irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/rule
+
+.PHONY : _run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml
+
+# fast build rule for target.
+_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/build.make irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml.dir/build
+.PHONY : _run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml/fast
 
 # Convenience name for target.
 irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
@@ -260,6 +406,21 @@ control_msgs_generate_messages_nodejs: irb/industrial_robot_client/CMakeFiles/co
 control_msgs_generate_messages_nodejs/fast:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
 .PHONY : control_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_eus: irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+
+.PHONY : control_msgs_generate_messages_eus
+
+# fast build rule for target.
+control_msgs_generate_messages_eus/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make irb/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/build
+.PHONY : control_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 irb/industrial_robot_client/CMakeFiles/industrial_robot_client.dir/rule:
@@ -292,6 +453,21 @@ industrial_robot_client_bswap/fast:
 .PHONY : industrial_robot_client_bswap/fast
 
 # Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_client: irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client.dir/rule
+
+.PHONY : _run_tests_industrial_robot_client
+
+# fast build rule for target.
+_run_tests_industrial_robot_client/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client.dir/build
+.PHONY : _run_tests_industrial_robot_client/fast
+
+# Convenience name for target.
 irb/industrial_robot_client/CMakeFiles/motion_streaming_interface.dir/rule:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/motion_streaming_interface.dir/rule
 .PHONY : irb/industrial_robot_client/CMakeFiles/motion_streaming_interface.dir/rule
@@ -320,6 +496,21 @@ motion_download_interface: irb/industrial_robot_client/CMakeFiles/motion_downloa
 motion_download_interface/fast:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/motion_download_interface.dir/build.make irb/industrial_robot_client/CMakeFiles/motion_download_interface.dir/build
 .PHONY : motion_download_interface/fast
+
+# Convenience name for target.
+irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule
+.PHONY : irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_client_gtest_utest_robot_client: irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest_utest_robot_client.dir/rule
+
+.PHONY : run_tests_industrial_robot_client_gtest_utest_robot_client
+
+# fast build rule for target.
+run_tests_industrial_robot_client_gtest_utest_robot_client/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest_utest_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/run_tests_industrial_robot_client_gtest_utest_robot_client.dir/build
+.PHONY : run_tests_industrial_robot_client_gtest_utest_robot_client/fast
 
 # Convenience name for target.
 irb/industrial_robot_client/CMakeFiles/robot_state.dir/rule:
@@ -762,28 +953,68 @@ src/utils.cpp.s:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/industrial_robot_client_bswap.dir/build.make irb/industrial_robot_client/CMakeFiles/industrial_robot_client_bswap.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
+test/utest.o: test/utest.cpp.o
+
+.PHONY : test/utest.o
+
+# target to build an object file
+test/utest.cpp.o:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/test/utest.cpp.o
+.PHONY : test/utest.cpp.o
+
+test/utest.i: test/utest.cpp.i
+
+.PHONY : test/utest.i
+
+# target to preprocess a source file
+test/utest.cpp.i:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/test/utest.cpp.i
+.PHONY : test/utest.cpp.i
+
+test/utest.s: test/utest.cpp.s
+
+.PHONY : test/utest.s
+
+# target to generate assembly for a file
+test/utest.cpp.s:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/build.make irb/industrial_robot_client/CMakeFiles/utest_robot_client.dir/test/utest.cpp.s
+.PHONY : test/utest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install"
+	@echo "... test"
+	@echo "... _run_tests_industrial_robot_client_roslaunch-check"
+	@echo "... run_tests_industrial_robot_client_roslaunch-check"
+	@echo "... run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml"
+	@echo "... clean_test_results_industrial_robot_client"
+	@echo "... _run_tests_industrial_robot_client_gtest_utest_robot_client"
+	@echo "... install/strip"
+	@echo "... _run_tests_industrial_robot_client_gtest"
+	@echo "... run_tests_industrial_robot_client_gtest"
+	@echo "... run_tests_industrial_robot_client"
 	@echo "... control_msgs_generate_messages_lisp"
 	@echo "... control_msgs_generate_messages_cpp"
 	@echo "... industrial_robot_client_dummy"
 	@echo "... control_msgs_generate_messages_py"
 	@echo "... joint_trajectory_action"
+	@echo "... utest_robot_client"
+	@echo "... edit_cache"
+	@echo "... _run_tests_industrial_robot_client_roslaunch-check_test_roslaunch_test.xml"
+	@echo "... control_msgs_generate_messages_nodejs"
 	@echo "... install/local"
 	@echo "... control_msgs_generate_messages_eus"
-	@echo "... control_msgs_generate_messages_nodejs"
-	@echo "... edit_cache"
 	@echo "... industrial_robot_client"
 	@echo "... list_install_components"
 	@echo "... industrial_robot_client_bswap"
+	@echo "... _run_tests_industrial_robot_client"
 	@echo "... motion_streaming_interface"
 	@echo "... motion_download_interface"
+	@echo "... run_tests_industrial_robot_client_gtest_utest_robot_client"
 	@echo "... robot_state"
 	@echo "... robot_state_bswap"
 	@echo "... motion_streaming_interface_bswap"
@@ -828,6 +1059,9 @@ help:
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"
+	@echo "... test/utest.o"
+	@echo "... test/utest.i"
+	@echo "... test/utest.s"
 .PHONY : help
 
 

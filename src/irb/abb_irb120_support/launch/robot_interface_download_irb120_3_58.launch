@@ -28,6 +28,7 @@
 <!-- ABB nodes -->
   <node pkg="abb_irb120_support"	type="moveRobot.py" name="move_the_robot" output="screen"/>
   <node pkg="abb_irb120_support"	type="stopRobot.py" name="stop_the_robot" output="screen"/>
+  <node pkg="abb_irb120_support"	type="calibration.py" name="calibrate_the_robot" output="screen"/>
 
 
 </launch>

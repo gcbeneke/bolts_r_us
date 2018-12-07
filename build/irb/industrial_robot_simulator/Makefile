@@ -68,17 +68,27 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -92,6 +102,17 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -102,27 +123,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -156,6 +167,111 @@ depend:
 	cd /home/gijs/bolts_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+irb/industrial_robot_simulator/CMakeFiles/clean_test_results_industrial_robot_simulator.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_simulator/CMakeFiles/clean_test_results_industrial_robot_simulator.dir/rule
+.PHONY : irb/industrial_robot_simulator/CMakeFiles/clean_test_results_industrial_robot_simulator.dir/rule
+
+# Convenience name for target.
+clean_test_results_industrial_robot_simulator: irb/industrial_robot_simulator/CMakeFiles/clean_test_results_industrial_robot_simulator.dir/rule
+
+.PHONY : clean_test_results_industrial_robot_simulator
+
+# fast build rule for target.
+clean_test_results_industrial_robot_simulator/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_simulator/CMakeFiles/clean_test_results_industrial_robot_simulator.dir/build.make irb/industrial_robot_simulator/CMakeFiles/clean_test_results_industrial_robot_simulator.dir/build
+.PHONY : clean_test_results_industrial_robot_simulator/fast
+
+# Convenience name for target.
+irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check.dir/rule
+.PHONY : irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_simulator_roslaunch-check: irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check.dir/rule
+
+.PHONY : _run_tests_industrial_robot_simulator_roslaunch-check
+
+# fast build rule for target.
+_run_tests_industrial_robot_simulator_roslaunch-check/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check.dir/build.make irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check.dir/build
+.PHONY : _run_tests_industrial_robot_simulator_roslaunch-check/fast
+
+# Convenience name for target.
+irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator.dir/rule
+.PHONY : irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_simulator: irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator.dir/rule
+
+.PHONY : run_tests_industrial_robot_simulator
+
+# fast build rule for target.
+run_tests_industrial_robot_simulator/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator.dir/build.make irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator.dir/build
+.PHONY : run_tests_industrial_robot_simulator/fast
+
+# Convenience name for target.
+irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check.dir/rule
+.PHONY : irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_simulator_roslaunch-check: irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check.dir/rule
+
+.PHONY : run_tests_industrial_robot_simulator_roslaunch-check
+
+# fast build rule for target.
+run_tests_industrial_robot_simulator_roslaunch-check/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check.dir/build.make irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check.dir/build
+.PHONY : run_tests_industrial_robot_simulator_roslaunch-check/fast
+
+# Convenience name for target.
+irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule
+.PHONY : irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule
+
+# Convenience name for target.
+run_tests_industrial_robot_simulator_roslaunch-check_launch: irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule
+
+.PHONY : run_tests_industrial_robot_simulator_roslaunch-check_launch
+
+# fast build rule for target.
+run_tests_industrial_robot_simulator_roslaunch-check_launch/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/build.make irb/industrial_robot_simulator/CMakeFiles/run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/build
+.PHONY : run_tests_industrial_robot_simulator_roslaunch-check_launch/fast
+
+# Convenience name for target.
+irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator.dir/rule
+.PHONY : irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_simulator: irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator.dir/rule
+
+.PHONY : _run_tests_industrial_robot_simulator
+
+# fast build rule for target.
+_run_tests_industrial_robot_simulator/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator.dir/build.make irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator.dir/build
+.PHONY : _run_tests_industrial_robot_simulator/fast
+
+# Convenience name for target.
+irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule
+.PHONY : irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule
+
+# Convenience name for target.
+_run_tests_industrial_robot_simulator_roslaunch-check_launch: irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/rule
+
+.PHONY : _run_tests_industrial_robot_simulator_roslaunch-check_launch
+
+# fast build rule for target.
+_run_tests_industrial_robot_simulator_roslaunch-check_launch/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/build.make irb/industrial_robot_simulator/CMakeFiles/_run_tests_industrial_robot_simulator_roslaunch-check_launch.dir/build
+.PHONY : _run_tests_industrial_robot_simulator_roslaunch-check_launch/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -163,11 +279,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... install/local"
+	@echo "... test"
+	@echo "... clean_test_results_industrial_robot_simulator"
+	@echo "... _run_tests_industrial_robot_simulator_roslaunch-check"
+	@echo "... list_install_components"
+	@echo "... run_tests_industrial_robot_simulator"
+	@echo "... run_tests_industrial_robot_simulator_roslaunch-check"
+	@echo "... run_tests_industrial_robot_simulator_roslaunch-check_launch"
+	@echo "... install"
+	@echo "... _run_tests_industrial_robot_simulator"
+	@echo "... _run_tests_industrial_robot_simulator_roslaunch-check_launch"
 .PHONY : help
 
 
