@@ -1,0 +1,29 @@
+<!-- Launch file which runs the desired realsense nodelet with filters
+and vision part of the Bolts "R" Us project
+Date: 06-12-2018
+By: Giel Oomen
+-->
+
+<launch>
+
+<!-- launch the intel realsense nodelet with filters -->
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="filters" value="temporal,spatial,pointcloud" />
+  </include>
+
+<!-- bru_vis_CircleDetection node startup -->
+  <node
+    pkg="vision"
+    name="bru_vis_circleDetection"
+    type="bru_vis_circleDetection"
+  />
+
+<!-- bru_vis_CircleDetection node startup -->
+  <node
+    pkg="vision"
+    name="bru_vis_displayV2"
+    type="bru_vis_displayV2"
+  />
+
+
+</launch>
