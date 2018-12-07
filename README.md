@@ -3,7 +3,7 @@
 
 Calibratie camera: https://trojan03.github.io/#!/blog/4
 
-Dit is de Readme file voor het project Bolts R Us. De gehele source code is gemaakt in C++ en gebruikt ROS als middleware voor 
+Dit is de Readme file voor het project Bolts R Us. De gehele source code is gemaakt in C++ en in Python en gebruikt ROS als middleware voor 
 het overbrengen van data.
 
 ##
