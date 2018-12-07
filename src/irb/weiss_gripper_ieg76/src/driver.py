@@ -17,11 +17,11 @@ class Driver(object):
 		self.states_publisher_thread = StatesPublisher(0.8, self.serial_port_comm)
 		rospy.on_shutdown(self.shutdown_handler)
 
-	def log_reply(self, reply):
-		if reply.success:
-			rospy.loginfo(reply.message)
-		else:
-			rospy.logerr(reply.message)
+	#def log_reply(self, reply):
+	#	if reply.success:
+	#		rospy.loginfo(reply.message)
+	#	else:
+	#		rospy.logerr(reply.message)
 
 	def check_position(self, pos):
 		return 0 <= pos <= 30
@@ -34,7 +34,7 @@ class Driver(object):
 		reply = TriggerResponse()
 		self.driver_logic.service_called(transition="do_reference", params=req, trigger_response=reply)
 		reply.message = 'Referencing ' + reply.message
-		self.log_reply(reply)
+		#self.log_reply(reply)
 		return reply
 
 	def handle_open(self, req):
@@ -46,7 +46,7 @@ class Driver(object):
 		else:
 			self.driver_logic.service_called(transition="do_open", params=req, trigger_response=reply)
 			reply.message = 'Opening ' + reply.message
-		self.log_reply(reply)
+		#self.log_reply(reply)
 		return reply
 
 	def handle_close(self, req):
@@ -58,7 +58,7 @@ class Driver(object):
 		else:
 			self.driver_logic.service_called(transition="do_close", params=req, trigger_response=reply)
 			reply.message = 'Closing ' + reply.message
-		self.log_reply(reply)
+		#self.log_reply(reply)
 		return reply
 
 	def handle_grasp(self, req):
@@ -70,7 +70,7 @@ class Driver(object):
 		else:
 			self.driver_logic.service_called(transition="do_grasp", params=req, trigger_response=reply)
 			reply.message = 'Grasping ' + reply.message
-		self.log_reply(reply)
+		#self.log_reply(reply)
 		return reply
 
 	def handle_set_force(self, req):
@@ -85,7 +85,7 @@ class Driver(object):
 			reply.message = 'Set force successful.'
 		else:
 			reply.message = 'Set force failed. ' + reply.message
-		self.log_reply(reply)
+		#self.log_reply(reply)
 		return reply
 
 	def shutdown_handler(self):

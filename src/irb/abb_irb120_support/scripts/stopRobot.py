@@ -12,12 +12,13 @@ from math import pi
 
 status = 0
 ## Ophalen van knoppenstatus
+## 
 def state_callback(msg):
  	global status
 	status = msg.data
 	#print status
         if status == 2:
-            client.cancel_goal()
+            client.cancel_all_goals()
             print "Stop received, stopping robot"
             status = 5
 

@@ -167,7 +167,7 @@ class DriverLogic(object):
 		if self.operation_response is not None:
 			self.operation_response.success = False
 			self.operation_response.message += 'Unexpected state change.'
-		rospy.logerr('Unexpected state change.')
+		#rospy.logerr('Unexpected state change.')
 
 	def get_err_msg(self, state):
 		operation_err_msg_from_state = {'not_initialized': 'Reference the gripper before usage. ',
@@ -276,39 +276,39 @@ class DriverLogic(object):
 			pos_set = pos_set and self.serial_port_comm.set_closing_pos(closing_pos)
 		self.opening_pos = opening_pos
 		self.closing_pos = closing_pos
-		rospy.loginfo("Opening pos: {}, closing pos: {}".format(opening_pos, closing_pos))
+		#rospy.loginfo("Opening pos: {}, closing pos: {}".format(opening_pos, closing_pos))
 
 	def exec_opening(self):
-		rospy.loginfo('Trying to set opening positions...')
-		rospy.loginfo('State: {}'.format(self.state))
+		#rospy.loginfo('Trying to set opening positions...')
+		#rospy.loginfo('State: {}'.format(self.state))
 		self.set_positions(opening_pos=self.operation_params.position, closing_pos=self.gripper_pos)
-		rospy.loginfo('Opening positions set.')
+		#rospy.loginfo('Opening positions set.')
 		self.serial_port_comm.send_command_synced("open")
 
 	def exec_closing(self):
-		rospy.loginfo('Trying to set closing positions...')
-		rospy.loginfo('State: {}'.format(self.state))
+		#rospy.loginfo('Trying to set closing positions...')
+		#rospy.loginfo('State: {}'.format(self.state))
 		self.set_positions(opening_pos=self.gripper_pos, closing_pos=self.operation_params.position)
-		rospy.loginfo('Closing positions set.')
+		#rospy.loginfo('Closing positions set.')
 		self.serial_port_comm.send_command_synced("close")
 
 	def exec_grasping(self):
-		rospy.loginfo('Trying to set grasping positions...')
-		rospy.loginfo('State: {}'.format(self.state))
+		#rospy.loginfo('Trying to set grasping positions...')
+		#rospy.loginfo('State: {}'.format(self.state))
 		self.set_positions(opening_pos=self.gripper_pos, closing_pos=self.operation_params.position)
-		rospy.loginfo('Grasping positions set.')
+		#rospy.loginfo('Grasping positions set.')
 		self.serial_port_comm.send_command_synced("close")
 
 	def exec_opening_before_closing(self):
-		rospy.loginfo('Trying to set opening_before_closing positions...')
-		rospy.loginfo('State: {}'.format(self.state))
+		#rospy.loginfo('Trying to set opening_before_closing positions...')
+		#rospy.loginfo('State: {}'.format(self.state))
 		self.set_positions(opening_pos=self.gripper_pos, closing_pos=self.gripper_pos)
-		rospy.loginfo('Prepening positions set.')
+		#rospy.loginfo('Prepening positions set.')
 		self.serial_port_comm.send_command_synced("open")
 
 	def exec_closing_before_opening(self):
-		rospy.loginfo('Trying to set closing_before_opening positions...')
-		rospy.loginfo('State: {}'.format(self.state))
+		#rospy.loginfo('Trying to set closing_before_opening positions...')
+		#rospy.loginfo('State: {}'.format(self.state))
 		self.set_positions(opening_pos=self.gripper_pos, closing_pos=self.gripper_pos)
-		rospy.loginfo('Closing_before_opening positions set.')
+		#rospy.loginfo('Closing_before_opening positions set.')
 		self.serial_port_comm.send_command_synced("close")

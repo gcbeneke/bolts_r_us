@@ -7,17 +7,31 @@ from std_srvs.srv import Trigger
 from weiss_gripper_ieg76.srv import *
 from std_msgs.msg import Int8
 
+new_robot_status = 0
+opened = False
+
 def state_callback(msg):
+	global opened
 	status = msg.data
 	try:
-			if status == 1:
-				#print "Success: "
+			if status == 3:
 				send_reference_request()
 				send_open_request(16)
 
 	except rospy.ServiceException, e:
 			print "Service call failed: %s"%e
 
+def callback_robot_status(data):
+	global new_robot_status
+	pub = rospy.Publisher("bru_irb_new_robotState", Int8, queue_size=1)
+	robot_status = data.data
+	try:
+		if robot_status == 3 and new_robot_status == 0:
+			send_grasp_object_request(0)
+			new_robot_status = 4
+			pub.publish(new_robot_status)
+	except rospy.ServiceException, e:
+		print "Service call failed: %s"%e
 
 def send_reference_request():
 	rospy.wait_for_service('/weiss_gripper_ieg76_driver/reference')
@@ -58,5 +72,6 @@ def send_open_request(grasp_config_no):
 if __name__ == "__main__":
 	rospy.init_node('state_listener')
 	rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
+	rospy.Subscriber("bru_irb_robotState", Int8, callback_robot_status)
 	grasp_config_no = 0
 	rospy.spin()
