@@ -16,15 +16,18 @@ JOINT_NAMES = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
 movement = [0, 0, 0, 0, 0, 0]
 refPos = [-0.05583, 1.22699, -0.18286,0.78646, -1.20635, -0.52067] # positie 1 (0 punt)
 refPos2 = [0.04141, 1.37890, -0.50648, 0.93691,-1.13694,-0.70177] # positie 2
-boltPos = [0.52298, 0.82716, 0.16881, 0.02369, 0.52621, -0.42037]
-safeBoltPos = [0.52299, 0.63573, 0.15993, 0.01783, 0.72653, -0.41322]
+boltPos = [1.10464, 0.48894, 0.82054, -0.00813, 0.23652, -0.51340]
+safeBoltPos = [1.10464, -0.00791, 0.71832, -0.00259, 0.83561, -0.51956]
 
+x_pos1 = [0.11902, 1.22865, -0.15359, 0.14567, -0.95006, -0.14157]
+x_pos2 = [0.10470, 1.44064, -0.60579, 0.15998, -0.71131, -0.17982]
+afstandPos1totPos2 = 6.4
 ## Declareren globale variabelen
 # afstand tussen pos 1 en pos 2
 afstandtotj = 6.45
 status = 0
 movepos = refPos
-statusRobot = 0
+statusRobot = 1
 
 ## Ophalen van knoppenstatus
 def state_callback(msg):

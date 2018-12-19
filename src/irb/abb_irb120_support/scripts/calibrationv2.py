@@ -13,6 +13,45 @@ import numpy as np
 import cv2
 import sys
 
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge, CvBridgeError
+
+# Setup SimpleBlobDetector parameters.
+params = cv2.SimpleBlobDetector_Params()
+
+# Change thresholds
+params.minThreshold = 140;
+params.maxThreshold = 255;
+
+# Filter by Area.
+params.filterByArea = True
+params.minArea = 20
+
+# Filter by Circularity
+params.filterByCircularity = True
+params.minCircularity = 0.85
+
+# Filter by Convexity
+params.filterByConvexity = True
+params.minConvexity = 0.87
+
+# Filter by Inertia
+params.filterByInertia = True
+params.minInertiaRatio = 0.01
+
+# Create a detector with the parameters
+ver = (cv2.__version__).split('.')
+if int(ver[0]) < 3 :
+    detector = cv2.SimpleBlobDetector(params)
+else :
+    detector = cv2.SimpleBlobDetector_create(params)
+
+# Create global bridge variable to convert ROS and OpenCV images
+bridge = CvBridge()
+keypointsGlobal = []
+
+global cv2_img
+
 JOINT_NAMES = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
 pi = 3.14
 homePosition = [0,0,0,0,0,0]
@@ -53,6 +92,7 @@ client = None
 
 ## functie om te kalibreren
 ## beweegt de robot naar de home positie
+
 def calibrationhome():
     global homePosition
     if status == 3:
@@ -61,26 +101,36 @@ def calibrationhome():
 
 def bottomLeft():
     global posBottomLeft
+    global cv2_img
     print ("Druk op y om naar het 1ste punt te kalibreren")
     inp = raw_input("")[0]
     if inp == 'y':
         position(posBottomLeft)
+        time.sleep(2)
+        getKeypoint(cv2_img)
         bottomright()
 
 def bottomright():
     global posBottomRight
+    global cv2_img
     print ("Druk op y om naar het 2de punt te kalibreren")
     inp = raw_input("")[0]
     if inp == 'y':
         position(posBottomRight)
+        time.sleep(2)
+        getKeypoint(cv2_img)
         topLeft()
 
 def topLeft():
     global posTopLeft
+    global cv2_img
     print ("Druk op y om naar het 3de punt te kalibreren")
     inp = raw_input("")[0]
     if inp == 'y':
         position(posTopLeft)
+        time.sleep(2)
+        getKeypoint(cv2_img)
+        print(keypointsGlobal[0].pt[0])
         homeposition()
 
 def homeposition():
@@ -150,6 +200,43 @@ def calibration(wantedPos):
     except:
         	raise
 
+# Function to retrieve one keypoint on every ABB calibration position
+def getKeypoint(cv2_img):
+    global keypointsGlobal
+    # Convert the image to a grayscale image
+    gray_image = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2GRAY)
+
+    # Detect blobs in the grayscale image
+    keypoints = detector.detect(gray_image)
+
+    # Add the keypoint to a vector with 3 keypoints
+    keypointsGlobal.append(keypoints[0])
+
+
+def image_callback(image):
+    try:
+        global cv2_img
+        # Convert your ROS Image message to OpenCV2
+        cv2_img = bridge.imgmsg_to_cv2(image, "bgr8")
+
+    except CvBridgeError, e:
+        print(e)
+
+    else:
+        # Convert the image to a grayscale image
+        gray_image = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2GRAY)
+
+        # Detect blobs in the grayscale image
+        keypoints = detector.detect(gray_image)
+
+        # Draw detected blobs as red circles.
+        # cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS ensures the size of the circle corresponds to the size of blob
+        im_with_keypoints = cv2.drawKeypoints(cv2_img, keypoints, np.array([]), (0,0,255), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+        # Show the image with a circle drawn over the bolt
+        cv2.imshow("Videostream", im_with_keypoints)
+        cv2.waitKey(30)
+
 
 def main():
     global client
@@ -162,6 +249,7 @@ def main():
         rospy.init_node("calibrateRobot", anonymous=True, disable_signals=True)
     	rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
         rospy.Subscriber("bru_irb_new_robotState", Int8, robot_state_callback)
+        rospy.Subscriber("/camera/color/image_raw", Image, image_callback)
         pub = rospy.Publisher('bru_irb_robotState', Int8, queue_size=10)
         rate = rospy.Rate(10)
 
