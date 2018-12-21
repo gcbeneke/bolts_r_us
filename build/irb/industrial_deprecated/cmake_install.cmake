@@ -1,8 +1,8 @@
-# Install script for directory: /home/gijs/bolts_ws/src/irb/industrial_deprecated
+# Install script for directory: /home/redouan/bolts_ws/src/irb/industrial_deprecated
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gijs/bolts_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/redouan/bolts_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gijs/bolts_ws/build/irb/industrial_deprecated/catkin_generated/installspace/industrial_deprecated.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/redouan/bolts_ws/build/irb/industrial_deprecated/catkin_generated/installspace/industrial_deprecated.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_deprecated/cmake" TYPE FILE FILES
-    "/home/gijs/bolts_ws/build/irb/industrial_deprecated/catkin_generated/installspace/industrial_deprecatedConfig.cmake"
-    "/home/gijs/bolts_ws/build/irb/industrial_deprecated/catkin_generated/installspace/industrial_deprecatedConfig-version.cmake"
+    "/home/redouan/bolts_ws/build/irb/industrial_deprecated/catkin_generated/installspace/industrial_deprecatedConfig.cmake"
+    "/home/redouan/bolts_ws/build/irb/industrial_deprecated/catkin_generated/installspace/industrial_deprecatedConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_deprecated" TYPE FILE FILES "/home/gijs/bolts_ws/src/irb/industrial_deprecated/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_deprecated" TYPE FILE FILES "/home/redouan/bolts_ws/src/irb/industrial_deprecated/package.xml")
 endif()
 

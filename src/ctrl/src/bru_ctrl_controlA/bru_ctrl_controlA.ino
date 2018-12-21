@@ -11,9 +11,9 @@ ros::NodeHandle nh;
 std_msgs::Int8 state_msg;
 ros::Publisher buttonState("bru_ctrl_state", &state_msg);
 
-const int startButton = 2;
-const int stopButton = 3;
-const int caliButton = 4;
+const int startButton = 3;
+const int stopButton = 4;
+const int caliButton = 2;
 
 int state = 0;
 bool published = false;

@@ -7,8 +7,22 @@ from std_srvs.srv import Trigger
 from weiss_gripper_ieg76.srv import *
 from std_msgs.msg import Int8
 
+
+calibrationstate = 0
 new_robot_status = 0
 opened = False
+
+def callback_calibration_status(msg):
+	global calibrationstate
+	pub = rospy.Publisher("bru_irb_calibrationState", Int8, queue_size=1)
+	calibrationstate = msg.data
+	try:
+		if calibrationstate == 4:
+			send_grasp_object_request(0)
+			calibrationstate = 5
+			pub.publish(calibrationstate)
+	except rospy.ServiceException, e:
+			print "Service call failed: %s"%e
 
 def state_callback(msg):
 	global opened
@@ -73,5 +87,6 @@ if __name__ == "__main__":
 	rospy.init_node('state_listener')
 	rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
 	rospy.Subscriber("bru_irb_robotState", Int8, callback_robot_status)
+	rospy.Subscriber("bru_irb_calibrationState", Int8, callback_calibration_status)
 	grasp_config_no = 0
 	rospy.spin()

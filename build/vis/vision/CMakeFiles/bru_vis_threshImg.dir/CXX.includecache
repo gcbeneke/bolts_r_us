@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/gijs/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp
+/home/redouan/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -18,7 +18,7 @@ opencv2/highgui/highgui.hpp
 cv_bridge/cv_bridge.h
 -
 sensor_msgs/Image.h
-/home/gijs/bolts_ws/src/vis/vision/src/sensor_msgs/Image.h
+/home/redouan/bolts_ws/src/vis/vision/src/sensor_msgs/Image.h
 sensor_msgs/image_encodings.h
 -
 

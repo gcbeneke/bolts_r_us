@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIE -fPIC -std=c++11 -D_FORTIFY_SOURCE=2 -fstack-protector -Wforma
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"realsense2_camera\" -Drealsense2_camera_EXPORTS
 
-CXX_INCLUDES = -I/home/gijs/bolts_ws/devel/include -I/home/gijs/bolts_ws/src/vis/realsense2_camera/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/opencv 
+CXX_INCLUDES = -I/home/redouan/bolts_ws/devel/include -I/home/redouan/bolts_ws/src/vis/realsense2_camera/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/opencv 
 

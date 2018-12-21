@@ -14,13 +14,14 @@ from opt.msg import *
 JOINT_NAMES = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
 avg_value = [0, 0, 0, 0, 0, 0]
 current_value = [0,0,0,0,0,0]
-statusRobot = 6
+statusRobot = 0
 new_robot_status = 0
 
 firstPos  = [-0.90279, 1.00068, 0.37982, -0.90743, -1.47271, 0.05792]
 secondPos = [-0.83944, 1.03169, 0.29536, -0.84939, -1.42815, 0.09053]
 thirdPos = [-0.78646, 0.94316, 0.55527, -0.78557, -1.53922, -0.04047]
 fourthPos = [-0.77261, 1.01772, 0.52081, -0.76527, -1.58833, -0.01226]
+betweenPos = [-0.35746, -0.06283, 1.02381, -0.42115, -1.02429, 0.14476]
 
 pos02 = [-0.86438, 0.97722, 0.44759, -0.86636, -1.49561, 0.01943]
 pos24 = [-0.82681, 0.95869, 0.50449, -0.82708, -1.51736, -0.01251]
@@ -34,10 +35,19 @@ forwardPos46 = [-0.72033, 0.96876, 0.47324, -0.72281, -1.49401, -0.00695]
 forwardPos68 = [-0.67407, 0.95323, 0.52210, -0.67506, -1.51618, -0.03232]
 forwardPos810 = [-0.62585, 0.93971,0.56725, -0.62603, -1.53895, -0.05449]
 
+## roteren van de bout voor 2cm (1ste keer)
+rotatebol02 = [-0.69212, 1.08465, 0.16088, -0.71441, -1.34153, 0.11911]
+## KOMT NOG EEN POSITIE VOOR BOUT INDRAAIEN 2CM (2DE KEER)( VERDER ERINDRAAIEN)
+
 ## Ophalen van knoppenstatus
 def state_callback(msg):
  	global status
 	status = msg.data
+
+## controleren of de robot bij de gevraagde positie is
+def calculateOffSet(currentPos, wantedPos):
+    offsetJ = [i - j for i, j in zip(wantedPos,currentPos)]
+    return offsetJ
 
 ## Ophalen van robotstatus
 def robot_state_callback(data):
@@ -57,6 +67,12 @@ def calcpos02(cm):
     stepSet = [j * cm for j in step]
     newPos = [k + l for k, l in zip(stepSet, firstPos)]
     return newPos
+
+def rotatebolt():
+        offsetJ = [i - j for i, j in zip(rotatebol02,forwardPos02)]
+        newPos = [0,0,0,0,0,0]
+        newPos = [k + l for k, l in zip(offsetJ, forwardPos02)]
+        return newPos
 
 def calcForward(cm, pos):
     if cm <= 2:
@@ -129,21 +145,12 @@ def calcpos810(cm):
     newPos = [k + l for k, l in zip(stepSet, pos68)]
     return newPos
 
-def calculateForwardStep(pos):
-    global firstPos
-    global secondPos
-    offsetJ = [i - j for i, j in zip(secondPos, firstPos)]
-    step = [i / 3.1 for i in offsetJ]
-    newPos = [0,0,0,0,0,0]
-    stepSet = [j * 3.1 for j in step]
-    newPos = [k + l for k, l in zip(stepSet, pos)]
-    return newPos
-
 ## Beweegt de robot naar de meegegeven joint positie
 def moveRobot():
     global firstPos
     global statusRobot
-    cm = 4.1
+    cm = 4.05
+    i = 0
     try:
         joint_states = rospy.wait_for_message("joint_states", JointState)
         joints_pos = joint_states.position
@@ -165,18 +172,35 @@ def moveRobot():
             ## Bewegen naar gevraagde positie
         g.trajectory.points = [
                 JointTrajectoryPoint(positions=joints_pos, velocities=[1]*6, accelerations=[1], effort = [0],  time_from_start=rospy.Duration(0.0)),
-                JointTrajectoryPoint(positions=firstPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(2.0)),
-                JointTrajectoryPoint(positions=pos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(4.0)),
-                JointTrajectoryPoint(positions=newerPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(6.0))]
-
+                JointTrajectoryPoint(positions=betweenPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(2.0)),
+                JointTrajectoryPoint(positions=firstPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(4.0))]
+                ##JointTrajectoryPoint(positions=pos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(6.0)),
+                ##JointTrajectoryPoint(positions=newerPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(8.0))]
+                ##JointTrajectoryPoint(positions=rotatePos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(8.0))]
         client.send_goal(g)
         client.wait_for_result()
-        statusRobot = 11
+        offset = calculateOffSet(joints_pos, newerPos)
+        for x in offset:
+            if x < 0.001 and x > -0.001:
+                i = i + 1
+            if i > 5:
+                print "hallo"
+                #statusRobot = 6
     except KeyboardInterrupt:
         client.cancel_goal()
         raise
     except:
         raise
+
+def findHole():
+    global statusRobot
+    print " hole found"
+    statusRobot = 7
+
+def rotatebolt():
+    global statusRobot
+    print " hallo"
+    statusRobot = 8
 
 def main():
     global client
@@ -184,14 +208,19 @@ def main():
     try:
         ## Initieren van de node
         rospy.init_node("optoForceRobot", anonymous=True, disable_signals=True)
+        rospy.Subscriber("bru_irb_robotState", Int8, robot_state_callback)
         ## Publisher aanmaken
         client = actionlib.SimpleActionClient('joint_trajectory_action', FollowJointTrajectoryAction)
         client.wait_for_server()
         parameters = rospy.get_param(None)
         ## Programma dat wordt uitgevoerd
         while not rospy.is_shutdown():
-            if statusRobot == 6 and statusRobot != 11:
+            if statusRobot == 5:
                 moveRobot()
+            elif statusRobot == 6:
+                findHole()
+            elif statusRobot == 7:
+                rotatebolt()
             index = str(parameters).find('prefix')
             if (index > 0):
                 prefix = str(parameters)[index+len("prefix': '"):(index+len("prefix': '")+str(parameters)[index+len("prefix': '"):-1].find("'"))]

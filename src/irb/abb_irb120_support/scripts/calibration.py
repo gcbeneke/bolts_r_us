@@ -13,18 +13,54 @@ import numpy as np
 import cv2
 import sys
 
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge, CvBridgeError
+
+# Setup SimpleBlobDetector parameters.
+params = cv2.SimpleBlobDetector_Params()
+
+# Change thresholds
+params.minThreshold = 65;
+params.maxThreshold = 255;
+
+# Filter by Area.
+params.filterByArea = True
+params.minArea = 30
+
+# Filter by Circularity
+params.filterByCircularity = True
+params.minCircularity = 0.85
+
+# Filter by Convexity
+params.filterByConvexity = True
+params.minConvexity = 0.87
+
+# Filter by Inertia
+params.filterByInertia = True
+params.minInertiaRatio = 0.01
+
 JOINT_NAMES = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
 pi = 3.14
 homePosition = [0,0,0,0,0,0]
 calibrationToCamera = False
 ## Alle jointsstates voor de eerste positie
+calibrationstate = 0
 status = 0
 movement = [0, 0, 0, 0, 0, 0]
 statusRobot = 0
 alwaysTrue = True
-posBottomLeft = [0.11984, 1.14822, 0.49917,0.90106, -1.65097, -0.08359]
-posTopLeft = [0.11984, 0.76255, 0.68557, 0.89825, -1.52681, -0.23960]
-posBottomRight = [0.32488, 1.36717, -0.29109, 1.18545,-1.31537,-0.62547]
+posBottomLeft = [-0.88364, 1.22486, 0.11999, -0.89130, -1.44706, 0.08231]
+posTopLeft = [-0.88287, 0.86405, 0.29592, -0.91746, -1.33217, 0.23003]
+posBottomRight = [-0.19608, 1.09855, 0.67471, -0.19936, -1.78781, -0.13250]
+boltPos = [1.10464, 0.49386, 0.81989, -0.00839, 0.23239, -0.51316]
+safeBoltPos = [1.10464, -0.00791, 0.71832, -0.00259, 0.83561, -0.51956]
+betweensafepos = [1.10465, 0.18023, 0.81070, -0.00360, 0.55544, -0.51815]
+betweenPos = [-0.35746, -0.06283, 1.02381, -0.42115, -1.02429, 0.14476]
+
+def callback_calibration_status(msg):
+    global calibrationstate
+    calibrationstate = msg.data
+
 ## Ophalen van knoppenstatus
 def state_callback(msg):
  	global status
@@ -57,31 +93,60 @@ def calibrationhome():
     global homePosition
     if status == 3:
         calibration(homePosition)
-        bottomLeft()
+
+def moveAboveBolt():
+    if status == 3:
+        position(safeBoltPos)
+
+def betweenCalibration():
+    if status == 3:
+        position(betweenPos)
+
+def moveBetweensafe():
+    global calibrationstate
+    if status == 3:
+        position(betweensafepos)
+
+def moveToWarehouse():
+    global calibrationstate
+    if status == 3:
+        position(boltPos)
 
 def bottomLeft():
     global posBottomLeft
+    global status
     print ("Druk op y om naar het 1ste punt te kalibreren")
     inp = raw_input("")[0]
     if inp == 'y':
-        position(posBottomLeft)
-        bottomright()
+        if status == 3:
+            position(posBottomLeft)
+            time.sleep(5)
+            getKeypoint(cv2_img)
+            print "x is :", keypointsGlobal[0].pt[0], " y is : ", keypointsGlobal[0].pt[1]
 
-def bottomright():
+def bottomRight():
     global posBottomRight
+    global status
     print ("Druk op y om naar het 2de punt te kalibreren")
     inp = raw_input("")[0]
     if inp == 'y':
-        position(posBottomRight)
-        topLeft()
+        if status == 3:
+            position(posBottomRight)
+            time.sleep(5)
+            getKeypoint(cv2_img)
+            print "x is :", keypointsGlobal[1].pt[0], " y is : ", keypointsGlobal[1].pt[1]
 
 def topLeft():
     global posTopLeft
+    global calibrationstate
     print ("Druk op y om naar het 3de punt te kalibreren")
     inp = raw_input("")[0]
     if inp == 'y':
-        position(posTopLeft)
-        homeposition()
+        if status == 3:
+            position(posTopLeft)
+            time.sleep(5)
+            getKeypoint(cv2_img)
+            print "x is :", keypointsGlobal[2].pt[0], " y is : ", keypointsGlobal[2].pt[1]
 
 def homeposition():
     global homePosition
@@ -89,16 +154,19 @@ def homeposition():
     print ("Druk op y om naar het homepunt te gaan")
     inp = raw_input("")[0]
     if inp == 'y':
-        position(homePosition)
-        calibrationToCamera = True
-        pub = rospy.Publisher("bru_irb_new_robotState", Int8, queue_size=1)
-        robotstate = 1
-        pub.publish(robotstate)
+        if status == 3:
+            position(homePosition)
+            calibrationToCamera = True
+            pub = rospy.Publisher("bru_irb_new_robotState", Int8, queue_size=1)
+            robotstate = 1
+            pub.publish(robotstate)
 
 def position(wantedPos):
+    global calibrationstate
     joint_states = rospy.wait_for_message("joint_states", JointState)
     joints_pos = joint_states.position
     movepos = joints_pos
+    i = 0
     g = FollowJointTrajectoryGoal()
     g.trajectory = JointTrajectory()
     g.trajectory.joint_names = JOINT_NAMES
@@ -110,6 +178,12 @@ def position(wantedPos):
     client.wait_for_result()
     joint_states = rospy.wait_for_message("joint_states", JointState)
     joints_pos = joint_states.position
+    offset = calculateOffSet(joints_pos, wantedPos)
+    for x in offset:
+        if x < 0.001 and x > -0.001:
+            i = i + 1
+        if i > 5:
+            calibrationstate = calibrationstate + 1
 
 def calibration(wantedPos):
     global joints_pos
@@ -117,6 +191,7 @@ def calibration(wantedPos):
     global statusRobot
     global alwaysTrue
     global calibrationToCamera
+    global calibrationstate
     i = 0
     g = FollowJointTrajectoryGoal()
     g.trajectory = JointTrajectory()
@@ -144,17 +219,70 @@ def calibration(wantedPos):
                                 print "Joint " , i , " calibrated correctly"
                             else:
                                 print "Error while calibrating " , i , " try again"
+                            if i > 5:
+                                 calibrationstate = 1
     except KeyboardInterrupt:
             client.cancel_goal()
             raise
     except:
         	raise
 
+# Create a detector with the parameters
+ver = (cv2.__version__).split('.')
+if int(ver[0]) < 3 :
+    detector = cv2.SimpleBlobDetector(params)
+else :
+    detector = cv2.SimpleBlobDetector_create(params)
+
+# Create global bridge variable to convert ROS and OpenCV images
+bridge = CvBridge()
+keypointsGlobal = []
+
+global cv2_img
+
+# Function to retrieve one keypoint on every ABB calibration position
+def getKeypoint(cv2_img):
+    global keypointsGlobal
+    # Convert the image to a grayscale image
+    gray_image = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2GRAY)
+
+    # Detect blobs in the grayscale image
+    keypoints = detector.detect(gray_image)
+
+    # Add the keypoint to a vector with 3 keypoints
+    keypointsGlobal.append(keypoints[0])
+
+
+def image_callback(image):
+    try:
+        global cv2_img
+        # Convert your ROS Image message to OpenCV2
+        cv2_img = bridge.imgmsg_to_cv2(image, "bgr8")
+
+    except CvBridgeError, e:
+        print(e)
+
+    else:
+        # Convert the image to a grayscale image
+        gray_image = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2GRAY)
+
+        # Detect blobs in the grayscale image
+        keypoints = detector.detect(gray_image)
+
+        # Draw detected blobs as red circles.
+        # cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS ensures the size of the circle corresponds to the size of blob
+        im_with_keypoints = cv2.drawKeypoints(cv2_img, keypoints, np.array([]), (0,0,255), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+        # Show the image with a circle drawn over the bolt
+        cv2.imshow("Videostream", im_with_keypoints)
+        cv2.waitKey(30)
+
 
 def main():
     global client
     global statusRobot
     global calibrationToCamera
+    global status
 
     try:
         x = 0
@@ -162,18 +290,43 @@ def main():
         rospy.init_node("calibrateRobot", anonymous=True, disable_signals=True)
     	rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
         rospy.Subscriber("bru_irb_new_robotState", Int8, robot_state_callback)
+        rospy.Subscriber("bru_irb_calibrationState", Int8, callback_calibration_status)
+        rospy.Subscriber("/camera/color/image_raw", Image, image_callback)
         pub = rospy.Publisher('bru_irb_robotState', Int8, queue_size=10)
+        pubcali = rospy.Publisher("bru_irb_calibrationState", Int8, queue_size=10)
         rate = rospy.Rate(10)
 
         client = actionlib.SimpleActionClient('joint_trajectory_action', FollowJointTrajectoryAction)
         client.wait_for_server()
         print ""
         parameters = rospy.get_param(None)
-        while calibrationToCamera == False:
+        while not rospy.is_shutdown():
             pub.publish(statusRobot)
+
             rate.sleep()
-            if calibrationToCamera == False:
+            if calibrationToCamera == False and calibrationstate == 0:
                 calibrationhome()
+            elif calibrationstate == 1:
+                moveAboveBolt()
+            elif calibrationstate == 2 or calibrationstate == 5:
+                moveBetweensafe()
+            elif calibrationstate == 3:
+                moveToWarehouse()
+                pubcali.publish(calibrationstate)
+            elif calibrationstate == 6:
+                moveAboveBolt()
+            elif calibrationstate == 7:
+                betweenCalibration()
+            elif calibrationstate == 8:
+                bottomLeft()
+            elif calibrationstate == 9:
+                bottomRight()
+            elif calibrationstate == 10:
+                topLeft()
+            elif calibrationstate == 11:
+                homeposition()
+            elif calibrationstate == 12:
+                break
 
             index = str(parameters).find('prefix')
             if (index > 0):
@@ -184,5 +337,6 @@ def main():
     except KeyboardInterrupt:
         rospy.signal_shutdown("KeyboardInterrupt")
         raise
+
 
 if __name__ == '__main__': main()

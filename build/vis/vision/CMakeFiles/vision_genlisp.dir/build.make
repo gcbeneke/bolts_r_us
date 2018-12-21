@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gijs/bolts_ws/src
+CMAKE_SOURCE_DIR = /home/redouan/bolts_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gijs/bolts_ws/build
+CMAKE_BINARY_DIR = /home/redouan/bolts_ws/build
 
 # Utility rule file for vision_genlisp.
 
@@ -63,10 +63,10 @@ vis/vision/CMakeFiles/vision_genlisp.dir/build: vision_genlisp
 .PHONY : vis/vision/CMakeFiles/vision_genlisp.dir/build
 
 vis/vision/CMakeFiles/vision_genlisp.dir/clean:
-	cd /home/gijs/bolts_ws/build/vis/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_genlisp.dir/cmake_clean.cmake
+	cd /home/redouan/bolts_ws/build/vis/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_genlisp.dir/cmake_clean.cmake
 .PHONY : vis/vision/CMakeFiles/vision_genlisp.dir/clean
 
 vis/vision/CMakeFiles/vision_genlisp.dir/depend:
-	cd /home/gijs/bolts_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gijs/bolts_ws/src /home/gijs/bolts_ws/src/vis/vision /home/gijs/bolts_ws/build /home/gijs/bolts_ws/build/vis/vision /home/gijs/bolts_ws/build/vis/vision/CMakeFiles/vision_genlisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/redouan/bolts_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/redouan/bolts_ws/src /home/redouan/bolts_ws/src/vis/vision /home/redouan/bolts_ws/build /home/redouan/bolts_ws/build/vis/vision /home/redouan/bolts_ws/build/vis/vision/CMakeFiles/vision_genlisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vis/vision/CMakeFiles/vision_genlisp.dir/depend
 

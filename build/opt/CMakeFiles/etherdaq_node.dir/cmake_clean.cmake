@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o"
-  "/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node.pdb"
-  "/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node"
+  "/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node.pdb"
+  "/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node"
 )
 
 # Per-language clean rules from dependency scanning.

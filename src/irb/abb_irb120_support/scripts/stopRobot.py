@@ -27,12 +27,6 @@ def state_callback(msg):
             print "Stop received, stopping robot"
             status = 5
 
-## Ophalen van robotstatus
-def robot_state_callback(data):
-    global new_robot_status
-    global statusRobot
-    new_robot_status = data.data
-    statusRobot = new_robot_status
 
 ## Ophalen van huidige krachten waarde
 def robot_offset_callback(msg):
@@ -58,10 +52,10 @@ def stopMoving():
     global current_value
     global robotState
 
-    if current_value[2] <= -10000:
-        print "Test"
-        client.cancel_all_goals()
-        robotState = 10
+    #if current_value[2] <= -10000:
+    #    print "Test"
+        #client.cancel_all_goals()
+
 
 client = None
 
@@ -69,20 +63,15 @@ def main():
     global client
     try:
         rospy.init_node("stop_robot", anonymous=True, disable_signals=True)
-
         ## Aanmaken van alle subscribers
         rospy.Subscriber("bru_avg_offset", Corrections, robot_offset_callback)
         rospy.Subscriber("bru_opt_workData", OptoForceData, robot_currentValues_callback)
         rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
-
-        pub = rospy.Publisher('bru_irb_robotState', Int8, queue_size=10)
-
         client = actionlib.SimpleActionClient('joint_trajectory_action', FollowJointTrajectoryAction)
         client.wait_for_server()
         while not rospy.is_shutdown():
             stopMoving()
-            if robotState == 10:
-                pub.publish(robotState)
+
 
 
         parameters = rospy.get_param(None)

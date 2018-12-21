@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/gijs/bolts_ws/src/opt/src/etherdaq_driver.cpp" "/home/gijs/bolts_ws/build/opt/CMakeFiles/etherdaq_driver.dir/src/etherdaq_driver.cpp.o"
+  "/home/redouan/bolts_ws/src/opt/src/etherdaq_driver.cpp" "/home/redouan/bolts_ws/build/opt/CMakeFiles/etherdaq_driver.dir/src/etherdaq_driver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/gijs/bolts_ws/devel/include"
-  "/home/gijs/bolts_ws/src/opt/include"
+  "/home/redouan/bolts_ws/devel/include"
+  "/home/redouan/bolts_ws/src/opt/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

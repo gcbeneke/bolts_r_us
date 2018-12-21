@@ -1,8 +1,8 @@
-# Install script for directory: /home/gijs/bolts_ws/src/irb/abb_irb120_support
+# Install script for directory: /home/redouan/bolts_ws/src/irb/abb_irb120_support
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gijs/bolts_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/redouan/bolts_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,26 +38,26 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gijs/bolts_ws/build/irb/abb_irb120_support/catkin_generated/installspace/abb_irb120_support.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/redouan/bolts_ws/build/irb/abb_irb120_support/catkin_generated/installspace/abb_irb120_support.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_irb120_support/cmake" TYPE FILE FILES
-    "/home/gijs/bolts_ws/build/irb/abb_irb120_support/catkin_generated/installspace/abb_irb120_supportConfig.cmake"
-    "/home/gijs/bolts_ws/build/irb/abb_irb120_support/catkin_generated/installspace/abb_irb120_supportConfig-version.cmake"
+    "/home/redouan/bolts_ws/build/irb/abb_irb120_support/catkin_generated/installspace/abb_irb120_supportConfig.cmake"
+    "/home/redouan/bolts_ws/build/irb/abb_irb120_support/catkin_generated/installspace/abb_irb120_supportConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_irb120_support" TYPE FILE FILES "/home/gijs/bolts_ws/src/irb/abb_irb120_support/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_irb120_support" TYPE FILE FILES "/home/redouan/bolts_ws/src/irb/abb_irb120_support/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_irb120_support" TYPE DIRECTORY FILES
-    "/home/gijs/bolts_ws/src/irb/abb_irb120_support/config"
-    "/home/gijs/bolts_ws/src/irb/abb_irb120_support/launch"
-    "/home/gijs/bolts_ws/src/irb/abb_irb120_support/meshes"
-    "/home/gijs/bolts_ws/src/irb/abb_irb120_support/urdf"
+    "/home/redouan/bolts_ws/src/irb/abb_irb120_support/config"
+    "/home/redouan/bolts_ws/src/irb/abb_irb120_support/launch"
+    "/home/redouan/bolts_ws/src/irb/abb_irb120_support/meshes"
+    "/home/redouan/bolts_ws/src/irb/abb_irb120_support/urdf"
     )
 endif()
 

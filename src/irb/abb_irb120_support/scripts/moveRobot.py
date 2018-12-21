@@ -214,67 +214,6 @@ def moveAboveBolt():
     except:
         raise
 
-def moveBoltToHole():
-    ## Declareren globale variabelen
-    global statusRobot
-    global movepos
-    global joints_pos
-    global status
-
-    ## Declareren lokale variabelen
-    i = 0
-
-    ## Initialisatie robot
-    g = FollowJointTrajectoryGoal()
-    g.trajectory = JointTrajectory()
-    g.trajectory.joint_names = JOINT_NAMES
-
-    ## Status Ophalen
-    ## 1 = Start, 2 = Stop
-    rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
-
-    try:
-        ## Controleren status
-        if status == 1:
-            ## Huidige joint positie opvragen
-            joint_states = rospy.wait_for_message("joint_states", JointState)
-            joints_pos = joint_states.position
-            movepos = joints_pos
-
-            ## Gevraagde beweging uitrekenen
-            movement = calculateToPosition(movepos, refPos)
-            movepos = movement
-
-            ## Bewegen naar gevraagde positie
-            g.trajectory.points = [
-                    JointTrajectoryPoint(positions=joints_pos, velocities=[1]*6, accelerations=[1], effort = [0],  time_from_start=rospy.Duration(0.0)),
-                    JointTrajectoryPoint(positions=movepos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(1.0))]
-
-            client.send_goal(g)
-            client.wait_for_result()
-
-        ## Huidige joint positie opvragen
-        joint_states = rospy.wait_for_message("joint_states", JointState)
-        joints_pos = joint_states.position
-
-        ## Uitrekenen verschil in gewenste en oude joints
-        offset = calculateOffSet(joints_pos, movepos)
-
-        ## Controleren op de correctheid van de Joints
-        for x in offset:
-            if x < 0.001 and x > -0.001:
-                i = i + 1
-            if i > 5:
-                statusRobot = 6
-                print ""
-                print "--------------------"
-                print "Arrived at hole position"
-    except KeyboardInterrupt:
-        client.cancel_goal()
-        raise
-    except:
-        raise
-
 def main():
     global client
     global statusRobot
@@ -311,7 +250,8 @@ def main():
             elif statusRobot == 4 or statusRobot == 1:
                 moveAboveBolt()
             elif statusRobot == 5:
-                moveBoltToHole()
+                pub.publish(statusRobot)
+                break
 
             index = str(parameters).find('prefix')
             if (index > 0):

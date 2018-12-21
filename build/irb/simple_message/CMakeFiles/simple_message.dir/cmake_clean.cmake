@@ -25,8 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/simple_message.dir/src/messages/joint_traj_pt_full_message.cpp.o"
   "CMakeFiles/simple_message.dir/src/messages/robot_status_message.cpp.o"
   "CMakeFiles/simple_message.dir/src/simple_comms_fault_handler.cpp.o"
-  "/home/gijs/bolts_ws/devel/lib/libsimple_message.pdb"
-  "/home/gijs/bolts_ws/devel/lib/libsimple_message.so"
+  "/home/redouan/bolts_ws/devel/lib/libsimple_message.pdb"
+  "/home/redouan/bolts_ws/devel/lib/libsimple_message.so"
 )
 
 # Per-language clean rules from dependency scanning.

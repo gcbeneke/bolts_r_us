@@ -67,14 +67,14 @@ set(industrial_trajectory_filters_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(industrial_trajectory_filters_SOURCE_PREFIX /home/gijs/bolts_ws/src/irb/industrial_trajectory_filters)
-  set(industrial_trajectory_filters_DEVEL_PREFIX /home/gijs/bolts_ws/devel)
+  set(industrial_trajectory_filters_SOURCE_PREFIX /home/redouan/bolts_ws/src/irb/industrial_trajectory_filters)
+  set(industrial_trajectory_filters_DEVEL_PREFIX /home/redouan/bolts_ws/devel)
   set(industrial_trajectory_filters_INSTALL_PREFIX "")
   set(industrial_trajectory_filters_PREFIX ${industrial_trajectory_filters_DEVEL_PREFIX})
 else()
   set(industrial_trajectory_filters_SOURCE_PREFIX "")
   set(industrial_trajectory_filters_DEVEL_PREFIX "")
-  set(industrial_trajectory_filters_INSTALL_PREFIX /home/gijs/bolts_ws/install)
+  set(industrial_trajectory_filters_INSTALL_PREFIX /home/redouan/bolts_ws/install)
   set(industrial_trajectory_filters_PREFIX ${industrial_trajectory_filters_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(industrial_trajectory_filters_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/gijs/bolts_ws/src/irb/industrial_trajectory_filters/include " STREQUAL " ")
+if(NOT "/home/redouan/bolts_ws/src/irb/industrial_trajectory_filters/include " STREQUAL " ")
   set(industrial_trajectory_filters_INCLUDE_DIRS "")
-  set(_include_dirs "/home/gijs/bolts_ws/src/irb/industrial_trajectory_filters/include")
+  set(_include_dirs "/home/redouan/bolts_ws/src/irb/industrial_trajectory_filters/include")
   if(NOT "https://github.com/ros-industrial/industrial_core/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/ros-industrial/industrial_core/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/industrial_trajectory_filters " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/gijs/bolts_ws/src/irb/industrial_trajectory_filters/include " STRE
         message(FATAL_ERROR "Project 'industrial_trajectory_filters' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'industrial_trajectory_filters' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/gijs/bolts_ws/src/irb/industrial_trajectory_filters/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'industrial_trajectory_filters' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/redouan/bolts_ws/src/irb/industrial_trajectory_filters/${idir}'.  ${_report}")
     endif()
     _list_append_unique(industrial_trajectory_filters_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/gijs/bolts_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/redouan/bolts_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
