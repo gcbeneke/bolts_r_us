@@ -20,7 +20,7 @@ from cv_bridge import CvBridge, CvBridgeError
 params = cv2.SimpleBlobDetector_Params()
 
 # Change thresholds
-params.minThreshold = 65;
+params.minThreshold = 55;
 params.maxThreshold = 255;
 
 # Filter by Area.
@@ -49,9 +49,9 @@ status = 0
 movement = [0, 0, 0, 0, 0, 0]
 statusRobot = 0
 alwaysTrue = True
-posBottomLeft = [-0.88364, 1.22486, 0.11999, -0.89130, -1.44706, 0.08231]
-posTopLeft = [-0.88287, 0.86405, 0.29592, -0.91746, -1.33217, 0.23003]
-posBottomRight = [-0.19608, 1.09855, 0.67471, -0.19936, -1.78781, -0.13250]
+posBottomLeft = [-0.90280, 1.03482, 0.36274, -0.90629, -1.48322, 0.04448]
+posTopLeft = [-0.90121, 0.75491, 0.46869, -0.92426, -1.37668, 0.18342]
+posBottomRight = [-0.45062, 0.93036, 0.78268, -0.45461, -1.71852, -0.15392]
 boltPos = [1.10464, 0.49386, 0.81989, -0.00839, 0.23239, -0.51316]
 safeBoltPos = [1.10464, -0.00791, 0.71832, -0.00259, 0.83561, -0.51956]
 betweensafepos = [1.10465, 0.18023, 0.81070, -0.00360, 0.55544, -0.51815]
@@ -120,7 +120,7 @@ def bottomLeft():
     if inp == 'y':
         if status == 3:
             position(posBottomLeft)
-            time.sleep(5)
+            time.sleep(3)
             getKeypoint(cv2_img)
             print "x is :", keypointsGlobal[0].pt[0], " y is : ", keypointsGlobal[0].pt[1]
 
@@ -132,7 +132,7 @@ def bottomRight():
     if inp == 'y':
         if status == 3:
             position(posBottomRight)
-            time.sleep(5)
+            time.sleep(3)
             getKeypoint(cv2_img)
             print "x is :", keypointsGlobal[1].pt[0], " y is : ", keypointsGlobal[1].pt[1]
 
@@ -144,7 +144,7 @@ def topLeft():
     if inp == 'y':
         if status == 3:
             position(posTopLeft)
-            time.sleep(5)
+            time.sleep(3)
             getKeypoint(cv2_img)
             print "x is :", keypointsGlobal[2].pt[0], " y is : ", keypointsGlobal[2].pt[1]
 
@@ -227,7 +227,7 @@ def calibration(wantedPos):
     except:
         	raise
 
-# Create a detector with the parameters
+    # Create a detector with the parameters
 ver = (cv2.__version__).split('.')
 if int(ver[0]) < 3 :
     detector = cv2.SimpleBlobDetector(params)
@@ -248,6 +248,9 @@ def getKeypoint(cv2_img):
 
     # Detect blobs in the grayscale image
     keypoints = detector.detect(gray_image)
+
+    while not keypoints:
+        keypoints = detector.detect(gray_image)
 
     # Add the keypoint to a vector with 3 keypoints
     keypointsGlobal.append(keypoints[0])
@@ -274,8 +277,8 @@ def image_callback(image):
         im_with_keypoints = cv2.drawKeypoints(cv2_img, keypoints, np.array([]), (0,0,255), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 
         # Show the image with a circle drawn over the bolt
-        cv2.imshow("Videostream", im_with_keypoints)
-        cv2.waitKey(30)
+        #cv2.imshow("Videostream", im_with_keypoints)
+        #cv2.waitKey(30)
 
 
 def main():
@@ -301,7 +304,7 @@ def main():
         print ""
         parameters = rospy.get_param(None)
         while not rospy.is_shutdown():
-            pub.publish(statusRobot)
+            #pub.publish(statusRobot)
 
             rate.sleep()
             if calibrationToCamera == False and calibrationstate == 0:

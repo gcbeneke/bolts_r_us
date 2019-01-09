@@ -88,7 +88,7 @@ int main(int argc, char **argv)
         putText(im_with_keypoints, "Depth "+ to_string(depth[i]), cvPoint(keypointVec[i].pt.x + 10,keypointVec[i].pt.y +15 + (keypointVec[i].size/2)),
         FONT_HERSHEY_DUPLEX, 0.5, cvScalar(0,0,255), 1, CV_AA);
       }
-      imshow("Videostream", im_with_keypoints);
+      imshow("Videostream met diepte", im_with_keypoints);
       waitKey(30);
 
 

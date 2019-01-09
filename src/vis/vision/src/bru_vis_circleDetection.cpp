@@ -38,6 +38,7 @@ sensor_msgs::PointCloud convertedPC;
 ::vision::VectorData XYZSizeData;
 int pcHeight;
 int pcWidth;
+double offSet;
 
 
 void imageCallback(const sensor_msgs::ImageConstPtr& colorImg)
@@ -68,9 +69,12 @@ int checkDepth(const sensor_msgs::PointCloud inputCloud, const vector<KeyPoint> 
     XYZSizeData.z = inputCloud.points[XYZSizeData.x * XYZSizeData.y].z;
     XYZSizeData.size = keypoints[i].size;
 
-    if(XYZSizeData.z > 0.25 && XYZSizeData.z < 0.5){
-      allHoles.allHolesDataVec.push_back(XYZSizeData);
-    }
+    offSet = sqrt(XYZSizeData.size/3.14);
+    XYZSizeData.x = XYZSizeData.x + offSet;
+
+    //if(XYZSizeData.z > 0.25 && XYZSizeData.z < 0.5){
+    allHoles.allHolesDataVec.push_back(XYZSizeData);
+    //}
   }
 }
 
@@ -85,21 +89,27 @@ int main(int argc, char **argv)
   ros::Subscriber depthSub = n.subscribe("/camera/depth/color/points", 4, depthCallback);
   ros::Publisher pub = n.advertise<vision::imageCircleData>("/bru_vis_holeData", 4);
 
+  int alpha_slider;
+  int beta_slider;
 
   // Setup SimpleBlobDetector parameters.
   SimpleBlobDetector::Params params;
 
+  //filter by colour
+  //params.filterByColor=false;
+  //params.blobColor=180;
+
   // Change thresholds
-  params.minThreshold = 10;
-  params.maxThreshold = 220;
+  params.minThreshold = 36;
+  params.maxThreshold = 255;
 
   // Filter by Area.
   params.filterByArea = true;
-  params.minArea = 50;
+  params.minArea = 100;
 
   // Filter by Circularity
   params.filterByCircularity = true;
-  params.minCircularity = 0.8;
+  params.minCircularity = 0.75;
 
   // Filter by Convexity
   params.filterByConvexity = false;
@@ -112,6 +122,8 @@ int main(int argc, char **argv)
   // Set up detector with params
   Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(params);
   Mat im_with_keypoints;
+
+
 
   // Main loop
   while(ros::ok()){
@@ -143,6 +155,27 @@ int main(int argc, char **argv)
         waitKey(30);
 
         // END OF VIDEOSTREAM
+        Mat grayImgOCV = colorImgOCV;
+
+        Mat threshImg;
+        cvtColor(colorImgOCV, grayImgOCV, CV_BGR2GRAY);
+        if(grayImgOCV.empty() == false){
+          //cv::imshow("gray image", grayImgOCV);
+          //cv::waitKey(30);
+          //Mat threshImg = grayImgOCV;
+
+          // Controleren of er data in de image staat om te kunnen thresholden
+          cv::createTrackbar( "Threshold_min", "Threshold_set", &alpha_slider, 255);
+          cv::createTrackbar( "Threshold_max", "Threshold_set", &beta_slider, 255);
+
+          cv::threshold( grayImgOCV, threshImg, alpha_slider, beta_slider, cv::THRESH_BINARY);
+          Mat tijdelijk = threshImg;
+          if(tijdelijk.empty() == false){
+            cv::imshow("Threshold_set", tijdelijk);
+            cv::waitKey(30);
+          }
+
+          }
 
       } else{
         std::cout << "No image found from the Intel Realsense camera" << '\n';

@@ -31,17 +31,22 @@ def state_callback(msg):
 			if status == 3:
 				send_reference_request()
 				send_open_request(16)
+			if status == 1 and opened == False:
+				send_reference_request()
+				send_open_request(16)
+				opened = True
 
 	except rospy.ServiceException, e:
 			print "Service call failed: %s"%e
 
 def callback_robot_status(data):
 	global new_robot_status
-	pub = rospy.Publisher("bru_irb_new_robotState", Int8, queue_size=1)
+	pub = rospy.Publisher("bru_irb_robotState", Int8, queue_size=2)
 	robot_status = data.data
 	try:
 		if robot_status == 3 and new_robot_status == 0:
-			send_grasp_object_request(0)
+			send_open_request(0)
+			rospy.sleep(0.5)
 			new_robot_status = 4
 			pub.publish(new_robot_status)
 	except rospy.ServiceException, e:

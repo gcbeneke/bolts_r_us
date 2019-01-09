@@ -60,18 +60,20 @@ void zeroFunction(const std_msgs::Bool &msg)
 	if (etherdaq == NULL) {
 		return;
 	}
+	//cerr << "Please specify address of EthernetDAQ" << endl;
 	bool zeroing = msg.data;
-	if (zeroing) {
-		etherdaq->doZero();
-		return;
-	}
 	//etherdaq->doUnzero();
+	etherdaq->doZero();
+
+
+	//etherdaq->doZero();
 }
 
 
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "etherdaq_node");
+	std::cout << "In while" << endl;
   ros::NodeHandle nh;
 
   float pub_rate_hz;

@@ -47,15 +47,9 @@ def robot_currentValues_callback(msg):
     current_value[3] = msg.tx
     current_value[4] = msg.ty
     current_value[5] = msg.tz
-
-def stopMoving():
-    global current_value
-    global robotState
-
-    #if current_value[2] <= -10000:
-    #    print "Test"
-        #client.cancel_all_goals()
-
+    if current_value[2] < -5000:
+        print "Te veel kracht"
+        ##client.cancel_all_goals()
 
 client = None
 
@@ -70,17 +64,13 @@ def main():
         client = actionlib.SimpleActionClient('joint_trajectory_action', FollowJointTrajectoryAction)
         client.wait_for_server()
         while not rospy.is_shutdown():
-            stopMoving()
-
-
-
-        parameters = rospy.get_param(None)
-        index = str(parameters).find('prefix')
-        if (index > 0):
-            prefix = str(parameters)[index+len("prefix': '"):(index+len("prefix': '")+str(parameters)[index+len("prefix': '"):-1].find("'"))]
-            for i, name in enumerate(JOINT_NAMES):
-                JOINT_NAMES[i] = prefix + name
-        rospy.spin()
+            parameters = rospy.get_param(None)
+            index = str(parameters).find('prefix')
+            if (index > 0):
+                prefix = str(parameters)[index+len("prefix': '"):(index+len("prefix': '")+str(parameters)[index+len("prefix': '"):-1].find("'"))]
+                for i, name in enumerate(JOINT_NAMES):
+                    JOINT_NAMES[i] = prefix + name
+            rospy.spin()
     except KeyboardInterrupt:
         raise
 

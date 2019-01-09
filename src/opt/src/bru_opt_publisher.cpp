@@ -55,7 +55,6 @@ int main (int argc, char ** argv)
 	ros::Subscriber sub_new = n.subscribe("ethdaq_data", 1000, chatterCallback);
 	ros::Publisher workData = n.advertise<opt::OptoForceData>("bru_opt_workData", 1);
 
-
 	ros::Duration zeroingTime(10.0);
 	ros::Time lastZeroing = ros::Time::now();
 	bool zeroing = true;
@@ -71,14 +70,12 @@ int main (int argc, char ** argv)
 		ft.ty = ty;
 		ft.tz = tz;
 		workData.publish(ft);
-
 		if (lastTime.isZero()) {
 			continue;
 		}
 		ros::Time currentTime = ros::Time::now();
 		if (currentTime - lastZeroing >= zeroingTime) {
 			// We do a zeroing/unzeroing in every 10 secs
-
 			std_msgs::Bool z;
 			z.data = zeroing;
 			zero_pub.publish(z);

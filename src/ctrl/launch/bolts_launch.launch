@@ -2,6 +2,6 @@
 <launch>
   <include file="$(find ctrl)/launch/ctrl_launch.launch"/>
   <include file="$(find opt)/launch/opt_launch.launch"/>
-  <!--include file="$(find vision)/launch/vis.launch"/-->
+  <include file="$(find vision)/launch/vis.launch"/>
   <include file="$(find abb_irb120_support)/launch/robot_interface_download_irb120_3_58.launch"/>
 </launch>
