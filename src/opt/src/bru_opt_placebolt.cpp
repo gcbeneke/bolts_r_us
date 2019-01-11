@@ -91,6 +91,13 @@ int main (int argc, char ** argv)
 			pub.offSet[5] = newTz;
 			pub_avg_offset.publish(avg);
 			pub_correctPos.publish(pub);
+
+			offSet_Fx = 0;
+			offSet_Fy = 0;
+			offSet_Fz = 0;
+			offSet_Tx = 0;
+			offSet_Ty = 0;
+			offSet_Tz = 0;
 		}
 
 		for(int i = 0; i < MAX_SIZE; i++){

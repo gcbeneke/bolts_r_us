@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/realsense2_camera_generate_messages_py"
-  "/home/redouan/bolts_ws/devel/lib/python2.7/dist-packages/realsense2_camera/msg/_IMUInfo.py"
-  "/home/redouan/bolts_ws/devel/lib/python2.7/dist-packages/realsense2_camera/msg/_Extrinsics.py"
-  "/home/redouan/bolts_ws/devel/lib/python2.7/dist-packages/realsense2_camera/msg/__init__.py"
+  "/home/gijs/bolts_ws/devel/lib/python2.7/dist-packages/realsense2_camera/msg/_IMUInfo.py"
+  "/home/gijs/bolts_ws/devel/lib/python2.7/dist-packages/realsense2_camera/msg/_Extrinsics.py"
+  "/home/gijs/bolts_ws/devel/lib/python2.7/dist-packages/realsense2_camera/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

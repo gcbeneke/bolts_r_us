@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/redouan/bolts_ws/src/opt/include/etherdaq_driver/etherdaq_driver.h
+/home/gijs/bolts_ws/src/opt/include/etherdaq_driver/etherdaq_driver.h
 boost/asio.hpp
 -
 boost/thread/mutex.hpp
@@ -24,13 +24,13 @@ tinyxml.h
 boost/lexical_cast.hpp
 -
 diagnostic_updater/DiagnosticStatusWrapper.h
-/home/redouan/bolts_ws/src/opt/include/etherdaq_driver/diagnostic_updater/DiagnosticStatusWrapper.h
+/home/gijs/bolts_ws/src/opt/include/etherdaq_driver/diagnostic_updater/DiagnosticStatusWrapper.h
 geometry_msgs/WrenchStamped.h
-/home/redouan/bolts_ws/src/opt/include/etherdaq_driver/geometry_msgs/WrenchStamped.h
+/home/gijs/bolts_ws/src/opt/include/etherdaq_driver/geometry_msgs/WrenchStamped.h
 
-/home/redouan/bolts_ws/src/opt/src/etherdaq_driver.cpp
+/home/gijs/bolts_ws/src/opt/src/etherdaq_driver.cpp
 etherdaq_driver/etherdaq_driver.h
-/home/redouan/bolts_ws/src/opt/src/etherdaq_driver/etherdaq_driver.h
+/home/gijs/bolts_ws/src/opt/src/etherdaq_driver/etherdaq_driver.h
 stdint.h
 -
 exception
@@ -221,6 +221,8 @@ rosconsole/macros_generated.h
 /opt/ros/melodic/include/ros/rosconsole/macros_generated.h
 
 /opt/ros/melodic/include/ros/console_backend.h
+ros/macros.h
+-
 
 /opt/ros/melodic/include/ros/datatypes.h
 string

@@ -32,11 +32,29 @@ status = 0
 movepos = refPos
 statusRobot = 0
 new_robot_status = 0
+state = False
 
 ## Ophalen van knoppenstatus
 def state_callback(msg):
- 	global status
-	status = msg.data
+    global status
+    global state
+    #x = ''
+    #if status == 2:
+    #    state = False
+    #if state == False:
+        #x = raw_input('Press x if u want to start the normal program or press y for the optoforce program: ')
+    #pub = rospy.Publisher('bru_opt_optoforce', Int8, queue_size=1)
+ 	#print('Press x if u want to start the normal program or press y for the optoforce program:')
+    #if x == 'x' and state == False:
+    status = msg.data
+        #print "Test"
+    #    state = True
+    #elif x == 'y' and state == False:
+    #    status = 6
+    #    pub.publish(status)
+        #print "Test2"
+    #    state = True
+
 
 ## Ophalen van gatpositie
 def hole_position_callback(data):

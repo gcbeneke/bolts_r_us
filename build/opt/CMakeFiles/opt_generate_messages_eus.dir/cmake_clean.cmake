@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opt_generate_messages_eus"
-  "/home/redouan/bolts_ws/devel/share/roseus/ros/opt/msg/Corrections.l"
-  "/home/redouan/bolts_ws/devel/share/roseus/ros/opt/msg/OptoForceData.l"
-  "/home/redouan/bolts_ws/devel/share/roseus/ros/opt/manifest.l"
+  "/home/gijs/bolts_ws/devel/share/roseus/ros/opt/msg/Corrections.l"
+  "/home/gijs/bolts_ws/devel/share/roseus/ros/opt/msg/OptoForceData.l"
+  "/home/gijs/bolts_ws/devel/share/roseus/ros/opt/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

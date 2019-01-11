@@ -1,10 +1,10 @@
 
 "use strict";
 
-let VectorData = require('./VectorData.js');
 let imageCircleData = require('./imageCircleData.js');
+let VectorData = require('./VectorData.js');
 
 module.exports = {
-  VectorData: VectorData,
   imageCircleData: imageCircleData,
+  VectorData: VectorData,
 };

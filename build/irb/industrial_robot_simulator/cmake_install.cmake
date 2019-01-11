@@ -1,8 +1,8 @@
-# Install script for directory: /home/redouan/bolts_ws/src/irb/industrial_robot_simulator
+# Install script for directory: /home/gijs/bolts_ws/src/irb/industrial_robot_simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/redouan/bolts_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/gijs/bolts_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/redouan/bolts_ws/build/irb/industrial_robot_simulator/catkin_generated/installspace/industrial_robot_simulator.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gijs/bolts_ws/build/irb/industrial_robot_simulator/catkin_generated/installspace/industrial_robot_simulator.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_robot_simulator/cmake" TYPE FILE FILES
-    "/home/redouan/bolts_ws/build/irb/industrial_robot_simulator/catkin_generated/installspace/industrial_robot_simulatorConfig.cmake"
-    "/home/redouan/bolts_ws/build/irb/industrial_robot_simulator/catkin_generated/installspace/industrial_robot_simulatorConfig-version.cmake"
+    "/home/gijs/bolts_ws/build/irb/industrial_robot_simulator/catkin_generated/installspace/industrial_robot_simulatorConfig.cmake"
+    "/home/gijs/bolts_ws/build/irb/industrial_robot_simulator/catkin_generated/installspace/industrial_robot_simulatorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_robot_simulator" TYPE FILE FILES "/home/redouan/bolts_ws/src/irb/industrial_robot_simulator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_robot_simulator" TYPE FILE FILES "/home/gijs/bolts_ws/src/irb/industrial_robot_simulator/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/industrial_robot_simulator" TYPE PROGRAM FILES "/home/redouan/bolts_ws/src/irb/industrial_robot_simulator/industrial_robot_simulator")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/industrial_robot_simulator" TYPE PROGRAM FILES "/home/gijs/bolts_ws/src/irb/industrial_robot_simulator/industrial_robot_simulator")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_robot_simulator/launch" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/src/irb/industrial_robot_simulator/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_robot_simulator/launch" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/src/irb/industrial_robot_simulator/launch/")
 endif()
 

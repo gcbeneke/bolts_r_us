@@ -47,9 +47,9 @@ def robot_currentValues_callback(msg):
     current_value[3] = msg.tx
     current_value[4] = msg.ty
     current_value[5] = msg.tz
-    if current_value[2] < -5000:
+    if current_value[2] <= -7000: #or current_value[2] >= 6000:
         print "Te veel kracht"
-        ##client.cancel_all_goals()
+        client.cancel_all_goals()
 
 client = None
 

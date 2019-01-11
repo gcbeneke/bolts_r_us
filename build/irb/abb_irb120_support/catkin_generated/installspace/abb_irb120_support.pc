@@ -1,8 +1,8 @@
-prefix=/home/redouan/bolts_ws/install
+prefix=/home/gijs/bolts_ws/install
 
 Name: abb_irb120_support
 Description: Description of abb_irb120_support
 Version: 0.1.0
 Cflags: 
-Libs: -L/home/redouan/bolts_ws/install/lib 
+Libs: -L/home/gijs/bolts_ws/install/lib 
 Requires: 
