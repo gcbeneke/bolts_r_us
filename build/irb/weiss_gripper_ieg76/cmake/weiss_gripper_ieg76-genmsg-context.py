@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/gijs/bolts_ws/src/irb/weiss_gripper_ieg76/srv/Move.srv;/home/gijs/bolts_ws/src/irb/weiss_gripper_ieg76/srv/SetForce.srv"
+services_str = "/home/redouan/bolts_ws/src/irb/weiss_gripper_ieg76/srv/Move.srv;/home/redouan/bolts_ws/src/irb/weiss_gripper_ieg76/srv/SetForce.srv"
 pkg_name = "weiss_gripper_ieg76"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

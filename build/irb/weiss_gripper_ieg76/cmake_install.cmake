@@ -1,8 +1,8 @@
-# Install script for directory: /home/gijs/bolts_ws/src/irb/weiss_gripper_ieg76
+# Install script for directory: /home/redouan/bolts_ws/src/irb/weiss_gripper_ieg76
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gijs/bolts_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/redouan/bolts_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,55 +39,55 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76/srv" TYPE FILE FILES
-    "/home/gijs/bolts_ws/src/irb/weiss_gripper_ieg76/srv/Move.srv"
-    "/home/gijs/bolts_ws/src/irb/weiss_gripper_ieg76/srv/SetForce.srv"
+    "/home/redouan/bolts_ws/src/irb/weiss_gripper_ieg76/srv/Move.srv"
+    "/home/redouan/bolts_ws/src/irb/weiss_gripper_ieg76/srv/SetForce.srv"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76/cmake" TYPE FILE FILES "/home/gijs/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76/cmake" TYPE FILE FILES "/home/redouan/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/include/weiss_gripper_ieg76")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/include/weiss_gripper_ieg76")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/share/roseus/ros/weiss_gripper_ieg76")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/share/roseus/ros/weiss_gripper_ieg76")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/share/common-lisp/ros/weiss_gripper_ieg76")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/share/common-lisp/ros/weiss_gripper_ieg76")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/share/gennodejs/ros/weiss_gripper_ieg76")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/share/gennodejs/ros/weiss_gripper_ieg76")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/gijs/bolts_ws/devel/lib/python2.7/dist-packages/weiss_gripper_ieg76")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/redouan/bolts_ws/devel/lib/python2.7/dist-packages/weiss_gripper_ieg76")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/lib/python2.7/dist-packages/weiss_gripper_ieg76")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/lib/python2.7/dist-packages/weiss_gripper_ieg76")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gijs/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/redouan/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76/cmake" TYPE FILE FILES "/home/gijs/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76/cmake" TYPE FILE FILES "/home/redouan/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76/cmake" TYPE FILE FILES
-    "/home/gijs/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76Config.cmake"
-    "/home/gijs/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76Config-version.cmake"
+    "/home/redouan/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76Config.cmake"
+    "/home/redouan/bolts_ws/build/irb/weiss_gripper_ieg76/catkin_generated/installspace/weiss_gripper_ieg76Config-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76" TYPE FILE FILES "/home/gijs/bolts_ws/src/irb/weiss_gripper_ieg76/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/weiss_gripper_ieg76" TYPE FILE FILES "/home/redouan/bolts_ws/src/irb/weiss_gripper_ieg76/package.xml")
 endif()
 

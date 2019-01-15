@@ -1,8 +1,8 @@
-# Install script for directory: /home/gijs/bolts_ws/src/ctrl
+# Install script for directory: /home/redouan/bolts_ws/src/ctrl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gijs/bolts_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/redouan/bolts_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,57 +38,57 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl/msg" TYPE FILE FILES "/home/gijs/bolts_ws/src/ctrl/msg/State.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl/msg" TYPE FILE FILES "/home/redouan/bolts_ws/src/ctrl/msg/State.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl/cmake" TYPE FILE FILES "/home/gijs/bolts_ws/build/ctrl/catkin_generated/installspace/ctrl-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl/cmake" TYPE FILE FILES "/home/redouan/bolts_ws/build/ctrl/catkin_generated/installspace/ctrl-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/include/ctrl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/include/ctrl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/share/roseus/ros/ctrl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/share/roseus/ros/ctrl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/share/common-lisp/ros/ctrl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/share/common-lisp/ros/ctrl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/share/gennodejs/ros/ctrl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/share/gennodejs/ros/ctrl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/gijs/bolts_ws/devel/lib/python2.7/dist-packages/ctrl")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/redouan/bolts_ws/devel/lib/python2.7/dist-packages/ctrl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/devel/lib/python2.7/dist-packages/ctrl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/devel/lib/python2.7/dist-packages/ctrl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gijs/bolts_ws/build/ctrl/catkin_generated/installspace/ctrl.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/redouan/bolts_ws/build/ctrl/catkin_generated/installspace/ctrl.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl/cmake" TYPE FILE FILES "/home/gijs/bolts_ws/build/ctrl/catkin_generated/installspace/ctrl-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl/cmake" TYPE FILE FILES "/home/redouan/bolts_ws/build/ctrl/catkin_generated/installspace/ctrl-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl/cmake" TYPE FILE FILES
-    "/home/gijs/bolts_ws/build/ctrl/catkin_generated/installspace/ctrlConfig.cmake"
-    "/home/gijs/bolts_ws/build/ctrl/catkin_generated/installspace/ctrlConfig-version.cmake"
+    "/home/redouan/bolts_ws/build/ctrl/catkin_generated/installspace/ctrlConfig.cmake"
+    "/home/redouan/bolts_ws/build/ctrl/catkin_generated/installspace/ctrlConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl" TYPE FILE FILES "/home/gijs/bolts_ws/src/ctrl/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl" TYPE FILE FILES "/home/redouan/bolts_ws/src/ctrl/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl" TYPE DIRECTORY FILES "/home/gijs/bolts_ws/src/ctrl/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ctrl" TYPE DIRECTORY FILES "/home/redouan/bolts_ws/src/ctrl/launch")
 endif()
 

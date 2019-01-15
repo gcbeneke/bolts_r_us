@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gijs/bolts_ws/src
+CMAKE_SOURCE_DIR = /home/redouan/bolts_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gijs/bolts_ws/build
+CMAKE_BINARY_DIR = /home/redouan/bolts_ws/build
 
 # Include any dependencies generated for this target.
 include opt/CMakeFiles/etherdaq_node.dir/depend.make
@@ -58,17 +58,17 @@ include opt/CMakeFiles/etherdaq_node.dir/progress.make
 include opt/CMakeFiles/etherdaq_node.dir/flags.make
 
 opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o: opt/CMakeFiles/etherdaq_node.dir/flags.make
-opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o: /home/gijs/bolts_ws/src/opt/src/etherdaq_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o"
-	cd /home/gijs/bolts_ws/build/opt && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o -c /home/gijs/bolts_ws/src/opt/src/etherdaq_node.cpp
+opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o: /home/redouan/bolts_ws/src/opt/src/etherdaq_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/redouan/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o"
+	cd /home/redouan/bolts_ws/build/opt && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o -c /home/redouan/bolts_ws/src/opt/src/etherdaq_node.cpp
 
 opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.i"
-	cd /home/gijs/bolts_ws/build/opt && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gijs/bolts_ws/src/opt/src/etherdaq_node.cpp > CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.i
+	cd /home/redouan/bolts_ws/build/opt && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/redouan/bolts_ws/src/opt/src/etherdaq_node.cpp > CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.i
 
 opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.s"
-	cd /home/gijs/bolts_ws/build/opt && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gijs/bolts_ws/src/opt/src/etherdaq_node.cpp -o CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.s
+	cd /home/redouan/bolts_ws/build/opt && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/redouan/bolts_ws/src/opt/src/etherdaq_node.cpp -o CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.s
 
 opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o.requires:
 
@@ -88,45 +88,45 @@ etherdaq_node_OBJECTS = \
 # External object files for target etherdaq_node
 etherdaq_node_EXTERNAL_OBJECTS =
 
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: opt/CMakeFiles/etherdaq_node.dir/build.make
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /home/gijs/bolts_ws/devel/lib/libetherdaq_driver.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libroscpp.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librosconsole.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librostime.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libcpp_common.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libcurl.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/gijs/bolts_ws/devel/lib/opt/etherdaq_node: opt/CMakeFiles/etherdaq_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/gijs/bolts_ws/devel/lib/opt/etherdaq_node"
-	cd /home/gijs/bolts_ws/build/opt && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/etherdaq_node.dir/link.txt --verbose=$(VERBOSE)
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: opt/CMakeFiles/etherdaq_node.dir/src/etherdaq_node.cpp.o
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: opt/CMakeFiles/etherdaq_node.dir/build.make
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /home/redouan/bolts_ws/devel/lib/libetherdaq_driver.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libroscpp.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librosconsole.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/librostime.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /opt/ros/melodic/lib/libcpp_common.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libcurl.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/redouan/bolts_ws/devel/lib/opt/etherdaq_node: opt/CMakeFiles/etherdaq_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/redouan/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/redouan/bolts_ws/devel/lib/opt/etherdaq_node"
+	cd /home/redouan/bolts_ws/build/opt && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/etherdaq_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-opt/CMakeFiles/etherdaq_node.dir/build: /home/gijs/bolts_ws/devel/lib/opt/etherdaq_node
+opt/CMakeFiles/etherdaq_node.dir/build: /home/redouan/bolts_ws/devel/lib/opt/etherdaq_node
 
 .PHONY : opt/CMakeFiles/etherdaq_node.dir/build
 
@@ -135,10 +135,10 @@ opt/CMakeFiles/etherdaq_node.dir/requires: opt/CMakeFiles/etherdaq_node.dir/src/
 .PHONY : opt/CMakeFiles/etherdaq_node.dir/requires
 
 opt/CMakeFiles/etherdaq_node.dir/clean:
-	cd /home/gijs/bolts_ws/build/opt && $(CMAKE_COMMAND) -P CMakeFiles/etherdaq_node.dir/cmake_clean.cmake
+	cd /home/redouan/bolts_ws/build/opt && $(CMAKE_COMMAND) -P CMakeFiles/etherdaq_node.dir/cmake_clean.cmake
 .PHONY : opt/CMakeFiles/etherdaq_node.dir/clean
 
 opt/CMakeFiles/etherdaq_node.dir/depend:
-	cd /home/gijs/bolts_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gijs/bolts_ws/src /home/gijs/bolts_ws/src/opt /home/gijs/bolts_ws/build /home/gijs/bolts_ws/build/opt /home/gijs/bolts_ws/build/opt/CMakeFiles/etherdaq_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/redouan/bolts_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/redouan/bolts_ws/src /home/redouan/bolts_ws/src/opt /home/redouan/bolts_ws/build /home/redouan/bolts_ws/build/opt /home/redouan/bolts_ws/build/opt/CMakeFiles/etherdaq_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : opt/CMakeFiles/etherdaq_node.dir/depend
 

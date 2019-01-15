@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ctrl_generate_messages_lisp"
-  "/home/gijs/bolts_ws/devel/share/common-lisp/ros/ctrl/msg/State.lisp"
+  "/home/redouan/bolts_ws/devel/share/common-lisp/ros/ctrl/msg/State.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

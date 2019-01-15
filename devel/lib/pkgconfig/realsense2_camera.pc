@@ -1,8 +1,8 @@
-prefix=/home/gijs/bolts_ws/devel
+prefix=/home/redouan/bolts_ws/devel
 
 Name: realsense2_camera
 Description: Description of realsense2_camera
 Version: 2.1.1
-Cflags: -I/home/gijs/bolts_ws/devel/include
-Libs: -L/home/gijs/bolts_ws/devel/lib -lrealsense2_camera
+Cflags: -I/home/redouan/bolts_ws/devel/include
+Libs: -L/home/redouan/bolts_ws/devel/lib -lrealsense2_camera
 Requires: message_runtime roscpp sensor_msgs std_msgs nodelet cv_bridge image_transport dynamic_reconfigure

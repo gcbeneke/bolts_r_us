@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/gijs/bolts_ws/src/opt/include/etherdaq_driver/etherdaq_driver.h
+/home/redouan/bolts_ws/src/opt/include/etherdaq_driver/etherdaq_driver.h
 boost/asio.hpp
 -
 boost/thread/mutex.hpp
@@ -24,23 +24,23 @@ tinyxml.h
 boost/lexical_cast.hpp
 -
 diagnostic_updater/DiagnosticStatusWrapper.h
-/home/gijs/bolts_ws/src/opt/include/etherdaq_driver/diagnostic_updater/DiagnosticStatusWrapper.h
+/home/redouan/bolts_ws/src/opt/include/etherdaq_driver/diagnostic_updater/DiagnosticStatusWrapper.h
 geometry_msgs/WrenchStamped.h
-/home/gijs/bolts_ws/src/opt/include/etherdaq_driver/geometry_msgs/WrenchStamped.h
+/home/redouan/bolts_ws/src/opt/include/etherdaq_driver/geometry_msgs/WrenchStamped.h
 
-/home/gijs/bolts_ws/src/opt/src/etherdaq_node.cpp
+/home/redouan/bolts_ws/src/opt/src/etherdaq_node.cpp
 ros/ros.h
-/home/gijs/bolts_ws/src/opt/src/ros/ros.h
+/home/redouan/bolts_ws/src/opt/src/ros/ros.h
 etherdaq_driver/etherdaq_driver.h
-/home/gijs/bolts_ws/src/opt/src/etherdaq_driver/etherdaq_driver.h
+/home/redouan/bolts_ws/src/opt/src/etherdaq_driver/etherdaq_driver.h
 geometry_msgs/WrenchStamped.h
-/home/gijs/bolts_ws/src/opt/src/geometry_msgs/WrenchStamped.h
+/home/redouan/bolts_ws/src/opt/src/geometry_msgs/WrenchStamped.h
 diagnostic_msgs/DiagnosticArray.h
-/home/gijs/bolts_ws/src/opt/src/diagnostic_msgs/DiagnosticArray.h
+/home/redouan/bolts_ws/src/opt/src/diagnostic_msgs/DiagnosticArray.h
 diagnostic_updater/DiagnosticStatusWrapper.h
-/home/gijs/bolts_ws/src/opt/src/diagnostic_updater/DiagnosticStatusWrapper.h
+/home/redouan/bolts_ws/src/opt/src/diagnostic_updater/DiagnosticStatusWrapper.h
 std_msgs/Bool.h
-/home/gijs/bolts_ws/src/opt/src/std_msgs/Bool.h
+/home/redouan/bolts_ws/src/opt/src/std_msgs/Bool.h
 unistd.h
 -
 iostream
@@ -255,8 +255,6 @@ rosconsole/macros_generated.h
 /opt/ros/melodic/include/ros/rosconsole/macros_generated.h
 
 /opt/ros/melodic/include/ros/console_backend.h
-ros/macros.h
--
 
 /opt/ros/melodic/include/ros/datatypes.h
 string

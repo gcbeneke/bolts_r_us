@@ -1,8 +1,8 @@
-# Install script for directory: /home/gijs/bolts_ws/src/irb/abb_experimental
+# Install script for directory: /home/redouan/bolts_ws/src/irb/abb_experimental
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gijs/bolts_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/redouan/bolts_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,6 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_experimental" TYPE FILE FILES "/home/gijs/bolts_ws/src/irb/abb_experimental/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_experimental" TYPE FILE FILES "/home/redouan/bolts_ws/src/irb/abb_experimental/package.xml")
 endif()
 

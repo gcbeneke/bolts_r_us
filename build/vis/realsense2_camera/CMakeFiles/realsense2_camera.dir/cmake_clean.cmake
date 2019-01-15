@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/realsense2_camera.dir/src/rs415_node.cpp.o"
   "CMakeFiles/realsense2_camera.dir/src/rs435_node.cpp.o"
   "CMakeFiles/realsense2_camera.dir/src/sr300_node.cpp.o"
-  "/home/gijs/bolts_ws/devel/lib/librealsense2_camera.pdb"
-  "/home/gijs/bolts_ws/devel/lib/librealsense2_camera.so"
+  "/home/redouan/bolts_ws/devel/lib/librealsense2_camera.pdb"
+  "/home/redouan/bolts_ws/devel/lib/librealsense2_camera.so"
 )
 
 # Per-language clean rules from dependency scanning.

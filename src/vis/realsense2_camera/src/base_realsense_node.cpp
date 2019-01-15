@@ -6,8 +6,6 @@
 
 using namespace realsense2_camera;
 
-int i = 5;
-
 std::string BaseRealSenseNode::getNamespaceStr()
 {
     auto ns = ros::this_node::getNamespace();
@@ -759,7 +757,7 @@ void BaseRealSenseNode::setupStreams()
             }
             catch(const std::exception& ex)
             {
-                i++;
+                ROS_ERROR_STREAM("An error has occurred during frame callback: " << ex.what());
             }
         }; // frame_callback
 

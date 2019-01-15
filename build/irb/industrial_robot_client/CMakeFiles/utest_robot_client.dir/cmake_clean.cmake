@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/utest_robot_client.dir/test/utest.cpp.o"
-  "/home/gijs/bolts_ws/devel/lib/industrial_robot_client/utest_robot_client.pdb"
-  "/home/gijs/bolts_ws/devel/lib/industrial_robot_client/utest_robot_client"
+  "/home/redouan/bolts_ws/devel/lib/industrial_robot_client/utest_robot_client.pdb"
+  "/home/redouan/bolts_ws/devel/lib/industrial_robot_client/utest_robot_client"
 )
 
 # Per-language clean rules from dependency scanning.
