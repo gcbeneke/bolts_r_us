@@ -112,7 +112,7 @@ class CWaitForMessage:
         print 'connect to ROS with name: %s' % self.node_name
         rospy.init_node(self.node_name, anonymous=True)
 
-        rospy.loginfo('Subscribing on topic: %s' % topic)
+        #rospy.loginfo('Subscribing on topic: %s' % topic)
         self.sub = rospy.Subscriber(topic, msg_Image, self.callback)
 
         self.prev_time = time.time()
@@ -128,7 +128,7 @@ class CWaitForMessage:
     @staticmethod
     def unregister_all(registers):
         for test_name in registers:
-            rospy.loginfo('Un-Subscribing test %s' % test_name)
+            #rospy.loginfo('Un-Subscribing test %s' % test_name)
             registers[test_name]['sub'].unregister()
 
     def wait_for_messages(self, themes):
@@ -139,7 +139,7 @@ class CWaitForMessage:
         rospy.init_node(self.node_name, anonymous=True)
         for theme_name in themes:
             theme = self.themes[theme_name]
-            rospy.loginfo('Subscribing %s on topic: %s' % (theme_name, theme['topic']))
+            #rospy.loginfo('Subscribing %s on topic: %s' % (theme_name, theme['topic']))
             self.func_data[theme_name]['sub'] = rospy.Subscriber(theme['topic'], theme['msg_type'], theme['callback'](theme_name))
 
         self.prev_time = time.time()
@@ -153,7 +153,7 @@ class CWaitForMessage:
         return self.func_data
 
     def callback(self, data):
-        rospy.loginfo('Got message. Seq %d, secs: %d, nsecs: %d' % (data.header.seq, data.header.stamp.secs, data.header.stamp.nsecs))
+    #3rospy.loginfo('Got message. Seq %d, secs: %d, nsecs: %d' % (data.header.seq, data.header.stamp.secs, data.header.stamp.nsecs))
 
         self.prev_time = time.time()
         if any([self.seq > 0 and data.header.seq >= self.seq,
@@ -197,7 +197,7 @@ def main():
     if '/' in wanted_topic:
         msg_params = {'topic': wanted_topic}
         res = msg_retriever.wait_for_message(msg_params)
-        rospy.loginfo('Got message: %s' % res.header)
+        #rospy.loginfo('Got message: %s' % res.header)
     else:
         themes = [wanted_topic]
         res = msg_retriever.wait_for_messages(themes)
@@ -206,4 +206,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

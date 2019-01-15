@@ -89,18 +89,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -134,6 +122,18 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,6 +183,216 @@ bru_opt_placebolt/fast:
 .PHONY : bru_opt_placebolt/fast
 
 # Convenience name for target.
+opt/CMakeFiles/opt_generate_messages_eus.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_eus.dir/rule
+.PHONY : opt/CMakeFiles/opt_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+opt_generate_messages_eus: opt/CMakeFiles/opt_generate_messages_eus.dir/rule
+
+.PHONY : opt_generate_messages_eus
+
+# fast build rule for target.
+opt_generate_messages_eus/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_eus.dir/build.make opt/CMakeFiles/opt_generate_messages_eus.dir/build
+.PHONY : opt_generate_messages_eus/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_geneus.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_geneus.dir/rule
+.PHONY : opt/CMakeFiles/opt_geneus.dir/rule
+
+# Convenience name for target.
+opt_geneus: opt/CMakeFiles/opt_geneus.dir/rule
+
+.PHONY : opt_geneus
+
+# fast build rule for target.
+opt_geneus/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_geneus.dir/build.make opt/CMakeFiles/opt_geneus.dir/build
+.PHONY : opt_geneus/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_generate_messages_py.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_py.dir/rule
+.PHONY : opt/CMakeFiles/opt_generate_messages_py.dir/rule
+
+# Convenience name for target.
+opt_generate_messages_py: opt/CMakeFiles/opt_generate_messages_py.dir/rule
+
+.PHONY : opt_generate_messages_py
+
+# fast build rule for target.
+opt_generate_messages_py/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_py.dir/build.make opt/CMakeFiles/opt_generate_messages_py.dir/build
+.PHONY : opt_generate_messages_py/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_gencpp.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_gencpp.dir/rule
+.PHONY : opt/CMakeFiles/opt_gencpp.dir/rule
+
+# Convenience name for target.
+opt_gencpp: opt/CMakeFiles/opt_gencpp.dir/rule
+
+.PHONY : opt_gencpp
+
+# fast build rule for target.
+opt_gencpp/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_gencpp.dir/build.make opt/CMakeFiles/opt_gencpp.dir/build
+.PHONY : opt_gencpp/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_genpy.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_genpy.dir/rule
+.PHONY : opt/CMakeFiles/opt_genpy.dir/rule
+
+# Convenience name for target.
+opt_genpy: opt/CMakeFiles/opt_genpy.dir/rule
+
+.PHONY : opt_genpy
+
+# fast build rule for target.
+opt_genpy/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_genpy.dir/build.make opt/CMakeFiles/opt_genpy.dir/build
+.PHONY : opt_genpy/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_generate_messages_cpp.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_cpp.dir/rule
+.PHONY : opt/CMakeFiles/opt_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+opt_generate_messages_cpp: opt/CMakeFiles/opt_generate_messages_cpp.dir/rule
+
+.PHONY : opt_generate_messages_cpp
+
+# fast build rule for target.
+opt_generate_messages_cpp/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_cpp.dir/build.make opt/CMakeFiles/opt_generate_messages_cpp.dir/build
+.PHONY : opt_generate_messages_cpp/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_genlisp.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_genlisp.dir/rule
+.PHONY : opt/CMakeFiles/opt_genlisp.dir/rule
+
+# Convenience name for target.
+opt_genlisp: opt/CMakeFiles/opt_genlisp.dir/rule
+
+.PHONY : opt_genlisp
+
+# fast build rule for target.
+opt_genlisp/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_genlisp.dir/build.make opt/CMakeFiles/opt_genlisp.dir/build
+.PHONY : opt_genlisp/fast
+
+# Convenience name for target.
+opt/CMakeFiles/etherdaq_driver.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/etherdaq_driver.dir/rule
+.PHONY : opt/CMakeFiles/etherdaq_driver.dir/rule
+
+# Convenience name for target.
+etherdaq_driver: opt/CMakeFiles/etherdaq_driver.dir/rule
+
+.PHONY : etherdaq_driver
+
+# fast build rule for target.
+etherdaq_driver/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/etherdaq_driver.dir/build.make opt/CMakeFiles/etherdaq_driver.dir/build
+.PHONY : etherdaq_driver/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_generate_messages_lisp.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_lisp.dir/rule
+.PHONY : opt/CMakeFiles/opt_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+opt_generate_messages_lisp: opt/CMakeFiles/opt_generate_messages_lisp.dir/rule
+
+.PHONY : opt_generate_messages_lisp
+
+# fast build rule for target.
+opt_generate_messages_lisp/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_lisp.dir/build.make opt/CMakeFiles/opt_generate_messages_lisp.dir/build
+.PHONY : opt_generate_messages_lisp/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_generate_messages.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages.dir/rule
+.PHONY : opt/CMakeFiles/opt_generate_messages.dir/rule
+
+# Convenience name for target.
+opt_generate_messages: opt/CMakeFiles/opt_generate_messages.dir/rule
+
+.PHONY : opt_generate_messages
+
+# fast build rule for target.
+opt_generate_messages/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages.dir/build.make opt/CMakeFiles/opt_generate_messages.dir/build
+.PHONY : opt_generate_messages/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_gennodejs.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_gennodejs.dir/rule
+.PHONY : opt/CMakeFiles/opt_gennodejs.dir/rule
+
+# Convenience name for target.
+opt_gennodejs: opt/CMakeFiles/opt_gennodejs.dir/rule
+
+.PHONY : opt_gennodejs
+
+# fast build rule for target.
+opt_gennodejs/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_gennodejs.dir/build.make opt/CMakeFiles/opt_gennodejs.dir/build
+.PHONY : opt_gennodejs/fast
+
+# Convenience name for target.
+opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule
+.PHONY : opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule
+
+# Convenience name for target.
+_opt_generate_messages_check_deps_OptoForceData: opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule
+
+.PHONY : _opt_generate_messages_check_deps_OptoForceData
+
+# fast build rule for target.
+_opt_generate_messages_check_deps_OptoForceData/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/build.make opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/build
+.PHONY : _opt_generate_messages_check_deps_OptoForceData/fast
+
+# Convenience name for target.
+opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule
+.PHONY : opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule
+
+# Convenience name for target.
+_opt_generate_messages_check_deps_Corrections: opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule
+
+.PHONY : _opt_generate_messages_check_deps_Corrections
+
+# fast build rule for target.
+_opt_generate_messages_check_deps_Corrections/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/build.make opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/build
+.PHONY : _opt_generate_messages_check_deps_Corrections/fast
+
+# Convenience name for target.
+opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule
+.PHONY : opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+opt_generate_messages_nodejs: opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule
+
+.PHONY : opt_generate_messages_nodejs
+
+# fast build rule for target.
+opt_generate_messages_nodejs/fast:
+	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_nodejs.dir/build.make opt/CMakeFiles/opt_generate_messages_nodejs.dir/build
+.PHONY : opt_generate_messages_nodejs/fast
+
+# Convenience name for target.
 opt/CMakeFiles/bru_opt_publisher.dir/rule:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/bru_opt_publisher.dir/rule
 .PHONY : opt/CMakeFiles/bru_opt_publisher.dir/rule
@@ -211,366 +421,6 @@ etherdaq_node: opt/CMakeFiles/etherdaq_node.dir/rule
 etherdaq_node/fast:
 	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/etherdaq_node.dir/build.make opt/CMakeFiles/etherdaq_node.dir/build
 .PHONY : etherdaq_node/fast
-
-# Convenience name for target.
-opt/CMakeFiles/etherdaq_driver.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/etherdaq_driver.dir/rule
-.PHONY : opt/CMakeFiles/etherdaq_driver.dir/rule
-
-# Convenience name for target.
-etherdaq_driver: opt/CMakeFiles/etherdaq_driver.dir/rule
-
-.PHONY : etherdaq_driver
-
-# fast build rule for target.
-etherdaq_driver/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/etherdaq_driver.dir/build.make opt/CMakeFiles/etherdaq_driver.dir/build
-.PHONY : etherdaq_driver/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_genpy.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_genpy.dir/rule
-.PHONY : opt/CMakeFiles/opt_genpy.dir/rule
-
-# Convenience name for target.
-opt_genpy: opt/CMakeFiles/opt_genpy.dir/rule
-
-.PHONY : opt_genpy
-
-# fast build rule for target.
-opt_genpy/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_genpy.dir/build.make opt/CMakeFiles/opt_genpy.dir/build
-.PHONY : opt_genpy/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_generate_messages_py.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_py.dir/rule
-.PHONY : opt/CMakeFiles/opt_generate_messages_py.dir/rule
-
-# Convenience name for target.
-opt_generate_messages_py: opt/CMakeFiles/opt_generate_messages_py.dir/rule
-
-.PHONY : opt_generate_messages_py
-
-# fast build rule for target.
-opt_generate_messages_py/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_py.dir/build.make opt/CMakeFiles/opt_generate_messages_py.dir/build
-.PHONY : opt_generate_messages_py/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_genlisp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_genlisp.dir/rule
-.PHONY : opt/CMakeFiles/opt_genlisp.dir/rule
-
-# Convenience name for target.
-opt_genlisp: opt/CMakeFiles/opt_genlisp.dir/rule
-
-.PHONY : opt_genlisp
-
-# fast build rule for target.
-opt_genlisp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_genlisp.dir/build.make opt/CMakeFiles/opt_genlisp.dir/build
-.PHONY : opt_genlisp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_generate_messages_lisp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_lisp.dir/rule
-.PHONY : opt/CMakeFiles/opt_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-opt_generate_messages_lisp: opt/CMakeFiles/opt_generate_messages_lisp.dir/rule
-
-.PHONY : opt_generate_messages_lisp
-
-# fast build rule for target.
-opt_generate_messages_lisp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_lisp.dir/build.make opt/CMakeFiles/opt_generate_messages_lisp.dir/build
-.PHONY : opt_generate_messages_lisp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_geneus.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_geneus.dir/rule
-.PHONY : opt/CMakeFiles/opt_geneus.dir/rule
-
-# Convenience name for target.
-opt_geneus: opt/CMakeFiles/opt_geneus.dir/rule
-
-.PHONY : opt_geneus
-
-# fast build rule for target.
-opt_geneus/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_geneus.dir/build.make opt/CMakeFiles/opt_geneus.dir/build
-.PHONY : opt_geneus/fast
-
-# Convenience name for target.
-opt/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : opt/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: opt/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make opt/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-opt/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : opt/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: opt/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make opt/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-opt/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : opt/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: opt/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make opt/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : opt/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: opt/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make opt/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-opt/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : opt/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: opt/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make opt/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-opt/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : opt/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: opt/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make opt/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_gennodejs.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_gennodejs.dir/rule
-.PHONY : opt/CMakeFiles/opt_gennodejs.dir/rule
-
-# Convenience name for target.
-opt_gennodejs: opt/CMakeFiles/opt_gennodejs.dir/rule
-
-.PHONY : opt_gennodejs
-
-# fast build rule for target.
-opt_gennodejs/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_gennodejs.dir/build.make opt/CMakeFiles/opt_gennodejs.dir/build
-.PHONY : opt_gennodejs/fast
-
-# Convenience name for target.
-opt/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : opt/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: opt/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make opt/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_generate_messages.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages.dir/rule
-.PHONY : opt/CMakeFiles/opt_generate_messages.dir/rule
-
-# Convenience name for target.
-opt_generate_messages: opt/CMakeFiles/opt_generate_messages.dir/rule
-
-.PHONY : opt_generate_messages
-
-# fast build rule for target.
-opt_generate_messages/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages.dir/build.make opt/CMakeFiles/opt_generate_messages.dir/build
-.PHONY : opt_generate_messages/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule
-.PHONY : opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-opt_generate_messages_nodejs: opt/CMakeFiles/opt_generate_messages_nodejs.dir/rule
-
-.PHONY : opt_generate_messages_nodejs
-
-# fast build rule for target.
-opt_generate_messages_nodejs/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_nodejs.dir/build.make opt/CMakeFiles/opt_generate_messages_nodejs.dir/build
-.PHONY : opt_generate_messages_nodejs/fast
-
-# Convenience name for target.
-opt/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : opt/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_cpp: opt/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make opt/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-.PHONY : opt/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_eus: opt/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_eus
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_eus/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make opt/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
-.PHONY : diagnostic_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule
-.PHONY : opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule
-
-# Convenience name for target.
-_opt_generate_messages_check_deps_Corrections: opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/rule
-
-.PHONY : _opt_generate_messages_check_deps_Corrections
-
-# fast build rule for target.
-_opt_generate_messages_check_deps_Corrections/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/build.make opt/CMakeFiles/_opt_generate_messages_check_deps_Corrections.dir/build
-.PHONY : _opt_generate_messages_check_deps_Corrections/fast
-
-# Convenience name for target.
-opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule
-.PHONY : opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule
-
-# Convenience name for target.
-_opt_generate_messages_check_deps_OptoForceData: opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/rule
-
-.PHONY : _opt_generate_messages_check_deps_OptoForceData
-
-# fast build rule for target.
-_opt_generate_messages_check_deps_OptoForceData/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/build.make opt/CMakeFiles/_opt_generate_messages_check_deps_OptoForceData.dir/build
-.PHONY : _opt_generate_messages_check_deps_OptoForceData/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_gencpp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_gencpp.dir/rule
-.PHONY : opt/CMakeFiles/opt_gencpp.dir/rule
-
-# Convenience name for target.
-opt_gencpp: opt/CMakeFiles/opt_gencpp.dir/rule
-
-.PHONY : opt_gencpp
-
-# fast build rule for target.
-opt_gencpp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_gencpp.dir/build.make opt/CMakeFiles/opt_gencpp.dir/build
-.PHONY : opt_gencpp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : opt/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_nodejs: opt/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_nodejs/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make opt/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
-.PHONY : diagnostic_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_generate_messages_cpp.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_cpp.dir/rule
-.PHONY : opt/CMakeFiles/opt_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-opt_generate_messages_cpp: opt/CMakeFiles/opt_generate_messages_cpp.dir/rule
-
-.PHONY : opt_generate_messages_cpp
-
-# fast build rule for target.
-opt_generate_messages_cpp/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_cpp.dir/build.make opt/CMakeFiles/opt_generate_messages_cpp.dir/build
-.PHONY : opt_generate_messages_cpp/fast
-
-# Convenience name for target.
-opt/CMakeFiles/opt_generate_messages_eus.dir/rule:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f CMakeFiles/Makefile2 opt/CMakeFiles/opt_generate_messages_eus.dir/rule
-.PHONY : opt/CMakeFiles/opt_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-opt_generate_messages_eus: opt/CMakeFiles/opt_generate_messages_eus.dir/rule
-
-.PHONY : opt_generate_messages_eus
-
-# fast build rule for target.
-opt_generate_messages_eus/fast:
-	cd /home/gijs/bolts_ws/build && $(MAKE) -f opt/CMakeFiles/opt_generate_messages_eus.dir/build.make opt/CMakeFiles/opt_generate_messages_eus.dir/build
-.PHONY : opt_generate_messages_eus/fast
 
 src/bru_opt_placebolt.o: src/bru_opt_placebolt.cpp.o
 
@@ -690,36 +540,26 @@ help:
 	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... bru_opt_placebolt"
+	@echo "... opt_generate_messages_eus"
+	@echo "... opt_geneus"
+	@echo "... test"
+	@echo "... opt_generate_messages_py"
+	@echo "... opt_gencpp"
+	@echo "... opt_genpy"
+	@echo "... opt_generate_messages_cpp"
+	@echo "... opt_genlisp"
+	@echo "... etherdaq_driver"
+	@echo "... rebuild_cache"
+	@echo "... opt_generate_messages_lisp"
+	@echo "... install"
+	@echo "... opt_generate_messages"
+	@echo "... opt_gennodejs"
+	@echo "... _opt_generate_messages_check_deps_OptoForceData"
+	@echo "... _opt_generate_messages_check_deps_Corrections"
+	@echo "... opt_generate_messages_nodejs"
 	@echo "... install/local"
 	@echo "... bru_opt_publisher"
 	@echo "... etherdaq_node"
-	@echo "... etherdaq_driver"
-	@echo "... opt_genpy"
-	@echo "... test"
-	@echo "... opt_generate_messages_py"
-	@echo "... opt_genlisp"
-	@echo "... rebuild_cache"
-	@echo "... opt_generate_messages_lisp"
-	@echo "... opt_geneus"
-	@echo "... diagnostic_msgs_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... install"
-	@echo "... opt_gennodejs"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... opt_generate_messages"
-	@echo "... opt_generate_messages_nodejs"
-	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... diagnostic_msgs_generate_messages_eus"
-	@echo "... _opt_generate_messages_check_deps_Corrections"
-	@echo "... _opt_generate_messages_check_deps_OptoForceData"
-	@echo "... opt_gencpp"
-	@echo "... diagnostic_msgs_generate_messages_nodejs"
-	@echo "... opt_generate_messages_cpp"
-	@echo "... opt_generate_messages_eus"
 	@echo "... src/bru_opt_placebolt.o"
 	@echo "... src/bru_opt_placebolt.i"
 	@echo "... src/bru_opt_placebolt.s"

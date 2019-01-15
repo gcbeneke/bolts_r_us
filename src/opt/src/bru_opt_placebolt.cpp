@@ -11,6 +11,7 @@ float tx, ty, tz;
 const int MAX_SIZE = 6;
 float corrections[MAX_SIZE] = {};
 
+// ophalen optoforce data
 void chatterCallback(const opt::OptoForceData& msg)
 {
 	fx = msg.fx;
@@ -54,6 +55,7 @@ int main (int argc, char ** argv)
     ros::spinOnce();
 		loop_rate.sleep();
 
+		// data verwerken naar gemiddelde offset
 		if(i < 100){
 			offSet_Fx += newFx-lastFx;
 			offSet_Fy += newFy-lastFy;
@@ -66,6 +68,7 @@ int main (int argc, char ** argv)
 		opt::Corrections pub;
 		opt::Corrections avg;
 
+		// gemiddelde offset berekenen
 		if(i > 99){
 			avg_offSet_Fx = offSet_Fx/i;
 			avg_offSet_Fy = offSet_Fy/i;
@@ -83,6 +86,7 @@ int main (int argc, char ** argv)
 			avg.offSet[4] = avg_offSet_Ty;
 			avg.offSet[5] = avg_offSet_Tz;
 
+			// offset publiceren
 	    pub.offSet[0] = newFx;
 			pub.offSet[1] = newFy;
 			pub.offSet[2] = newFz;
@@ -92,6 +96,7 @@ int main (int argc, char ** argv)
 			pub_avg_offset.publish(avg);
 			pub_correctPos.publish(pub);
 
+			// alles naar nul brengen
 			offSet_Fx = 0;
 			offSet_Fy = 0;
 			offSet_Fz = 0;
@@ -100,20 +105,15 @@ int main (int argc, char ** argv)
 			offSet_Tz = 0;
 		}
 
+		// alles naar nul brengen
 		for(int i = 0; i < MAX_SIZE; i++){
 			avg.offSet[i]=0;
 		}
 
+		// nieuwe data is oude data
 		lastFx = newFx, lastFy = newFy, lastFz = newFz;
 		lastTx = newTx, lastTy = newTy, lastTz = newTz;
 		i++;
   }
   return 0;
 }
-
-/*corrections[0] = 1.0;
-  corrections[1] = 0.0;
-  corrections[2] = 1.0;
-  corrections[3] = 0.0;
-  corrections[4] = 1.0;
-  corrections[5] = 0.0;*/

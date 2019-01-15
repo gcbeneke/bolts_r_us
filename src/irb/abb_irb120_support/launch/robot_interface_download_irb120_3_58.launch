@@ -30,6 +30,8 @@
   <node pkg="abb_irb120_support"	type="stopRobot.py" name="stop_the_robot" output="screen"/>
   <node pkg="abb_irb120_support"	type="calibration.py" name="calibrate_the_robot" output="screen"/>
   <node pkg="abb_irb120_support"	type="optoForceRobot.py" name="OptoForce" output="screen"/>
+  <node pkg="abb_irb120_support"	type="optoForceDemo.py" name="OptoForce_demo" output="screen"/>
+  <node pkg="abb_irb120_support"	type="forceCalculation.py" name="force_calc" output="screen"/>
 
 
 </launch>

@@ -3,6 +3,6 @@ prefix=/home/gijs/bolts_ws/devel
 Name: abb_irb120_support
 Description: Description of abb_irb120_support
 Version: 0.1.0
-Cflags: 
+Cflags: -I/home/gijs/bolts_ws/devel/include
 Libs: -L/home/gijs/bolts_ws/devel/lib 
-Requires: 
+Requires: message_runtime

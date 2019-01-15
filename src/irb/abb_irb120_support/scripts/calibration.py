@@ -39,16 +39,17 @@ params.minConvexity = 0.87
 params.filterByInertia = True
 params.minInertiaRatio = 0.01
 
+
+## Declareren van alle globale variabelen
 JOINT_NAMES = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
 pi = 3.14
-homePosition = [0,0,0,0,0,0]
 calibrationToCamera = False
-## Alle jointsstates voor de eerste positie
 calibrationstate = 0
 status = 0
-movement = [0, 0, 0, 0, 0, 0]
 statusRobot = 0
 alwaysTrue = True
+homePosition = [0,0,0,0,0,0]
+movement = [0, 0, 0, 0, 0, 0]
 posBottomLeft = [-0.90280, 1.03482, 0.36274, -0.90629, -1.48322, 0.04448]
 posTopLeft = [-0.90121, 0.75491, 0.46869, -0.92426, -1.37668, 0.18342]
 posBottomRight = [-0.45062, 0.93036, 0.78268, -0.45461, -1.71852, -0.15392]
@@ -92,26 +93,33 @@ client = None
 def calibrationhome():
     global homePosition
     if status == 3:
-        calibration(homePosition)
+        position(homePosition)
 
+## functie om boven de bout te bewegen
+## beweegt de robot boven de bout
 def moveAboveBolt():
     if status == 3:
         position(safeBoltPos)
 
+## functie om naar een tussenpositie te bewegen
 def betweenCalibration():
     if status == 3:
         position(betweenPos)
 
+## functie om naar een veilige tussen positie te bewegen
 def moveBetweensafe():
     global calibrationstate
     if status == 3:
         position(betweensafepos)
 
+## functie om naar de bout te bewegen
 def moveToWarehouse():
     global calibrationstate
     if status == 3:
         position(boltPos)
 
+## functie om naar het 1e kalibratiepunt te bewegen
+## slaat de point gegevens op in een array
 def bottomLeft():
     global posBottomLeft
     global status
@@ -124,6 +132,8 @@ def bottomLeft():
             getKeypoint(cv2_img)
             print "x is :", keypointsGlobal[0].pt[0], " y is : ", keypointsGlobal[0].pt[1]
 
+## functie om naar het 2e kalibratiepunt te bewegen
+## slaat de point gegevens op in een array
 def bottomRight():
     global posBottomRight
     global status
@@ -136,6 +146,8 @@ def bottomRight():
             getKeypoint(cv2_img)
             print "x is :", keypointsGlobal[1].pt[0], " y is : ", keypointsGlobal[1].pt[1]
 
+## functie om naar het 3e kalibratiepunt te bewegen
+## slaat de point gegevens op in een array
 def topLeft():
     global posTopLeft
     global calibrationstate
@@ -148,6 +160,7 @@ def topLeft():
             getKeypoint(cv2_img)
             print "x is :", keypointsGlobal[2].pt[0], " y is : ", keypointsGlobal[2].pt[1]
 
+## functie om naar het homepunt te bewegen
 def homeposition():
     global homePosition
     global calibrationToCamera
@@ -161,8 +174,12 @@ def homeposition():
             robotstate = 1
             pub.publish(robotstate)
 
+## functie om naar het meegegeven punt te bewegen
+## wordt bij de kalibratiepunten functies aangeroepen
 def position(wantedPos):
     global calibrationstate
+
+    ## huidige positie ophalen
     joint_states = rospy.wait_for_message("joint_states", JointState)
     joints_pos = joint_states.position
     movepos = joints_pos
@@ -170,6 +187,8 @@ def position(wantedPos):
     g = FollowJointTrajectoryGoal()
     g.trajectory = JointTrajectory()
     g.trajectory.joint_names = JOINT_NAMES
+    ## bewegen naar de gewenste positie
+    ## in deze functie wordt snelheid, versnelling, effort en tijd tot starten meegegeven
     g.trajectory.points = [
             JointTrajectoryPoint(positions=joints_pos, velocities=[1]*6, accelerations=[1], effort = [0],  time_from_start=rospy.Duration(0.0)),
             JointTrajectoryPoint(positions=wantedPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(1.0))]
@@ -179,53 +198,14 @@ def position(wantedPos):
     joint_states = rospy.wait_for_message("joint_states", JointState)
     joints_pos = joint_states.position
     offset = calculateOffSet(joints_pos, wantedPos)
+
+    ## controleren of de robot op de gewenste positie is
+    ## hierna kan de robot doorgaan met het programma
     for x in offset:
         if x < 0.001 and x > -0.001:
             i = i + 1
         if i > 5:
             calibrationstate = calibrationstate + 1
-
-def calibration(wantedPos):
-    global joints_pos
-    global status
-    global statusRobot
-    global alwaysTrue
-    global calibrationToCamera
-    global calibrationstate
-    i = 0
-    g = FollowJointTrajectoryGoal()
-    g.trajectory = JointTrajectory()
-    g.trajectory.joint_names = JOINT_NAMES
-    rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
-
-    try:
-            rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
-            if alwaysTrue == True:
-            		joint_states = rospy.wait_for_message("joint_states", JointState)
-            		joints_pos = joint_states.position
-            		movepos = joints_pos
-
-            		g.trajectory.points = [
-            	   	    	JointTrajectoryPoint(positions=joints_pos, velocities=[1]*6, accelerations=[1], effort = [0],  time_from_start=rospy.Duration(0.0)),
-            	    	   	JointTrajectoryPoint(positions=wantedPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(1.0))]
-
-            	    	client.send_goal(g)
-                    	client.wait_for_result()
-                        joint_states = rospy.wait_for_message("joint_states", JointState)
-                        joints_pos = joint_states.position
-                        for x in joints_pos:
-                            if x < 0.001 and x > -0.001:
-                                i = i +1
-                                print "Joint " , i , " calibrated correctly"
-                            else:
-                                print "Error while calibrating " , i , " try again"
-                            if i > 5:
-                                 calibrationstate = 1
-    except KeyboardInterrupt:
-            client.cancel_goal()
-            raise
-    except:
-        	raise
 
     # Create a detector with the parameters
 ver = (cv2.__version__).split('.')
@@ -290,6 +270,8 @@ def main():
     try:
         x = 0
         counter = 0
+
+        ## aanmaken van alle subscribers en
         rospy.init_node("calibrateRobot", anonymous=True, disable_signals=True)
     	rospy.Subscriber("bru_ctrl_state", Int8, state_callback)
         rospy.Subscriber("bru_irb_new_robotState", Int8, robot_state_callback)
@@ -304,9 +286,9 @@ def main():
         print ""
         parameters = rospy.get_param(None)
         while not rospy.is_shutdown():
-            #pub.publish(statusRobot)
-
             rate.sleep()
+            ## controleer in welke state kalibratie zich bevindt
+            ## elke kalibratiestap kent een eigen nummer
             if calibrationToCamera == False and calibrationstate == 0:
                 calibrationhome()
             elif calibrationstate == 1:
@@ -330,12 +312,6 @@ def main():
                 homeposition()
             elif calibrationstate == 12:
                 break
-
-            index = str(parameters).find('prefix')
-            if (index > 0):
-                prefix = str(parameters)[index+len("prefix': '"):(index+len("prefix': '")+str(parameters)[index+len("prefix': '"):-1].find("'"))]
-                for i, name in enumerate(JOINT_NAMES):
-                    JOINT_NAMES[i] = prefix + name
 
     except KeyboardInterrupt:
         rospy.signal_shutdown("KeyboardInterrupt")

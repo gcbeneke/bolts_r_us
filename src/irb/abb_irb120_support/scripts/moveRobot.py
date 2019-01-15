@@ -38,22 +38,21 @@ state = False
 def state_callback(msg):
     global status
     global state
-    #x = ''
-    #if status == 2:
-    #    state = False
-    #if state == False:
-        #x = raw_input('Press x if u want to start the normal program or press y for the optoforce program: ')
-    #pub = rospy.Publisher('bru_opt_optoforce', Int8, queue_size=1)
- 	#print('Press x if u want to start the normal program or press y for the optoforce program:')
-    #if x == 'x' and state == False:
-    status = msg.data
-        #print "Test"
-    #    state = True
-    #elif x == 'y' and state == False:
-    #    status = 6
-    #    pub.publish(status)
-        #print "Test2"
-    #    state = True
+    x = ''
+    pub = rospy.Publisher('bru_opt_optoforce', Int8, queue_size=1)
+    if status == 2:
+        state = False
+    if state == False:
+        x = raw_input('Press x if u want to start the normal program or press y for the optoforce program: ')
+    if x == 'x' and state == False:
+        status = msg.data
+        print "Test"
+        state = True
+    elif x == 'y' and state == False:
+        status = 6
+        pub.publish(status)
+        print "Test2"
+        state = True
 
 
 ## Ophalen van gatpositie
@@ -252,7 +251,6 @@ def main():
     try:
         rospy.init_node("moveRobot", anonymous=True, disable_signals=True)
     	rospy.Subscriber("/bru_ctrl_state", Int8, state_callback)
-        #rospy.Subscriber("bru_irb_robotState", Int8, robot_state_callback)
         pub = rospy.Publisher('bru_irb_robotState', Int8, queue_size=2)
         rospy.Subscriber("/bru_irb_robotState", Int8, robot_state_callback)
 
@@ -278,15 +276,10 @@ def main():
             rospy.Subscriber("bru_irb_robotState", Int8, robot_state_callback)
             if statusRobot == 2:
                 moveToWarehouse()
-                #print statusRobot
                 pub.publish(statusRobot)
             elif statusRobot == 4 or statusRobot == 1:
-
                 moveAboveBolt()
-                #print statusRobot
-                #pub.publish(statusRobot)
             elif statusRobot == 5:
-                #print statusRobot
                 pub.publish(statusRobot)
                 statusRobot = 200
                 break

@@ -46,14 +46,15 @@ void loop()
   bool startB = digitalRead(startButton);
   bool stopB = digitalRead(stopButton);
   bool caliB = digitalRead(caliButton);
-   
+  // Checks which state the button is in
+  // Three options, start, stop and calibrate
   if (startB == false && state != 1 && published != true){
     state = 1;
     published = true;
     publishedStop = false;
     publishedCali = false;
     //Serial.print(state);
-    Serial.println(". Started"); 
+    Serial.println(". Started");
   }
   else if (stopB == false && state != 2 && publishedStop != true){
     state = 2;
@@ -66,7 +67,7 @@ void loop()
     else if (caliB == false && publishedCali != true && state != 3){
     state = 3;
     published = false;
-    publishedStop = false;   
+    publishedStop = false;
     publishedCali = true;
     //Serial.print(state);
     Serial.println(". Calibration");
@@ -78,6 +79,7 @@ void loop()
     buttonState.publish(&state_msg);
     state = 0;
   }
+  // Delay of 100 ms
   delay(100);
   nh.spinOnce();
 }

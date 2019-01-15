@@ -17,18 +17,16 @@ avg_value = [0,0,0,0,0,0]
 current_value = [0,0,0,0,0,0]
 
 ## Ophalen van knoppenstatus
-##
 def state_callback(msg):
  	global status
 	status = msg.data
-	#print status
-        if status == 2:
-            client.cancel_all_goals()
-            print "Stop received, stopping robot"
-            status = 5
+ 	if status == 2:
+ 	 	client.cancel_all_goals()
+ 	 	print "Stop received, stopping robot"
+ 	 	status = 5
 
 
-## Ophalen van huidige krachten waarde
+## Ophalen van average offset krachten waarde
 def robot_offset_callback(msg):
     global avg_value
     avg_value[0] = msg.offSet[0]
@@ -47,15 +45,15 @@ def robot_currentValues_callback(msg):
     current_value[3] = msg.tx
     current_value[4] = msg.ty
     current_value[5] = msg.tz
-    if current_value[2] <= -7000: #or current_value[2] >= 6000:
-        print "Te veel kracht"
-        client.cancel_all_goals()
+    #if current_value[2] <= -7000: #or current_value[2] >= 6000:
+    #    client.cancel_all_goals()
 
 client = None
 
 def main():
     global client
     try:
+        ## initialisatie node
         rospy.init_node("stop_robot", anonymous=True, disable_signals=True)
         ## Aanmaken van alle subscribers
         rospy.Subscriber("bru_avg_offset", Corrections, robot_offset_callback)
@@ -64,13 +62,8 @@ def main():
         client = actionlib.SimpleActionClient('joint_trajectory_action', FollowJointTrajectoryAction)
         client.wait_for_server()
         while not rospy.is_shutdown():
-            parameters = rospy.get_param(None)
-            index = str(parameters).find('prefix')
-            if (index > 0):
-                prefix = str(parameters)[index+len("prefix': '"):(index+len("prefix': '")+str(parameters)[index+len("prefix': '"):-1].find("'"))]
-                for i, name in enumerate(JOINT_NAMES):
-                    JOINT_NAMES[i] = prefix + name
-            rospy.spin()
+            i = 0
+        rospy.spin()
     except KeyboardInterrupt:
         raise
 

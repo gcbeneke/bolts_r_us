@@ -23,6 +23,10 @@ y = 0
 xcm = 0
 ycm = 0
 
+## alle voor bepaalde posities
+## de bewegeningen die worden gemaakt door de robot worden op basis van deze joint posities gedaan
+## elke positie scheelt 2 cm met elkaar
+## al deze posities zijn bepaald om een 'lineaire' beweging te realiseren
 firstPos  = [-0.90280, 1.03482, 0.36274, -0.90629, -1.48322, 0.04448]
 secondPos = [-0.83944, 1.03169, 0.29536, -0.84939, -1.42815, 0.09053]
 thirdPos = [-0.78646, 0.94316, 0.55527, -0.78557, -1.53922, -0.04047]
@@ -54,18 +58,21 @@ forwardforwardPos1012 = [-0.56569, 0.96586, 0.59202, -0.56630, -1.57994, -0.0847
 
 verh2cm = 1.385
 verh4cm = 1.227
-verh6cm = 0.98
+verh6cm = 1.185
 verh8cm = 0.96
 verh10cm = 1.0425
 
 
 
-
+## vision komt niet overeen met werkelijk
+## daarom moet een offset gebruikt worden
 def verhoudingPixelWaarde(xcm):
     cm = xcm
-    if cm >= 0 and cm < 2:
-        print " hallo"
-    elif cm >= 2 and cm < 4:
+    #if cm >= 0 and cm < 2:
+    #    print "buffer"
+    if cm >= 2 and cm < 4:
+        ## bij 2cm is het gemeten cm 2,77
+        ## hiermee kon de verhouding berekent worden
         diff = cm - 2.77
         diff = diff / 2
         verhouding = diff * (verh2cm-verh4cm)
@@ -74,40 +81,41 @@ def verhoudingPixelWaarde(xcm):
         cm = cm - (diff*0.95)
         return cm
     elif cm >= 4 and cm < 6:
-        diff = cm - 4.93
+        diff = cm - 4.91
         diff = diff / 2
-        verhouding = diff * 0.8
+        verhouding = diff * (verh4cm-verh6cm)
         verhouding = verh4cm - verhouding
-        cm = verhouding * xcm
-        print verhouding
-        print cm
-        cm = cm - 2.0
+        cm = xcm / verhouding
+        cm = cm - (diff*0.25)
         return cm
-    elif cm >= 6 and cm < 8:
-        0.4
-    elif cm >= 8 and cm < 10:
-        0.2
+    #elif cm >= 6 and cm < 8:
+    #    print "buffer"
+    #elif cm >= 8 and cm < 10:
+    #    print "buffer"
 
 
 ## roteren van de bout voor 2cm (1ste keer)
 rotatebol02 = [-0.69212, 1.08465, 0.16088, -0.71441, -1.34153, 0.11911]
 ## KOMT NOG EEN POSITIE VOOR BOUT INDRAAIEN 2CM (2DE KEER)( VERDER ERINDRAAIEN)
 
+## verhoudingsfunctie om pixelwaarde met cm te koppelen
 def verhouding():
     x1 = 125.05
     x2 = 416.82
     y1 = 206.54
     y2 = 60.59
 
+    ## bepalen waar het nulpunt ligt
     xVerschil = x2 - x1
     yVerschil = y1 - y2
 
+    ## hoeveel centimeter tussen de twee posities zit in X en Y in cm
     horizontalDistance = 17.1
     verticalDistance = 7.4
 
+    ## berekent hoeveel cm per pixel
     xVerhouding = horizontalDistance/xVerschil
     yVerhouding = verticalDistance/yVerschil
-    ##print xVerhouding
     return xVerhouding
 
 ## Ophalen van knoppenstatus
@@ -126,26 +134,15 @@ def robot_state_callback(data):
     global statusRobot
     new_robot_status = data.data
     statusRobot = new_robot_status
-    #print "Robotstatus: ", statusRobot
 
-def moveUntilForce():
-        offsetJ = [i - j for i, j in zip(forwardPos24,pos24)]
-        step = [i / 1.5 for i in offsetJ]
-        newPos = [0,0,0,0,0,0]
-        stepSet = [j * 4 for j in step]
-        newPos = [k + l for k, l in zip(stepSet, pos24)]
-        return newPos
-
-def rotatebolt():
-        offsetJ = [i - j for i, j in zip(rotatebol02,forwardPos02)]
-        newPos = [0,0,0,0,0,0]
-        newPos = [k + l for k, l in zip(offsetJ, forwardPos02)]
-        return newPos
-
+## methode om de beweging in het gat te realiseren
 def calcForwardForward(cm, pos):
+    ## controle op hoeveel cm het gat zit
     if cm <= 2:
+        ## berekenen van het verschil tussen joints
         offsetJ = [i - j for i, j in zip(forwardForwardPos02,forwardPos02)]
         newPos = [0,0,0,0,0,0]
+        ## nieuwe positie berekenen
         newPos = [k + l for k, l in zip(offsetJ, pos)]
         return newPos
     elif cm <= 4 and cm > 2:
@@ -174,10 +171,15 @@ def calcForwardForward(cm, pos):
         newPos = [k + l for k, l in zip(offsetJ, pos)]
         return newPos
 
+
+## methode om de voorwaartse positie te berekenen
 def calcForward(cm, pos):
+    ## controle op hoeveel cm het gat zit
     if cm <= 2:
+        ## verschil in joints berekenen
         offsetJ = [i - j for i, j in zip(forwardPos02,pos02)]
         newPos = [0,0,0,0,0,0]
+        ## berekenen van nieuwe voorwaartse positie
         newPos = [k + l for k, l in zip(offsetJ, pos)]
         return newPos
     elif cm <= 4 and cm > 2:
@@ -206,19 +208,25 @@ def calcForward(cm, pos):
         newPos = [k + l for k, l in zip(offsetJ, pos)]
         return newPos
 
-## methode voor het berekenen voor de verschil tussen gewenst en huidige joint positie
-## Geeft als return het verschil
+## methode voor het berekenen van de gewenste positie met het aantal meegegeven centimers
+## geeft de positie terug
 def calcpos02(cm):
-    global firstPos
-    global pos02
+    global firstPos ## positie op 0 cm
+    global pos02    ## positie op 2 cm
+    ## verschil berekenen in joint rads
     offsetJ = [i - j for i, j in zip(pos02,firstPos)]
+    ## joint verschil per cm
     step = [i / 2 for i in offsetJ]
     newPos = [0,0,0,0,0,0]
-    #cm = cm - 2
+    ## joint beweging voor aantal centimeters
     stepSet = [j * cm for j in step]
+
+    ## optellen bij de positie van 0 cm
     newPos = [k + l for k, l in zip(stepSet, firstPos)]
     return newPos
 
+## methode voor het berekenen van de gewenste positie met het aantal meegegeven centimers
+## geeft de positie terug
 def calcpos24(cm):
     global pos02
     global pos24
@@ -230,6 +238,8 @@ def calcpos24(cm):
     newPos = [k + l for k, l in zip(stepSet, pos02)]
     return newPos
 
+## methode voor het berekenen van de gewenste positie met het aantal meegegeven centimers
+## geeft de positie terug
 def calcpos46(cm):
     global pos46
     global pos24
@@ -241,6 +251,8 @@ def calcpos46(cm):
     newPos = [k + l for k, l in zip(stepSet, pos24)]
     return newPos
 
+## methode voor het berekenen van de gewenste positie met het aantal meegegeven centimers
+## geeft de positie terug
 def calcpos68(cm):
     global pos46
     global pos68
@@ -252,6 +264,8 @@ def calcpos68(cm):
     newPos = [k + l for k, l in zip(stepSet, pos46)]
     return newPos
 
+## methode voor het berekenen van de gewenste positie met het aantal meegegeven centimers
+## geeft de positie terug
 def calcpos810(cm):
     global pos810
     global pos68
@@ -263,9 +277,11 @@ def calcpos810(cm):
     newPos = [k + l for k, l in zip(stepSet, pos68)]
     return newPos
 
+## methode voor het berekenen van de gewenste positie met het aantal meegegeven centimers
+## geeft de positie terug
 def calcpos1012(cm):
     global pos810
-    global pos68
+    global pos1012
     offsetJ = [i - j for i, j in zip(pos1012,pos810)]
     step = [i / 2 for i in offsetJ]
     newPos = [0,0,0,0,0,0]
@@ -286,6 +302,7 @@ def robot_currentValues_callback(msg):
     #if current_value[2] < -5000:
         #statusRobot = 7
 
+## functie voor het ophalen van X-Y coordinaten van het
 def callback_xy_values(msg):
     global x
     global y
@@ -295,40 +312,41 @@ def callback_xy_values(msg):
     x1 = 125.05
     y1 = 189.98
 
+    ## opslaan van coordinaten
     x = msg.allHolesDataVec[0].x
     y = msg.allHolesDataVec[0].y
 
     #print "Waarde voor x: ", x
     #print "Waarde voor y: ", y
 
+    ## Xverschil en Yverschil berekenen
     xVer = x - x1
     yVer = y1 - y
+
+    ## xVerhouding berekenen
     xVerhouding = verhouding()
     xcm = xVer * xVerhouding
-    #ycm = yVer * yVerhouding
-    #print "gemeten cm: ", xcm
+    ## verhouding pixelwaarde berekenen
+    print "gemeten cm: ", xcm
     xcm = verhoudingPixelWaarde(xcm)
-    #print "berekende cm: ", xcm
+    print "berekende cm: ", xcm
 
 ## Beweegt de robot naar de meegegeven joint positie
 def moveRobot():
     global firstPos
     global statusRobot
     global xcm
-    #xcm = 4.05
-    #print "S1"
     i = 0
     try:
         if xcm != 0:
-            #print "Sup"
             cm = xcm
+            ## huidige positie ophalen
             joint_states = rospy.wait_for_message("joint_states", JointState)
             joints_pos = joint_states.position
             g = FollowJointTrajectoryGoal()
             g.trajectory = JointTrajectory()
             g.trajectory.joint_names = JOINT_NAMES
-            #cm = xcm - 2.05
-            ##print xcm
+            ## controleren op hoeveel cm het gat zit
             if cm <= 2:
                 pos = calcpos02(cm)
             elif cm <= 4 and cm > 2:
@@ -336,11 +354,13 @@ def moveRobot():
                 holePos = cm + 8
             elif cm <= 6 and cm > 4:
                 pos = calcpos46(cm)
+                holePos = cm + 8
             elif cm <= 8 and cm > 6:
                 pos = calcpos68(cm)
             elif cm <= 10 and cm > 8:
                 pos = calcpos810(cm)
 
+            ## positie voor het 2e gaat berekenen
             if holePos <= 12 and holePos > 10:
                 holePosition = calcpos810(holePos)
                 newerHolePos = calcForward(holePos, holePosition)
@@ -348,10 +368,7 @@ def moveRobot():
             newerPos = calcForward(cm, pos)
             newerNewerPos = calcForwardForward(cm, newerPos)
 
-
-            ##print "Positie:", pos
-            ##print "Positie voor:", newerPos
-                ## Bewegen naar gevraagde positie
+            ## Bewegen naar gevraagde posities
             g.trajectory.points = [
                     JointTrajectoryPoint(positions=joints_pos, velocities=[1]*6, accelerations=[1], effort = [0],  time_from_start=rospy.Duration(0.0)),
                     JointTrajectoryPoint(positions=betweenPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(1.0)),
@@ -363,17 +380,12 @@ def moveRobot():
                     JointTrajectoryPoint(positions=newerPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(7.0)),
                     JointTrajectoryPoint(positions=newerNewerPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(9.0)),
                     JointTrajectoryPoint(positions=newerPos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(11.0)),
-                    JointTrajectoryPoint(positions=pos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(13.0)),
-                    JointTrajectoryPoint(positions=holePosition, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(15.0)),
-                    JointTrajectoryPoint(positions=newerHolePos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(17.0)),
-                    JointTrajectoryPoint(positions=newerNewerHolePos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(23.0))]
+                    JointTrajectoryPoint(positions=pos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(13.0))]
+                    #JointTrajectoryPoint(positions=holePosition, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(15.0)),
+                    #JointTrajectoryPoint(positions=newerHolePos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(17.0)),
+                    #JointTrajectoryPoint(positions=newerNewerHolePos, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(23.0))]
             client.send_goal(g)
             client.wait_for_result()
-            ##offset = calculateOffSet(joints_pos, newerPos)
-            ##for x in offset:
-                ##if x < 0.001 and x > -0.001:
-                ##    i = i + 1
-                ##if i > 5:
             print " ik ga naar voren voor de correctie!"
             statusRobot = 6
     except KeyboardInterrupt:
@@ -382,20 +394,25 @@ def moveRobot():
     except:
         raise
 
+## methode om de bout in het gat te draaien
 def rotatebolt():
     global statusRobot
     joint_states = rospy.wait_for_message("joint_states", JointState)
     joints_pos = joint_states.position
+
+    ## Huidige positie overschrijven om ervoor te zorgen dat de kop gaat draaien
     holeposition = joints_pos
     holeposition = list(holeposition)
     holeposition[5] = 3
     holeposition = tuple(holeposition)
+
     g = FollowJointTrajectoryGoal()
     g.trajectory = JointTrajectory()
     g.trajectory.joint_names = JOINT_NAMES
+    ## bewegen naar gewenste posities
     g.trajectory.points = [
-            JointTrajectoryPoint(positions=joints_pos, velocities=[1]*6, accelerations=[1], effort = [0],  time_from_start=rospy.Duration(0.0))]
-            #JointTrajectoryPoint(positions=holeposition, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(2.0))]
+            JointTrajectoryPoint(positions=joints_pos, velocities=[1]*6, accelerations=[1], effort = [0],  time_from_start=rospy.Duration(0.0)),
+            JointTrajectoryPoint(positions=holeposition, velocities=[1]*6, accelerations=[1], effort = [0], time_from_start=rospy.Duration(2.0))]
     client.send_goal(g)
     client.wait_for_result()
 
@@ -407,26 +424,16 @@ def main():
         rospy.init_node("optoForceRobot", anonymous=True, disable_signals=True)
         rospy.Subscriber("bru_irb_robotState", Int8, robot_state_callback)
         rospy.Subscriber("bru_vis_holeData", imageCircleData, callback_xy_values)
-        ## Publisher aanmaken
+        rospy.Subscriber("bru_irb_new_robotState", Int8, robot_state_callback)
+        rospy.Subscriber("bru_opt_workData", OptoForceData, robot_currentValues_callback)
         client = actionlib.SimpleActionClient('joint_trajectory_action', FollowJointTrajectoryAction)
-        ##client.wait_for_server()
         parameters = rospy.get_param(None)
         ## Programma dat wordt uitgevoerd
         while not rospy.is_shutdown():
-            rospy.Subscriber("bru_irb_new_robotState", Int8, robot_state_callback)
-            rospy.Subscriber("bru_opt_workData", OptoForceData, robot_currentValues_callback)
-            #print statusRobot
             if statusRobot == 5:
-                #print statusRobot
                 moveRobot()
             elif statusRobot == 6:
                 rotatebolt()
-            index = str(parameters).find('prefix')
-            if (index > 0):
-                prefix = str(parameters)[index+len("prefix': '"):(index+len("prefix': '")+str(parameters)[index+len("prefix': '"):-1].find("'"))]
-                for i, name in enumerate(JOINT_NAMES):
-                    JOINT_NAMES[i] = prefix + name
-
         rospy.spin()
     except KeyboardInterrupt:
         rospy.signal_shutdown("KeyboardInterrupt")

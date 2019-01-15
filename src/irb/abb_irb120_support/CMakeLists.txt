@@ -1,9 +1,32 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(abb_irb120_support)
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  cmake_modules
+  diagnostic_msgs
+  diagnostic_updater
+  geometry_msgs
+  roscpp
+  message_generation
+  actionlib_msgs
+  std_msgs
+)
 
-catkin_package()
+add_message_files(
+  FILES
+  Forces.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
+catkin_package(
+  CATKIN_DEPENDS message_runtime
+  )
+
+
 
 if (CATKIN_ENABLE_TESTING)
   find_package(roslaunch REQUIRED)
