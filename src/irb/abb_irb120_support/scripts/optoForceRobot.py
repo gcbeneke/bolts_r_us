@@ -327,9 +327,9 @@ def callback_xy_values(msg):
     xVerhouding = verhouding()
     xcm = xVer * xVerhouding
     ## verhouding pixelwaarde berekenen
-    print "gemeten cm: ", xcm
+    #print "gemeten cm: ", xcm
     xcm = verhoudingPixelWaarde(xcm)
-    print "berekende cm: ", xcm
+    #print "berekende cm: ", xcm
 
 ## Beweegt de robot naar de meegegeven joint positie
 def moveRobot():

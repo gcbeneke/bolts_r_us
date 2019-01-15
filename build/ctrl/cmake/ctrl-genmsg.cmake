@@ -2,7 +2,7 @@
 
 message(STATUS "ctrl: 1 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ictrl:/home/redouan/bolts_ws/src/ctrl/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ictrl:/home/gijs/bolts_ws/src/ctrl/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,9 +17,9 @@ add_custom_target(ctrl_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/redouan/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
+get_filename_component(_filename "/home/gijs/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
 add_custom_target(_ctrl_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ctrl" "/home/redouan/bolts_ws/src/ctrl/msg/State.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ctrl" "/home/gijs/bolts_ws/src/ctrl/msg/State.msg" ""
 )
 
 #
@@ -29,7 +29,7 @@ add_custom_target(_ctrl_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(ctrl
-  "/home/redouan/bolts_ws/src/ctrl/msg/State.msg"
+  "/home/gijs/bolts_ws/src/ctrl/msg/State.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ctrl
@@ -49,7 +49,7 @@ add_custom_target(ctrl_generate_messages_cpp
 add_dependencies(ctrl_generate_messages ctrl_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/redouan/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
+get_filename_component(_filename "/home/gijs/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
 add_dependencies(ctrl_generate_messages_cpp _ctrl_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +62,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ctrl_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(ctrl
-  "/home/redouan/bolts_ws/src/ctrl/msg/State.msg"
+  "/home/gijs/bolts_ws/src/ctrl/msg/State.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ctrl
@@ -82,7 +82,7 @@ add_custom_target(ctrl_generate_messages_eus
 add_dependencies(ctrl_generate_messages ctrl_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/redouan/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
+get_filename_component(_filename "/home/gijs/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
 add_dependencies(ctrl_generate_messages_eus _ctrl_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +95,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ctrl_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(ctrl
-  "/home/redouan/bolts_ws/src/ctrl/msg/State.msg"
+  "/home/gijs/bolts_ws/src/ctrl/msg/State.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ctrl
@@ -115,7 +115,7 @@ add_custom_target(ctrl_generate_messages_lisp
 add_dependencies(ctrl_generate_messages ctrl_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/redouan/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
+get_filename_component(_filename "/home/gijs/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
 add_dependencies(ctrl_generate_messages_lisp _ctrl_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +128,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ctrl_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(ctrl
-  "/home/redouan/bolts_ws/src/ctrl/msg/State.msg"
+  "/home/gijs/bolts_ws/src/ctrl/msg/State.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ctrl
@@ -148,7 +148,7 @@ add_custom_target(ctrl_generate_messages_nodejs
 add_dependencies(ctrl_generate_messages ctrl_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/redouan/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
+get_filename_component(_filename "/home/gijs/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
 add_dependencies(ctrl_generate_messages_nodejs _ctrl_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +161,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ctrl_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(ctrl
-  "/home/redouan/bolts_ws/src/ctrl/msg/State.msg"
+  "/home/gijs/bolts_ws/src/ctrl/msg/State.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ctrl
@@ -181,7 +181,7 @@ add_custom_target(ctrl_generate_messages_py
 add_dependencies(ctrl_generate_messages ctrl_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/redouan/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
+get_filename_component(_filename "/home/gijs/bolts_ws/src/ctrl/msg/State.msg" NAME_WE)
 add_dependencies(ctrl_generate_messages_py _ctrl_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

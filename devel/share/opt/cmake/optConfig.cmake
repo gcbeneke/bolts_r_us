@@ -67,14 +67,14 @@ set(opt_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(opt_SOURCE_PREFIX /home/redouan/bolts_ws/src/opt)
-  set(opt_DEVEL_PREFIX /home/redouan/bolts_ws/devel)
+  set(opt_SOURCE_PREFIX /home/gijs/bolts_ws/src/opt)
+  set(opt_DEVEL_PREFIX /home/gijs/bolts_ws/devel)
   set(opt_INSTALL_PREFIX "")
   set(opt_PREFIX ${opt_DEVEL_PREFIX})
 else()
   set(opt_SOURCE_PREFIX "")
   set(opt_DEVEL_PREFIX "")
-  set(opt_INSTALL_PREFIX /home/redouan/bolts_ws/install)
+  set(opt_INSTALL_PREFIX /home/gijs/bolts_ws/install)
   set(opt_PREFIX ${opt_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(opt_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/redouan/bolts_ws/devel/include;/home/redouan/bolts_ws/src/opt/include " STREQUAL " ")
+if(NOT "/home/gijs/bolts_ws/devel/include;/home/gijs/bolts_ws/src/opt/include " STREQUAL " ")
   set(opt_INCLUDE_DIRS "")
-  set(_include_dirs "/home/redouan/bolts_ws/devel/include;/home/redouan/bolts_ws/src/opt/include")
+  set(_include_dirs "/home/gijs/bolts_ws/devel/include;/home/gijs/bolts_ws/src/opt/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/redouan/bolts_ws/devel/include;/home/redouan/bolts_ws/src/opt/incl
         message(FATAL_ERROR "Project 'opt' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'opt' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/redouan/bolts_ws/src/opt/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'opt' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/gijs/bolts_ws/src/opt/${idir}'.  ${_report}")
     endif()
     _list_append_unique(opt_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/redouan/bolts_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/gijs/bolts_ws/devel/lib;/home/gijs/bolts_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

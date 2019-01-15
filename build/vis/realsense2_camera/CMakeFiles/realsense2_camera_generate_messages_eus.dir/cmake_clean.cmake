@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/realsense2_camera_generate_messages_eus"
-  "/home/redouan/bolts_ws/devel/share/roseus/ros/realsense2_camera/msg/IMUInfo.l"
-  "/home/redouan/bolts_ws/devel/share/roseus/ros/realsense2_camera/msg/Extrinsics.l"
-  "/home/redouan/bolts_ws/devel/share/roseus/ros/realsense2_camera/manifest.l"
+  "/home/gijs/bolts_ws/devel/share/roseus/ros/realsense2_camera/msg/IMUInfo.l"
+  "/home/gijs/bolts_ws/devel/share/roseus/ros/realsense2_camera/msg/Extrinsics.l"
+  "/home/gijs/bolts_ws/devel/share/roseus/ros/realsense2_camera/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

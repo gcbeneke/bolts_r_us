@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/redouan/bolts_ws/src
+CMAKE_SOURCE_DIR = /home/gijs/bolts_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/redouan/bolts_ws/build
+CMAKE_BINARY_DIR = /home/gijs/bolts_ws/build
 
 # Include any dependencies generated for this target.
 include vis/vision/CMakeFiles/bru_vis_threshImg.dir/depend.make
@@ -58,17 +58,17 @@ include vis/vision/CMakeFiles/bru_vis_threshImg.dir/progress.make
 include vis/vision/CMakeFiles/bru_vis_threshImg.dir/flags.make
 
 vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o: vis/vision/CMakeFiles/bru_vis_threshImg.dir/flags.make
-vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o: /home/redouan/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/redouan/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o"
-	cd /home/redouan/bolts_ws/build/vis/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o -c /home/redouan/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp
+vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o: /home/gijs/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o"
+	cd /home/gijs/bolts_ws/build/vis/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o -c /home/gijs/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp
 
 vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.i"
-	cd /home/redouan/bolts_ws/build/vis/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/redouan/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp > CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.i
+	cd /home/gijs/bolts_ws/build/vis/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gijs/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp > CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.i
 
 vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.s"
-	cd /home/redouan/bolts_ws/build/vis/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/redouan/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp -o CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.s
+	cd /home/gijs/bolts_ws/build/vis/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gijs/bolts_ws/src/vis/vision/src/bru_vis_threshImg.cpp -o CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.s
 
 vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o.requires:
 
@@ -88,90 +88,90 @@ bru_vis_threshImg_OBJECTS = \
 # External object files for target bru_vis_threshImg
 bru_vis_threshImg_EXTERNAL_OBJECTS =
 
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: vis/vision/CMakeFiles/bru_vis_threshImg.dir/build.make
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcv_bridge.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libimage_transport.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libmessage_filters.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libclass_loader.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/libPocoFoundation.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libroslib.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librospack.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcamera_info_manager.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcamera_calibration_parsers.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libroscpp.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librosconsole.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librostime.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcpp_common.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_face.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
-/home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg: vis/vision/CMakeFiles/bru_vis_threshImg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/redouan/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg"
-	cd /home/redouan/bolts_ws/build/vis/vision && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bru_vis_threshImg.dir/link.txt --verbose=$(VERBOSE)
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: vis/vision/CMakeFiles/bru_vis_threshImg.dir/src/bru_vis_threshImg.cpp.o
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: vis/vision/CMakeFiles/bru_vis_threshImg.dir/build.make
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcv_bridge.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libimage_transport.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libmessage_filters.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libclass_loader.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/libPocoFoundation.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libroslib.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librospack.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcamera_info_manager.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcamera_calibration_parsers.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libroscpp.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librosconsole.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/librostime.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /opt/ros/melodic/lib/libcpp_common.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_face.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
+/home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg: vis/vision/CMakeFiles/bru_vis_threshImg.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gijs/bolts_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg"
+	cd /home/gijs/bolts_ws/build/vis/vision && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bru_vis_threshImg.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-vis/vision/CMakeFiles/bru_vis_threshImg.dir/build: /home/redouan/bolts_ws/devel/lib/vision/bru_vis_threshImg
+vis/vision/CMakeFiles/bru_vis_threshImg.dir/build: /home/gijs/bolts_ws/devel/lib/vision/bru_vis_threshImg
 
 .PHONY : vis/vision/CMakeFiles/bru_vis_threshImg.dir/build
 
@@ -180,10 +180,10 @@ vis/vision/CMakeFiles/bru_vis_threshImg.dir/requires: vis/vision/CMakeFiles/bru_
 .PHONY : vis/vision/CMakeFiles/bru_vis_threshImg.dir/requires
 
 vis/vision/CMakeFiles/bru_vis_threshImg.dir/clean:
-	cd /home/redouan/bolts_ws/build/vis/vision && $(CMAKE_COMMAND) -P CMakeFiles/bru_vis_threshImg.dir/cmake_clean.cmake
+	cd /home/gijs/bolts_ws/build/vis/vision && $(CMAKE_COMMAND) -P CMakeFiles/bru_vis_threshImg.dir/cmake_clean.cmake
 .PHONY : vis/vision/CMakeFiles/bru_vis_threshImg.dir/clean
 
 vis/vision/CMakeFiles/bru_vis_threshImg.dir/depend:
-	cd /home/redouan/bolts_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/redouan/bolts_ws/src /home/redouan/bolts_ws/src/vis/vision /home/redouan/bolts_ws/build /home/redouan/bolts_ws/build/vis/vision /home/redouan/bolts_ws/build/vis/vision/CMakeFiles/bru_vis_threshImg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/gijs/bolts_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gijs/bolts_ws/src /home/gijs/bolts_ws/src/vis/vision /home/gijs/bolts_ws/build /home/gijs/bolts_ws/build/vis/vision /home/gijs/bolts_ws/build/vis/vision/CMakeFiles/bru_vis_threshImg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vis/vision/CMakeFiles/bru_vis_threshImg.dir/depend
 

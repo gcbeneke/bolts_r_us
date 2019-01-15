@@ -1,10 +1,10 @@
 
 "use strict";
 
-let SetForce = require('./SetForce.js')
 let Move = require('./Move.js')
+let SetForce = require('./SetForce.js')
 
 module.exports = {
-  SetForce: SetForce,
   Move: Move,
+  SetForce: SetForce,
 };

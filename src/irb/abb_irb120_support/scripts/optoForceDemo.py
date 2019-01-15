@@ -83,7 +83,7 @@ def correction(standX, standY, intval):
     ## bewegen naar gecorigeerde positie
     g.trajectory.points = [
             JointTrajectoryPoint(positions=joints_pos, velocities=[0], accelerations=[0], effort = [0],  time_from_start=rospy.Duration(0.0)),
-            JointTrajectoryPoint(positions=wantedPos, velocities=[10]*10, accelerations=[5]*10, effort = [0], time_from_start=rospy.Duration(0.001))]
+            JointTrajectoryPoint(positions=wantedPos, velocities=[10], accelerations=[5], effort = [0], time_from_start=rospy.Duration(0.001))]
 
     client.send_goal(g)
     client.wait_for_result()
